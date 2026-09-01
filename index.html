@@ -57,13 +57,13 @@
     .aguiaBox::after{display:none}
   }
 
-  .barra{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding:26px 44px 6px}
+  .barra{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:26px 44px 6px}
   .cd{position:relative;background:#fff;border-radius:14px;padding:20px 18px 17px;text-align:center;
       box-shadow:0 1px 3px rgba(15,44,76,.08);overflow:hidden;cursor:default;
       transition:transform .28s cubic-bezier(.2,.8,.3,1), box-shadow .28s ease;
       animation:sobe .5s cubic-bezier(.2,.8,.3,1) both}
-  .cd:nth-child(1){animation-delay:.55s} .cd:nth-child(2){animation-delay:.65s}
-  .cd:nth-child(3){animation-delay:.75s} .cd:nth-child(4){animation-delay:.85s}
+  .cd:nth-child(1){animation-delay:.55s} .cd:nth-child(2){animation-delay:.67s}
+  .cd:nth-child(3){animation-delay:.79s}
   @keyframes sobe{from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)}}
 
   .cd::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;
@@ -86,7 +86,6 @@
 
   .cd.ok  {--c:#16A349; --bg:#E9F7EF}
   .cd.run {--c:#F49E0A; --bg:#FEF5E4}
-  .cd.zero{--c:#94a3b8; --bg:#F1F5F9}
   .cd.mais{--c:#0F2C4C; --bg:#E7EEF7}
 
   /* entram conforme a pagina rola */
@@ -183,7 +182,7 @@
     .nota{margin-left:22px;margin-right:22px}
     .grid{grid-template-columns:1fr}
     td.rot{width:104px} td{padding:11px 14px;font-size:12.6px}
-    .barra{flex-wrap:wrap} .barra div{flex:1 1 33%}
+    .barra{grid-template-columns:1fr;padding:20px 22px 4px}
     header h1{font-size:25px} .aguia{width:54px}
   }
   @media print{ body{background:#fff} .acao,.ent{break-inside:avoid} }
@@ -204,7 +203,6 @@
   <div class="barra">
     <div class="cd ok"><div class="ic">✓</div><div class="k" data-alvo="5">0</div><div class="l">Concluídas</div></div>
     <div class="cd run"><div class="ic">◔</div><div class="k" data-alvo="1">0</div><div class="l">Em andamento</div></div>
-    <div class="cd zero"><div class="ic">○</div><div class="k" data-alvo="0">0</div><div class="l">Não iniciadas</div></div>
     <div class="cd mais"><div class="ic">✦</div><div class="k" data-alvo="12">0</div><div class="l">Entregas extras</div></div>
   </div>
 
