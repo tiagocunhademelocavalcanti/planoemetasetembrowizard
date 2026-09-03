@@ -199,6 +199,17 @@
     .cd{animation:none}
   }
 
+  .indice{display:flex;flex-wrap:wrap;gap:8px;padding:20px 44px 4px}
+  .indice a{font-size:12px;font-weight:700;color:#0F2C4C;background:#fff;border:1px solid #dbe4ef;
+    padding:8px 14px;border-radius:20px;text-decoration:none;
+    transition:background .25s ease,color .25s ease,transform .25s cubic-bezier(.2,.8,.3,1)}
+  .indice a:hover{background:#0F2C4C;color:#fff;transform:translateY(-2px)}
+  .selo{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
+    padding:3px 9px;border-radius:20px;margin-left:8px;vertical-align:middle}
+  .selo.andou{background:#E9F7EF;color:#16A349}
+  .selo.parcial{background:#FEF5E4;color:#B5530A}
+  .selo.aberto{background:#F1F5F9;color:#64748b}
+  html{scroll-behavior:smooth}
   section{padding:40px 44px 8px}
   .titulo{display:flex;align-items:center;gap:13px;margin-bottom:8px}
   .titulo span{width:5px;height:26px;background:#E2231A;border-radius:3px}
@@ -315,6 +326,7 @@
     .grid{grid-template-columns:1fr}
     td.rot{width:104px} td{padding:11px 14px;font-size:12.6px}
     .barra{grid-template-columns:1fr;padding:20px 22px 4px}
+    .indice{padding-left:22px;padding-right:22px}
     header h1{font-size:25px} .aguia{width:54px}
   }
   @media print{ body{background:#fff} .acao,.ent{break-inside:avoid} }
@@ -346,7 +358,67 @@
     <div class="cd mais"><div class="ic">✦</div><div class="k" data-alvo="12">12</div><div class="l">Entregas extras</div></div>
   </div>
 
-  <section>
+  <div class="indice">
+    <a href="#origem">De julho a setembro</a>
+    <a href="#acoes">A&ccedil;&otilde;es de 25/08</a>
+    <a href="#entregas">Entregas al&eacute;m da lista</a>
+    <a href="#plano">Plano de setembro</a>
+    <a href="#prioridades">Prioridades</a>
+    <a href="#roteiro">Roteiro do comercial</a>
+  </div>
+
+  <section id="origem">
+    <div class="titulo"><span></span><h2>De julho a setembro &mdash; o que saiu do papel</h2></div>
+    <p class="desc">Em 27 de julho, o <b>Plano de A&ccedil;&atilde;o 5W2H</b> diagnosticou quatro problemas na unidade e prop&ocirc;s as metas de agosto a dezembro. Esta se&ccedil;&atilde;o compara aquele diagn&oacute;stico com o que os dados mostram hoje &mdash; problema por problema.</p>
+
+    <div class="plano">
+      <div class="cab"><h3>Problema A &mdash; Matr&iacute;culas abaixo da meta<span class="selo andou">andou</span></h3><span>COMERCIAL</span></div>
+      <table>
+        <tr><td class="rot">Julho dizia</td><td>Primeiro contato levava <b>6 dias em m&eacute;dia</b>. A maioria dos leads era contatada <b>uma &uacute;nica vez</b>. A convers&atilde;o caiu de ~30% em janeiro para 12&ndash;18%.</td></tr>
+        <tr><td class="rot">O que foi feito</td><td>O <b>repique voltou</b> ao CRM, com contador de tentativas e a &uacute;ltima anota&ccedil;&atilde;o vis&iacute;vel na lista. A <b>Iza</b> passou a fazer a primeira resposta aos leads do Instagram no n&uacute;mero comercial. E o <b>funil passou a ser medido por etapa</b> &mdash; com os indicadores revisados para ler o hist&oacute;rico do lead, e n&atilde;o o status atual.</td></tr>
+        <tr class="meta"><td class="rot">Hoje</td><td><b>99% dos leads s&atilde;o contatados.</b> Depois: 50% agendam aula, 65% dos que agendam comparecem, e 41% dos que comparecem fecham.</td></tr>
+        <tr><td class="rot">A leitura</td><td><b>O problema de contato foi resolvido &mdash; e o gargalo mudou de lugar.</b> N&atilde;o &eacute; mais chegar na pessoa; &eacute; convert&ecirc;-la em aula marcada. Metade dos contatados n&atilde;o agenda. &Eacute; exatamente onde o plano de setembro concentra o esfor&ccedil;o.</td></tr>
+        <tr><td class="rot">Em aberto</td><td>O <b>SLA de 15 minutos</b> ainda n&atilde;o &eacute; mensur&aacute;vel: o indicador de tempo de 1&ordm; contato mede at&eacute; o registro no sistema, n&atilde;o at&eacute; a resposta ao cliente. Precisa de um campo novo e de um alinhamento com a equipe antes de virar meta.</td></tr>
+      </table>
+    </div>
+
+    <div class="plano">
+      <div class="cab"><h3>Problema B &mdash; Renova&ccedil;&atilde;o e reten&ccedil;&atilde;o<span class="selo parcial">parcial</span></h3><span>PEDAG&Oacute;GICO</span></div>
+      <table>
+        <tr><td class="rot">Julho dizia</td><td>Renova&ccedil;&atilde;o em <b>14%</b> da meta. Cancelamentos j&aacute; acima do teto anual. Reten&ccedil;&atilde;o em ~92%, meta 96%. N&atilde;o existia processo estruturado de renova&ccedil;&atilde;o, e a evas&atilde;o s&oacute; era percebida no pedido de cancelamento.</td></tr>
+        <tr><td class="rot">O que foi feito</td><td>O CRM passou a <b>avisar o pedag&oacute;gico automaticamente</b> a cada matr&iacute;cula, com tarefa de boas-vindas e prazo. E a <b>pesquisa de satisfa&ccedil;&atilde;o 2026</b> foi apurada e entregue &mdash; ela identifica a insatisfa&ccedil;&atilde;o por turma, que &eacute; o sinal de evas&atilde;o antes do cancelamento.</td></tr>
+        <tr><td class="rot">Em aberto</td><td>O <b>processo de renova&ccedil;&atilde;o proativo</b> e o <b>radar de frequ&ecirc;ncia</b> ainda n&atilde;o entraram em rotina. A planilha de metas pede <b>7 renova&ccedil;&otilde;es em setembro</b>, e a frente n&atilde;o aparece no plano do m&ecirc;s.</td></tr>
+      </table>
+    </div>
+
+    <div class="plano">
+      <div class="cab"><h3>Problema C &mdash; B2B sem opera&ccedil;&atilde;o estruturada<span class="selo andou">andou</span></h3><span>COMERCIAL B2B</span></div>
+      <table>
+        <tr><td class="rot">Julho dizia</td><td>A linha &quot;matr&iacute;cula empresa&quot; estava em <b>zero</b>. O canal de escolas, que era a maior origem de matr&iacute;culas, estava parado. E a rotina do Valdemar previa <b>17h por semana</b> de prospec&ccedil;&atilde;o, sem meta definida.</td></tr>
+        <tr><td class="rot">O que foi feito</td><td>A <b>oferta e o material B2B ficaram prontos</b> &mdash; proposta de parceria e roteiro de liga&ccedil;&atilde;o. E o <b>m&oacute;dulo Comercial foi constru&iacute;do no CRM</b>: cadastro de institui&ccedil;&otilde;es, hist&oacute;rico de visitas, registro pelo celular e o v&iacute;nculo de cada lead com a escola de origem &mdash; que &eacute; a medi&ccedil;&atilde;o do funil B2B que o plano pedia.</td></tr>
+        <tr class="meta"><td class="rot">Setembro</td><td>O canal de escolas foi reativado com meta pr&oacute;pria: <b>12 institui&ccedil;&otilde;es visitadas</b> (3 por semana, dentro das 17h) e <b>7 matr&iacute;culas</b>. Meta de atividade e de resultado separadas, para saber qual das duas falhou.</td></tr>
+        <tr><td class="rot">Em aberto</td><td>O <b>in-company</b> &mdash; a prospec&ccedil;&atilde;o de empresas e condom&iacute;nios. A planilha pede <b>2 matr&iacute;culas de empresa em setembro</b>, e o plano do m&ecirc;s cobre s&oacute; escolas.</td></tr>
+      </table>
+    </div>
+
+    <div class="plano">
+      <div class="cab"><h3>Problema D &mdash; Inadimpl&ecirc;ncia<span class="selo aberto">em aberto</span></h3><span>FINANCEIRO</span></div>
+      <table>
+        <tr><td class="rot">Julho dizia</td><td>A inadimpl&ecirc;ncia subiu de ~4% em janeiro para ~8% em junho, contra uma meta de ~3%. N&atilde;o &eacute; um m&ecirc;s ruim, &eacute; tend&ecirc;ncia. A cobran&ccedil;a &eacute; reativa: corre atr&aacute;s depois do vencimento.</td></tr>
+        <tr><td class="rot">Situa&ccedil;&atilde;o</td><td>&Eacute; a &uacute;nica das quatro frentes <b>fora do escopo do n&uacute;cleo</b> &mdash; pertence ao financeiro. A linha WIZARD FINANCEIRO da planilha de setembro est&aacute; sem a&ccedil;&atilde;o preenchida.</td></tr>
+        <tr><td class="rot">O que o plano pedia</td><td>Migrar para <b>cart&atilde;o recorrente ou d&eacute;bito autom&aacute;tico</b>, r&eacute;gua de cobran&ccedil;a preventiva antes do vencimento, e cruzar inadimpl&ecirc;ncia com frequ&ecirc;ncia &mdash; porque quem deve e falta &eacute; risco duplo.</td></tr>
+      </table>
+    </div>
+
+    <div class="nota" style="margin-left:0;margin-right:0">
+      <h4>O fio que liga tudo</h4>
+      <p>O diagn&oacute;stico de julho terminava assim: <i>&quot;os quatro problemas t&ecirc;m um fio comum &mdash; a unidade j&aacute; tem reputa&ccedil;&atilde;o forte, bom produto e listas prontas; o que falta &eacute; processo&quot;.</i></p>
+      <p><b>Dois meses depois, isso se confirmou.</b> Nenhuma das entregas exigiu mais verba ou mais estrutura: foram processo e ferramenta. E o resultado aparece onde o processo entrou &mdash; o contato, que era o pior indicador de julho, hoje &eacute; o melhor.</p>
+      <p>O plano de setembro &eacute; a continua&ccedil;&atilde;o direta desse mesmo racioc&iacute;nio, aplicado ao degrau seguinte do funil.</p>
+    </div>
+  </section>
+
+  <section id="acoes">
     <div class="titulo"><span></span><h2>As ações definidas em 25/08</h2></div>
     <p class="desc">Situação de cada ação registrada na última reunião do núcleo.</p>
     
@@ -418,7 +490,7 @@
       </div>
   </section>
 
-  <section>
+  <section id="entregas">
     <div class="titulo"><span></span><h2>Entregas além da lista</h2></div>
     <p class="desc">Trabalho realizado no período que não constava nas ações da reunião.</p>
     <div class="grid">
@@ -474,7 +546,7 @@
     </div>
   </section>
 
-  <section>
+  <section id="plano">
     <div class="titulo"><span></span><h2>O plano de setembro</h2></div>
     <p class="desc">As metas foram organizadas em três níveis, reconciliando as três referências que existiam sobre o mês.</p>
 
@@ -533,7 +605,7 @@
     </div>
   </section>
 
-  <section>
+  <section id="prioridades">
     <div class="titulo"><span></span><h2>As prioridades de setembro</h2></div>
     <p class="desc">Um plano diz o que ser&aacute; feito. Esta parte diz <b>o que vem primeiro e o que n&atilde;o pode faltar de jeito nenhum</b> &mdash; porque a decis&atilde;o dif&iacute;cil &eacute; sempre tomada na terceira semana, sem tempo de pensar.</p>
 
@@ -565,7 +637,7 @@
     </div>
   </section>
 
-  <section>
+  <section id="roteiro">
     <div class="titulo"><span></span><h2>Roteiro do comercial no CRM</h2></div>
     <p class="desc">Como o Valdemar usa a aba Comercial. Est&aacute; aqui para que toda a equipe saiba o que &eacute; registrado, onde, e o que cada um pode consultar sem precisar pedir n&uacute;mero a ningu&eacute;m.</p>
 
