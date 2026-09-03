@@ -341,9 +341,9 @@
   </header>
 
   <div class="barra">
-    <div class="cd ok"><div class="ic">✓</div><div class="k" data-alvo="5">0</div><div class="l">Concluídas</div></div>
-    <div class="cd run"><div class="ic">◔</div><div class="k" data-alvo="1">0</div><div class="l">Em andamento</div></div>
-    <div class="cd mais"><div class="ic">✦</div><div class="k" data-alvo="12">0</div><div class="l">Entregas extras</div></div>
+    <div class="cd ok"><div class="ic">✓</div><div class="k" data-alvo="5">5</div><div class="l">Concluídas</div></div>
+    <div class="cd run"><div class="ic">◔</div><div class="k" data-alvo="1">1</div><div class="l">Em andamento</div></div>
+    <div class="cd mais"><div class="ic">✦</div><div class="k" data-alvo="12">12</div><div class="l">Entregas extras</div></div>
   </div>
 
   <section>
@@ -535,7 +535,7 @@
 
   <section>
     <div class="titulo"><span></span><h2>As prioridades de setembro</h2></div>
-    <p class="desc">Um plano diz o que sera feito. Esta parte diz <b>o que vem primeiro, o que cede quando o mes apertar, e o que nao cede de jeito nenhum</b> &mdash; porque a decisao dificil e sempre tomada na terceira semana, sem tempo de pensar.</p>
+    <p class="desc">Um plano diz o que ser&aacute; feito. Esta parte diz <b>o que vem primeiro e o que n&atilde;o pode faltar de jeito nenhum</b> &mdash; porque a decis&atilde;o dif&iacute;cil &eacute; sempre tomada na terceira semana, sem tempo de pensar.</p>
 
     <div class="plano">
       <div class="cab"><h3>A ordem do m&ecirc;s</h3><span>SE TUDO CORRER BEM</span></div>
@@ -545,7 +545,7 @@
         <tr><td class="qd">2&ordm;<small>o m&ecirc;s inteiro</small></td><td class="oq2"><b>Capta&ccedil;&atilde;o em escolas</b><span>Em setembro de 2025, 19 das 22 matr&iacute;culas do m&ecirc;s vieram de a&ccedil;&atilde;o em escola. E &eacute; a &uacute;nica frente que constr&oacute;i al&eacute;m de setembro: doze institui&ccedil;&otilde;es cadastradas agora s&atilde;o doze portas abertas para outubro e novembro.</span></td><td class="mt" data-rot="Meta">7</td></tr>
         <tr><td class="qd">3&ordm;<small>semana 02</small></td><td class="oq2"><b>Segundo idioma</b><span>Vinte e duas pessoas pediram por escrito, com nome e telefone, e ningu&eacute;m procurou nenhuma. &Eacute; a venda mais barata do m&ecirc;s &mdash; e a que esfria mais r&aacute;pido.</span></td><td class="mt" data-rot="Meta">2</td></tr>
         <tr><td class="qd">4&ordm;<small>semana 01</small></td><td class="oq2"><b>Repique dos leads em negocia&ccedil;&atilde;o</b><span>Os que decidiram e n&atilde;o conseguiram pagar em agosto. J&aacute; est&aacute; em curso.</span></td><td class="mt" data-rot="Meta">2</td></tr>
-        <tr><td class="qd">5&ordm; e 6&ordm;<small>semanas 03 e 04</small></td><td class="oq2"><b>Indica&ccedil;&atilde;o e repique da fila</b><span>Constru&ccedil;&atilde;o de canal. As duas de menor meta e menor hist&oacute;rico &mdash; e s&atilde;o as que cedem primeiro.</span></td><td class="mt" data-rot="Meta">3</td></tr>
+        <tr><td class="qd">5&ordm; e 6&ordm;<small>semanas 03 e 04</small></td><td class="oq2"><b>Indica&ccedil;&atilde;o e repique da fila</b><span>Constru&ccedil;&atilde;o de canal. S&atilde;o as duas com menos hist&oacute;rico, e por isso as de meta mais modesta &mdash; mas s&atilde;o elas que abrem caminho para os meses seguintes.</span></td><td class="mt" data-rot="Meta">3</td></tr>
       </table>
     </div>
 
@@ -649,6 +649,7 @@
   document.querySelectorAll('.k[data-alvo]').forEach(function(el, i){
     var alvo = parseInt(el.dataset.alvo, 10);
     if (suave || alvo === 0) { el.textContent = alvo; return; }
+    el.textContent = 0;
     var ini = null, dur = 850, atraso = 600 + i * 100;
     setTimeout(function(){
       requestAnimationFrame(function passo(t){
