@@ -49,7 +49,7 @@
   .nota p:last-child{margin-bottom:0}
   .nota b{color:#fff}
   details.dt{background:#fff;border:1px solid #dde5ee;border-radius:13px;margin-bottom:12px;overflow:hidden;
-    box-shadow:0 1px 3px rgba(15,44,76,.05)}
+    box-shadow:0 1px 3px rgba(15,44,76,.05);scroll-margin-top:14px}
   details.dt summary{background:#0F2C4C;color:#fff;padding:14px 20px;cursor:pointer;list-style:none;
     display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;
     font-size:15px;font-weight:800}
@@ -64,6 +64,35 @@
   .sub{background:#f0f4f9}
   .sub td{font-weight:800;color:#0F2C4C;font-size:11px;letter-spacing:.05em;text-transform:uppercase}
   .rod{text-align:center;font-size:12.5px;color:#7c8b9c;margin-top:38px;padding-top:22px;border-top:1px solid #dde5ee}
+
+  /* --- placar clic&aacute;vel --- */
+  a.lk{color:inherit;text-decoration:none;display:block;cursor:pointer;
+       border-bottom:1.5px dotted #9db4cc;padding-bottom:1px}
+  a.lk:hover{color:#C8102E;border-bottom-color:#C8102E}
+  a.lk::after{content:' \203A';color:#C8102E;font-weight:800}
+  .dica{font-size:11.5px;color:#7c8b9c;font-style:italic;margin:-6px 0 16px}
+
+  /* --- barra de filtro --- */
+  .fbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+  .fbar button{font:inherit;font-size:12.5px;font-weight:800;letter-spacing:.03em;cursor:pointer;
+    padding:8px 15px;border-radius:20px;border:1.5px solid #cbd7e5;background:#fff;color:#5b6b7d}
+  .fbar button:hover{border-color:#0F2C4C;color:#0F2C4C}
+  .fbar button.on{background:#0F2C4C;border-color:#0F2C4C;color:#fff}
+  .fbar button.on[data-f="c"]{background:#16A349;border-color:#16A349}
+  .fbar button.on[data-f="a"]{background:#B5530A;border-color:#B5530A}
+  .fbar button.on[data-f="p"]{background:#64748b;border-color:#64748b}
+
+  /* --- fonte e rodap&eacute; de cada bloco --- */
+  .fsrc{background:#f7fafd;border-bottom:1px solid #eef2f7;padding:9px 20px;
+    font-size:11.5px;color:#7c8b9c;font-style:italic}
+  .fsrc b{color:#5b6b7d;font-style:normal;font-weight:700}
+  .fsrc a{color:#0F2C4C;font-weight:700;font-style:normal}
+  .volta{padding:11px 20px;background:#f7fafd;border-top:1px solid #eef2f7;
+    font-size:12px;font-weight:700}
+  .volta a{color:#0F2C4C;text-decoration:none}
+  .volta a:hover{color:#C8102E}
+  .vazio{padding:16px 20px;font-size:13px;color:#8496aa;font-style:italic}
+
   @media (max-width:620px){
     .capa{padding:34px 22px 28px} .capa h1{font-size:24px}
     td{padding:10px 13px;font-size:13px} .org{width:118px} .n{width:44px} .pc{width:56px;font-size:14px}
@@ -83,7 +112,7 @@
 
 <div class="wrap">
 
-  <section>
+  <section id="placar">
     <div class="titulo"><span></span><h2>O placar</h2></div>
     <p class="desc">Cada a&ccedil;&atilde;o combinada desde julho, reunida por origem. <b>O percentual &eacute; conclu&iacute;das sobre o total</b> &mdash; o que est&aacute; em andamento aparece, mas n&atilde;o soma. <b>Sem arquivo ou ata que comprove, a a&ccedil;&atilde;o &eacute; pendente.</b></p>
 
@@ -91,21 +120,134 @@
       <div class="cab"><h3>Situa&ccedil;&atilde;o por origem</h3><span>APURADO EM 09/09/2026</span></div>
       <table>
         <tr><td class="th">Origem</td><td class="th n">Total</td><td class="th n">Conclu&iacute;das</td><td class="th n">Em curso</td><td class="th n">Pendentes</td><td class="th pc">%</td></tr>
-        <tr><td class="org">Plano de A&ccedil;&atilde;o 5W2H<small>27/07 &middot; quatro problemas</small></td><td class="n">23</td><td class="n">7</td><td class="n">5</td><td class="n">11</td><td class="pc">30%</td></tr>
-        <tr class="meta"><td class="org">Radar Pedag&oacute;gico<small>27/07 &middot; apresentado em 03/08</small></td><td class="n">3</td><td class="n">0</td><td class="n">1</td><td class="n">2</td><td class="pc">0%</td></tr>
-        <tr class="meta"><td class="org">Reuni&atilde;o de 12/08<small>FUP Comercial Wiz</small></td><td class="n">7</td><td class="n">1</td><td class="n">0</td><td class="n">6</td><td class="pc">14%</td></tr>
-        <tr><td class="org">Reuni&atilde;o de 25/08<small>FUP Wiz &middot; a&ccedil;&otilde;es e pr&oacute;ximas etapas</small></td><td class="n">15</td><td class="n">9</td><td class="n">6</td><td class="n">0</td><td class="pc">60%</td></tr>
-        <tr class="meta"><td class="org">Reuni&atilde;o de 02/09<small>pr&oacute;ximas etapas</small></td><td class="n">7</td><td class="n">1</td><td class="n">0</td><td class="n">6</td><td class="pc">14%</td></tr>
+        <tr><td class="org"><a class="lk" href="#b5w2h" data-t="b5w2h">Plano de A&ccedil;&atilde;o 5W2H</a><small>27/07 &middot; quatro problemas</small></td><td class="n">23</td><td class="n">7</td><td class="n">5</td><td class="n">11</td><td class="pc">30%</td></tr>
+        <tr class="meta"><td class="org"><a class="lk" href="#bradar" data-t="bradar">Radar Pedag&oacute;gico</a><small>27/07 &middot; apresentado em 03/08</small></td><td class="n">3</td><td class="n">0</td><td class="n">1</td><td class="n">2</td><td class="pc">0%</td></tr>
+        <tr class="meta"><td class="org"><a class="lk" href="#b1208" data-t="b1208">Reuni&atilde;o de 12/08</a><small>FUP Comercial Wiz</small></td><td class="n">7</td><td class="n">1</td><td class="n">0</td><td class="n">6</td><td class="pc">14%</td></tr>
+        <tr><td class="org"><a class="lk" href="#b2508" data-t="b2508">Reuni&atilde;o de 25/08</a><small>FUP Wiz &middot; a&ccedil;&otilde;es e pr&oacute;ximas etapas</small></td><td class="n">15</td><td class="n">9</td><td class="n">6</td><td class="n">0</td><td class="pc">60%</td></tr>
+        <tr class="meta"><td class="org"><a class="lk" href="#b0209" data-t="b0209">Reuni&atilde;o de 02/09</a><small>pr&oacute;ximas etapas</small></td><td class="n">7</td><td class="n">1</td><td class="n">0</td><td class="n">6</td><td class="pc">14%</td></tr>
         <tr class="tot"><td>GERAL</td><td class="n">55</td><td class="n">18</td><td class="n">12</td><td class="n">25</td><td class="pc">33%</td></tr>
       </table>
     </div>
+    <p class="dica">Clique no nome de qualquer origem para abrir as a&ccedil;&otilde;es dela.</p>
 
     <div class="nota">
       <h4>Leitura direta do placar</h4>
       <p><b>A reuni&atilde;o de 25/08 &eacute; a &uacute;nica com maioria conclu&iacute;da</b> &mdash; 60%, e nenhuma pendente. &Eacute; tamb&eacute;m a &uacute;nica em que a maior parte das a&ccedil;&otilde;es foi atribu&iacute;da a quem tinha o instrumento para execut&aacute;-las.</p>
       <p><b>O Radar Pedag&oacute;gico est&aacute; em 0%</b>, e &eacute; o mais antigo dos cinco. Nenhuma das tr&ecirc;s a&ccedil;&otilde;es dele saiu &mdash; incluindo uma lista de <b>14 alunos nomeados para contato imediato</b>, parada desde julho.</p>
-      <p style="margin-bottom:0"><b>E as duas reuni&otilde;es de menor percentual &mdash; 12/08 e 02/09 &mdash; t&ecirc;m algo em comum:</b> as a&ccedil;&otilde;es foram atribu&iacute;das a pessoas que n&atilde;o eram donas da &aacute;rea. Das sete de 12/08, <b>seis foram para o comercial e eram de coordena&ccedil;&atilde;o pedag&oacute;gica.</b></p>
+      <p style="margin-bottom:0"><b>E as duas reuni&otilde;es em que menos a&ccedil;&otilde;es sa&iacute;ram do papel &mdash; 12/08 e 02/09 &mdash; t&ecirc;m algo em comum:</b> as a&ccedil;&otilde;es foram atribu&iacute;das a pessoas que n&atilde;o eram donas da &aacute;rea. Das sete de 12/08, <b>seis foram para o comercial e eram de coordena&ccedil;&atilde;o pedag&oacute;gica.</b></p>
     </div>
+  </section>
+
+  <section id="acoes">
+    <div class="titulo"><span></span><h2>As a&ccedil;&otilde;es, uma por uma</h2></div>
+    <p class="desc">Clique em qualquer origem para ver as a&ccedil;&otilde;es dela, com a situa&ccedil;&atilde;o, a evid&ecirc;ncia e o respons&aacute;vel. <span class="st c">conclu&iacute;da</span> tem evid&ecirc;ncia de entrega &middot; <span class="st a">em curso</span> tem evid&ecirc;ncia de in&iacute;cio &middot; <span class="st p">pendente</span> n&atilde;o tem nenhuma das duas.</p>
+
+    <div class="fbar">
+      <button data-f="all" class="on">Todas &middot; 55</button>
+      <button data-f="c">Conclu&iacute;das &middot; 18</button>
+      <button data-f="a">Em curso &middot; 12</button>
+      <button data-f="p">Pendentes &middot; 25</button>
+    </div>
+
+    <details class="dt" id="b5w2h">
+      <summary>Plano de A&ccedil;&atilde;o 5W2H<i>23 a&ccedil;&otilde;es &middot; 7 conclu&iacute;das &middot; 30%</i></summary>
+      <div class="fsrc"><b>Fonte:</b> CLAUDE GEST&Atilde;O 5W2H PDF / PLANO A&Ccedil;&Otilde;ES 5W2H.pdf &middot; ref. 27/07/2026</div>
+      <table>
+        <tr class="sub"><td colspan="2">Problema A &middot; Matr&iacute;culas e convers&atilde;o</td></tr>
+        <tr data-s="c"><td><span class="st c">conclu&iacute;da</span><b>Implantar an&uacute;ncios Click to WhatsApp</b> <span class="fonte">campanhas em veicula&ccedil;&atilde;o &middot; ag&ecirc;ncia</span></td><td class="resp">Marketing</td></tr>
+        <tr data-s="c"><td><span class="st c">conclu&iacute;da</span><b>Script de atendimento consultivo</b> <span class="fonte">TREINAMENTOS / Script_Atendimento_Consultivo_Wizard.pdf</span></td><td class="resp">Marketing + Comercial</td></tr>
+        <tr data-s="c"><td><span class="st c">conclu&iacute;da</span><b>Medir o funil por etapa</b> <span class="fonte">CRM &middot; aba Relat&oacute;rios &mdash; <a href="https://crmwizard.vercel.app" target="_blank" rel="noopener">abrir</a></span></td><td class="resp">Marketing</td></tr>
+        <tr data-s="a"><td><span class="st a">em curso</span><b>SLA de resposta em 15 minutos</b> &mdash; a regra est&aacute; escrita; o tempo real n&atilde;o &eacute; medido <span class="fonte">Script_Atendimento_Consultivo_Wizard.pdf, se&ccedil;&atilde;o 2</span></td><td class="resp">Comercial</td></tr>
+        <tr data-s="a"><td><span class="st a">em curso</span><b>Cad&ecirc;ncia de 3 a 5 tentativas</b> &mdash; o repique conta; a r&eacute;gua n&atilde;o &eacute; conferida <span class="fonte">CRM &middot; contador de tentativas no cart&atilde;o</span></td><td class="resp">Comercial</td></tr>
+        <tr class="sub"><td colspan="2">Problema B &middot; Renova&ccedil;&atilde;o e reten&ccedil;&atilde;o</td></tr>
+        <tr data-s="a"><td><span class="st a">em curso</span><b>Processo de renova&ccedil;&atilde;o proativo</b> &mdash; parou em abril; 8 tarefas no Mural em 25/08 <span class="fonte">CRM &middot; Mural de tarefas</span></td><td class="resp">Pedag&oacute;gico</td></tr>
+        <tr data-s="a"><td><span class="st a">em curso</span><b>Radar de evas&atilde;o pela frequ&ecirc;ncia</b> &mdash; instrumentos existem; a folha de sexta passa a exigir o n&uacute;mero <span class="fonte">Resumo_Radar_Pedagogico_Wizard.pdf</span></td><td class="resp">Pedag&oacute;gico</td></tr>
+        <tr data-s="a"><td><span class="st a">em curso</span><b>Onboarding e checkpoint pedag&oacute;gico</b> &mdash; boas-vindas autom&aacute;ticas; checkpoint sem evid&ecirc;ncia <span class="fonte">CRM &middot; tarefa autom&aacute;tica ao matricular</span></td><td class="resp">Pedag&oacute;gico</td></tr>
+        <tr data-s="p"><td><span class="st p">pendente</span><b>Reten&ccedil;&atilde;o via Wizard ON</b> &mdash; <b>~47% dos cancelamentos s&atilde;o mudan&ccedil;a e trabalho</b> <span class="fonte">PLANO A&Ccedil;&Otilde;ES 5W2H.pdf, Problema B</span></td><td class="resp">Pedag&oacute;gico + Comercial</td></tr>
+        <tr data-s="p"><td><span class="st p">pendente</span><b>Plano de Comunica&ccedil;&atilde;o do Aluno</b></td><td class="resp">Pedag&oacute;gico</td></tr>
+        <tr data-s="p"><td><span class="st p">pendente</span><b>Resgate ativo dos cancelados</b> &mdash; a coluna &ldquo;Proposta Resgate&rdquo; j&aacute; existe <span class="fonte">CRM &middot; etapa do funil</span></td><td class="resp">Comercial + Pedag&oacute;gico</td></tr>
+        <tr class="sub"><td colspan="2">Problema C &middot; B2B e parcerias</td></tr>
+        <tr data-s="c"><td><span class="st c">conclu&iacute;da</span><b>Definir a oferta e o material B2B</b> <span class="fonte">03 COMERCIAL / PANFLETO ACAO ESCOLAS &middot; PROPOSTA DE PARCERIA - Colegio Assuncao 16-09.pdf</span></td><td class="resp">Valdemar e Tiago</td></tr>
+        <tr data-s="c"><td><span class="st c">conclu&iacute;da</span><b>Reativar o canal de escolas</b> <span class="fonte">CRM &middot; aba Comercial &mdash; institui&ccedil;&otilde;es cadastradas</span></td><td class="resp">Valdemar</td></tr>
+        <tr data-s="c"><td><span class="st c">conclu&iacute;da</span><b>Rotina de prospec&ccedil;&atilde;o de 17h por semana</b> <span class="fonte">PLANO COMERCIAL SETEMBRO - Valdemar.md</span></td><td class="resp">Valdemar</td></tr>
+        <tr data-s="c"><td><span class="st c">conclu&iacute;da</span><b>Medir o funil B2B</b> <span class="fonte">CRM &middot; aba Comercial &mdash; <a href="https://crmwizard.vercel.app" target="_blank" rel="noopener">abrir</a></span></td><td class="resp">Valdemar e Tiago</td></tr>
+        <tr data-s="p"><td><span class="st p">pendente</span><b>Abrir o in-company</b> &mdash; 53 empresas e 29 condom&iacute;nios mapeados; a linha segue em <b>zero</b> <span class="fonte">PLANO A&Ccedil;&Otilde;ES 5W2H.pdf, Problema C</span></td><td class="resp">Valdemar</td></tr>
+        <tr data-s="p"><td><span class="st p">pendente</span><b>Focar nas contas em aberto</b> &mdash; excluir quem j&aacute; &eacute; do concorrente</td><td class="resp">Valdemar</td></tr>
+        <tr class="sub"><td colspan="2">Problema D &middot; Inadimpl&ecirc;ncia</td></tr>
+        <tr data-s="p"><td><span class="st p">pendente</span><b>Cart&atilde;o recorrente ou d&eacute;bito autom&aacute;tico</b> &mdash; <b>prazo era 30/09</b> <span class="fonte">PLANO A&Ccedil;&Otilde;ES 5W2H.pdf, Problema D</span></td><td class="resp">Financeiro</td></tr>
+        <tr data-s="p"><td><span class="st p">pendente</span><b>R&eacute;gua de cobran&ccedil;a preventiva</b></td><td class="resp">Financeiro</td></tr>
+        <tr data-s="p"><td><span class="st p">pendente</span><b>Triagem por motivo</b></td><td class="resp">Financeiro</td></tr>
+        <tr data-s="p"><td><span class="st p">pendente</span><b>Facilitar o pagamento &mdash; PIX e link</b> &mdash; prazo era 15/08</td><td class="resp">Financeiro</td></tr>
+        <tr data-s="p"><td><span class="st p">pendente</span><b>Conectar com a reten&ccedil;&atilde;o</b> &mdash; cruzar inadimpl&ecirc;ncia com frequ&ecirc;ncia</td><td class="resp">Financeiro + Pedag&oacute;gico</td></tr>
+        <tr data-s="p"><td><span class="st p">pendente</span><b>Acompanhamento semanal da inadimpl&ecirc;ncia</b></td><td class="resp">Financeiro</td></tr>
+      </table>
+      <div class="volta"><a href="#placar">&uarr; voltar ao placar</a></div>
+    </details>
+
+    <details class="dt" id="bradar">
+      <summary>Radar Pedag&oacute;gico<i>3 a&ccedil;&otilde;es &middot; nenhuma conclu&iacute;da</i></summary>
+      <div class="fsrc"><b>Fonte:</b> CLAUDE GEST&Atilde;O 5W2H PDF / Resumo_Radar_Pedagogico_Wizard.pdf &middot; ref. 27/07/2026 &mdash; leitura das fichas de evolu&ccedil;&atilde;o e de frequ&ecirc;ncia enviadas pela dire&ccedil;&atilde;o</div>
+      <table>
+        <tr data-s="a"><td><span class="st a">em curso</span><b>Registrar no radar vivo e levar o placar &agrave; reuni&atilde;o semanal</b> &mdash; a folha de sexta come&ccedil;a em 11/09 <span class="fonte">a&ccedil;&atilde;o 3 do documento</span></td><td class="resp">Pricila</td></tr>
+        <tr data-s="p"><td><span class="st p">pendente</span><b>Confirmar v&iacute;nculo aluno a aluno</b> &mdash; <b>os 14 nomes</b>: ativo, trancou ou cancelou? <span class="fonte">a&ccedil;&atilde;o 1 do documento &middot; lista de resgate priorit&aacute;ria</span></td><td class="resp">Pricila</td></tr>
+        <tr data-s="p"><td><span class="st p">pendente</span><b>Reagendar reposi&ccedil;&atilde;o e acionar resgate</b> <span class="fonte">a&ccedil;&atilde;o 2 do documento</span></td><td class="resp">Pricila</td></tr>
+      </table>
+      <div class="volta"><a href="#placar">&uarr; voltar ao placar</a></div>
+    </details>
+
+    <details class="dt" id="b1208">
+      <summary>Reuni&atilde;o de 12/08<i>7 a&ccedil;&otilde;es &middot; 1 conclu&iacute;da &middot; 14%</i></summary>
+      <div class="fsrc"><b>Fonte:</b> transcri&ccedil;&atilde;o da reuni&atilde;o FUP Comercial Wiz &middot; 07 EQUIPE / REUNIOES - linha do tempo das decisoes.md</div>
+      <table>
+        <tr data-s="c"><td><span class="st c">conclu&iacute;da</span><b>Tabular a pesquisa de satisfa&ccedil;&atilde;o</b> <span class="fonte">relat&oacute;rio dos 61 respondentes</span></td><td class="resp">atribu&iacute;da ao comercial<br>feita por Tiago</td></tr>
+        <tr data-s="p"><td><span class="st p">pendente</span><b>Levantar novatos em turmas avan&ccedil;adas e a defasagem</b> &mdash; <b>&eacute; a chave dos 18% de cancelamento por m&eacute;todo</b></td><td class="resp">atribu&iacute;da ao comercial<br>pertence &agrave; Pricila</td></tr>
+        <tr data-s="p"><td><span class="st p">pendente</span><b>Consultar o professor Vicente sobre integrar novatos</b></td><td class="resp">atribu&iacute;da ao comercial<br>pertence &agrave; Pricila</td></tr>
+        <tr data-s="p"><td><span class="st p">pendente</span><b>Refor&ccedil;ar a pesquisa com mensagens individuais</b></td><td class="resp">Valdemar</td></tr>
+        <tr data-s="p"><td><span class="st p">pendente</span><b>Aprender a rotina da coordena&ccedil;&atilde;o com a Jaciara</b> &mdash; <i>superada: a transi&ccedil;&atilde;o passou para a Pricila</i></td><td class="resp">Valdemar</td></tr>
+        <tr data-s="p"><td><span class="st p">pendente</span><b>Aprender o sistema Sponte com a Jaciara</b> &mdash; <i>superada pelo mesmo motivo</i></td><td class="resp">Valdemar</td></tr>
+        <tr data-s="p"><td><span class="st p">pendente</span><b>Verificar com a operadora a capacidade de upload</b> &mdash; os tablets n&atilde;o funcionam em sala</td><td class="resp">Leandra</td></tr>
+      </table>
+      <div class="volta"><a href="#placar">&uarr; voltar ao placar</a></div>
+    </details>
+
+    <details class="dt" id="b2508">
+      <summary>Reuni&atilde;o de 25/08<i>15 a&ccedil;&otilde;es &middot; 9 conclu&iacute;das &middot; 60%</i></summary>
+      <div class="fsrc"><b>Fonte:</b> transcri&ccedil;&atilde;o da reuni&atilde;o FUP Wiz &middot; STATUS DAS ACOES - reuniao 25-08.html</div>
+      <table>
+        <tr data-s="c"><td><span class="st c">conclu&iacute;da</span><b>Validar e implantar a IA</b> <span class="fonte">agente Iza em opera&ccedil;&atilde;o no n&uacute;mero comercial</span></td><td class="resp">Tiago</td></tr>
+        <tr data-s="c"><td><span class="st c">conclu&iacute;da</span><b>Integrar CRM e Pedag&oacute;gico</b> <span class="fonte">CRM &middot; tarefa de boas-vindas autom&aacute;tica</span></td><td class="resp">Tiago</td></tr>
+        <tr data-s="c"><td><span class="st c">conclu&iacute;da</span><b>Monitorar atendimento</b> <span class="fonte">an&aacute;lise dos 47 leads &middot; uso das etapas</span></td><td class="resp">Tiago</td></tr>
+        <tr data-s="c"><td><span class="st c">conclu&iacute;da</span><b>Testar a inst&acirc;ncia no n&uacute;mero designado</b> <span class="fonte">(81) 99119-3268</span></td><td class="resp">Tiago</td></tr>
+        <tr data-s="c"><td><span class="st c">conclu&iacute;da</span><b>Melhorias no CRM &mdash; aba Comercial</b> <span class="fonte">CRM &mdash; <a href="https://crmwizard.vercel.app" target="_blank" rel="noopener">abrir</a></span></td><td class="resp">Tiago</td></tr>
+        <tr data-s="c"><td><span class="st c">conclu&iacute;da</span><b>Finalizar a pesquisa quantitativa</b></td><td class="resp">Pricila</td></tr>
+        <tr data-s="c"><td><span class="st c">conclu&iacute;da</span><b>Listar os ajustes estruturais</b></td><td class="resp">Pricila</td></tr>
+        <tr data-s="c"><td><span class="st c">conclu&iacute;da</span><b>Regularizar os acessos ao sistema e ao portal</b></td><td class="resp">Mac&aacute;rio</td></tr>
+        <tr data-s="c"><td><span class="st c">conclu&iacute;da</span><b>Mentorar a Rita no uso da IA</b></td><td class="resp">Tiago</td></tr>
+        <tr data-s="a"><td><span class="st a">em curso</span><b>Metas de matr&iacute;cula do per&iacute;odo</b> &mdash; planos documentados; valida&ccedil;&atilde;o com a equipe pendente <span class="fonte">PLANO DO NUCLEO SETEMBRO.md</span></td><td class="resp">o grupo</td></tr>
+        <tr data-s="a"><td><span class="st a">em curso</span><b>Definir a rotina pedag&oacute;gica e alinhar hor&aacute;rios com a Leandra</b> <span class="fonte">07 EQUIPE / Rotina_Pricila_Gestao_Pedagogica.pdf</span></td><td class="resp">Pricila</td></tr>
+        <tr data-s="a"><td><span class="st a">em curso</span><b>Gerenciar renova&ccedil;&otilde;es &mdash; validar interesse e apresentar propostas</b> <span class="fonte">CRM &middot; Mural &mdash; bloco Renova&ccedil;&otilde;es</span></td><td class="resp">Pricila</td></tr>
+        <tr data-s="a"><td><span class="st a">em curso</span><b>Estudar as atividades da Jaciara</b></td><td class="resp">Pricila</td></tr>
+        <tr data-s="a"><td><span class="st a">em curso</span><b>Contatar alunos para confirmar rematr&iacute;cula</b></td><td class="resp">Pricila</td></tr>
+        <tr data-s="a"><td><span class="st a">em curso</span><b>Capta&ccedil;&atilde;o em escolas</b> &mdash; meta de 12 visitas e 7 matr&iacute;culas em setembro <span class="fonte">PLANO COMERCIAL SETEMBRO - Valdemar.md</span></td><td class="resp">Valdemar + Tiago</td></tr>
+      </table>
+      <div class="volta"><a href="#placar">&uarr; voltar ao placar</a></div>
+    </details>
+
+    <details class="dt" id="b0209">
+      <summary>Reuni&atilde;o de 02/09<i>7 a&ccedil;&otilde;es &middot; 1 conclu&iacute;da &middot; 14%</i></summary>
+      <div class="fsrc"><b>Fonte:</b> transcri&ccedil;&atilde;o da reuni&atilde;o de 02/09 &middot; pr&oacute;ximas etapas</div>
+      <table>
+        <tr data-s="c"><td><span class="st c">conclu&iacute;da</span><b>Remontar o plano de metas</b> &mdash; planos de setembro e bloco do pedag&oacute;gico <span class="fonte">PLANO DO NUCLEO SETEMBRO.md &middot; p&aacute;gina de planos e metas</span></td><td class="resp">Tiago</td></tr>
+        <tr data-s="p"><td><span class="st p">pendente</span><b>Criar as perguntas de sondagem a partir do IP</b></td><td class="resp">Tiago</td></tr>
+        <tr data-s="p"><td><span class="st p">pendente</span><b>Mapear escolas para o programa bil&iacute;ngue</b> &mdash; <b>negocia&ccedil;&atilde;o prevista para outubro</b>, o m&ecirc;s mais fraco do ano</td><td class="resp">Tiago</td></tr>
+        <tr data-s="p"><td><span class="st p">pendente</span><b>Definir o hor&aacute;rio da aprendiz Laura</b></td><td class="resp">Pricila</td></tr>
+        <tr data-s="p"><td><span class="st p">pendente</span><b>Conversar com o professor Vicente sobre a perman&ecirc;ncia</b></td><td class="resp">Pricila</td></tr>
+        <tr data-s="p"><td><span class="st p">pendente</span><b>Investigar o instrumento legal da contrata&ccedil;&atilde;o</b></td><td class="resp">Mac&aacute;rio</td></tr>
+        <tr data-s="p"><td><span class="st p">pendente</span><b>Apresentar a proposta do evento no cinema</b></td><td class="resp">Valdemar</td></tr>
+      </table>
+      <div class="volta"><a href="#placar">&uarr; voltar ao placar</a></div>
+    </details>
+
   </section>
 
   <section>
@@ -113,104 +255,9 @@
     <div class="nota">
       <h4>Radar Pedag&oacute;gico &middot; 14 nomes para contato imediato</h4>
       <p><b>Oito alunos em risco alto</b>, todos da <b>KIDS 2 de s&aacute;bado</b>, com <b>61 a 121 dias sem registro de aula</b>. E <b>seis evadidos confirmados</b> da turma bolsa de Espanhol, onde a reten&ccedil;&atilde;o est&aacute; em <b>~40%</b>.</p>
-      <p>O documento nomeia cada um e define o m&eacute;todo: <b>confirmar aluno a aluno se est&aacute; ativo, trancou ou cancelou</b>; reagendar reposi&ccedil;&atilde;o para quem segue; acionar resgate para quem confirmar sa&iacute;da.</p>
-      <p style="margin-bottom:0">A terceira a&ccedil;&atilde;o do documento pedia <b>&ldquo;levar o placar &agrave; reuni&atilde;o semanal&rdquo;</b>. <b>&Eacute; exatamente a folha de sexta criada agora</b> &mdash; a a&ccedil;&atilde;o existe desde julho e o lugar dela nasceu esta semana. <i>Fonte: Resumo_Radar_Pedagogico_Wizard.pdf, ref. 27/07/2026.</i></p>
+      <p>O <b>Resumo do Radar Pedag&oacute;gico</b> nomeia cada um e j&aacute; traz o m&eacute;todo: <b>confirmar aluno a aluno se est&aacute; ativo, trancou ou cancelou</b>; reagendar reposi&ccedil;&atilde;o para quem segue; acionar resgate para quem confirmar sa&iacute;da.</p>
+      <p style="margin-bottom:0">A terceira a&ccedil;&atilde;o do documento pedia <b>&ldquo;levar o placar &agrave; reuni&atilde;o semanal&rdquo;</b>. <b>&Eacute; exatamente a folha de sexta criada agora</b> &mdash; a a&ccedil;&atilde;o existe desde julho e o lugar dela nasceu esta semana. <i>Fonte: Resumo_Radar_Pedagogico_Wizard.pdf, ref. 27/07/2026 &mdash; arquivo com nomes de alunos, consultado na pasta, n&atilde;o publicado.</i></p>
     </div>
-  </section>
-
-  <section>
-    <div class="titulo"><span></span><h2>As a&ccedil;&otilde;es, uma por uma</h2></div>
-    <p class="desc">Clique em qualquer origem para ver as a&ccedil;&otilde;es dela, com a situa&ccedil;&atilde;o e o respons&aacute;vel. <span class="st c">conclu&iacute;da</span> tem evid&ecirc;ncia de entrega &middot; <span class="st a">em curso</span> tem evid&ecirc;ncia de in&iacute;cio &middot; <span class="st p">pendente</span> n&atilde;o tem nenhuma das duas.</p>
-
-    <details class="dt">
-      <summary>Plano de A&ccedil;&atilde;o 5W2H<i>23 a&ccedil;&otilde;es &middot; 7 conclu&iacute;das &middot; 30%</i></summary>
-      <table>
-        <tr class="sub"><td colspan="2">Problema A &middot; Matr&iacute;culas e convers&atilde;o</td></tr>
-        <tr><td><span class="st c">conclu&iacute;da</span><b>Implantar an&uacute;ncios Click to WhatsApp</b></td><td class="resp">Marketing</td></tr>
-        <tr><td><span class="st c">conclu&iacute;da</span><b>Script de atendimento consultivo</b> <span class="fonte">TREINAMENTOS/Script_Atendimento_Consultivo_Wizard.pdf</span></td><td class="resp">Marketing + Comercial</td></tr>
-        <tr><td><span class="st c">conclu&iacute;da</span><b>Medir o funil por etapa</b> <span class="fonte">aba Relat&oacute;rios</span></td><td class="resp">Marketing</td></tr>
-        <tr><td><span class="st a">em curso</span><b>SLA de resposta em 15 minutos</b> &mdash; a regra est&aacute; escrita; o tempo real n&atilde;o &eacute; medido</td><td class="resp">Comercial</td></tr>
-        <tr><td><span class="st a">em curso</span><b>Cad&ecirc;ncia de 3 a 5 tentativas</b> &mdash; o repique conta; a r&eacute;gua n&atilde;o &eacute; conferida</td><td class="resp">Comercial</td></tr>
-        <tr class="sub"><td colspan="2">Problema B &middot; Renova&ccedil;&atilde;o e reten&ccedil;&atilde;o</td></tr>
-        <tr><td><span class="st a">em curso</span><b>Processo de renova&ccedil;&atilde;o proativo</b> &mdash; parou em abril; 8 tarefas no Mural em 25/08</td><td class="resp">Pedag&oacute;gico</td></tr>
-        <tr><td><span class="st a">em curso</span><b>Radar de evas&atilde;o pela frequ&ecirc;ncia</b> &mdash; instrumentos existem; a folha de sexta passa a exigir o n&uacute;mero</td><td class="resp">Pedag&oacute;gico</td></tr>
-        <tr><td><span class="st a">em curso</span><b>Onboarding e checkpoint pedag&oacute;gico</b> &mdash; boas-vindas autom&aacute;ticas; checkpoint sem evid&ecirc;ncia</td><td class="resp">Pedag&oacute;gico</td></tr>
-        <tr><td><span class="st p">pendente</span><b>Reten&ccedil;&atilde;o via Wizard ON</b> &mdash; <b>~47% dos cancelamentos s&atilde;o mudan&ccedil;a e trabalho</b></td><td class="resp">Pedag&oacute;gico + Comercial</td></tr>
-        <tr><td><span class="st p">pendente</span><b>Plano de Comunica&ccedil;&atilde;o do Aluno</b></td><td class="resp">Pedag&oacute;gico</td></tr>
-        <tr><td><span class="st p">pendente</span><b>Resgate ativo dos cancelados</b> &mdash; a coluna &ldquo;Proposta Resgate&rdquo; j&aacute; existe</td><td class="resp">Comercial + Pedag&oacute;gico</td></tr>
-        <tr class="sub"><td colspan="2">Problema C &middot; B2B e parcerias</td></tr>
-        <tr><td><span class="st c">conclu&iacute;da</span><b>Definir a oferta e o material B2B</b></td><td class="resp">Valdemar</td></tr>
-        <tr><td><span class="st c">conclu&iacute;da</span><b>Reativar o canal de escolas</b></td><td class="resp">Valdemar</td></tr>
-        <tr><td><span class="st c">conclu&iacute;da</span><b>Rotina de prospec&ccedil;&atilde;o de 17h por semana</b></td><td class="resp">Valdemar</td></tr>
-        <tr><td><span class="st c">conclu&iacute;da</span><b>Medir o funil B2B</b> <span class="fonte">aba Comercial</span></td><td class="resp">Valdemar</td></tr>
-        <tr><td><span class="st p">pendente</span><b>Abrir o in-company</b> &mdash; 53 empresas e 29 condom&iacute;nios mapeados; a linha segue em <b>zero</b></td><td class="resp">Valdemar</td></tr>
-        <tr><td><span class="st p">pendente</span><b>Focar nas contas em aberto</b> &mdash; excluir quem j&aacute; &eacute; do concorrente</td><td class="resp">Valdemar</td></tr>
-        <tr class="sub"><td colspan="2">Problema D &middot; Inadimpl&ecirc;ncia</td></tr>
-        <tr><td><span class="st p">pendente</span><b>Cart&atilde;o recorrente ou d&eacute;bito autom&aacute;tico</b> &mdash; <b>prazo era 30/09</b></td><td class="resp">Financeiro</td></tr>
-        <tr><td><span class="st p">pendente</span><b>R&eacute;gua de cobran&ccedil;a preventiva</b></td><td class="resp">Financeiro</td></tr>
-        <tr><td><span class="st p">pendente</span><b>Triagem por motivo</b></td><td class="resp">Financeiro</td></tr>
-        <tr><td><span class="st p">pendente</span><b>Facilitar o pagamento &mdash; PIX e link</b> &mdash; prazo era 15/08</td><td class="resp">Financeiro</td></tr>
-        <tr><td><span class="st p">pendente</span><b>Conectar com a reten&ccedil;&atilde;o</b> &mdash; cruzar inadimpl&ecirc;ncia com frequ&ecirc;ncia</td><td class="resp">Financeiro + Pedag&oacute;gico</td></tr>
-        <tr><td><span class="st p">pendente</span><b>Acompanhamento semanal da inadimpl&ecirc;ncia</b></td><td class="resp">Financeiro</td></tr>
-      </table>
-    </details>
-
-    <details class="dt">
-      <summary>Radar Pedag&oacute;gico<i>3 a&ccedil;&otilde;es &middot; nenhuma conclu&iacute;da</i></summary>
-      <table>
-        <tr><td><span class="st a">em curso</span><b>Registrar no radar vivo e levar o placar &agrave; reuni&atilde;o semanal</b> &mdash; a folha de sexta come&ccedil;a em 11/09</td><td class="resp">Pricila</td></tr>
-        <tr><td><span class="st p">pendente</span><b>Confirmar v&iacute;nculo aluno a aluno</b> &mdash; <b>os 14 nomes</b>: ativo, trancou ou cancelou?</td><td class="resp">Pricila</td></tr>
-        <tr><td><span class="st p">pendente</span><b>Reagendar reposi&ccedil;&atilde;o e acionar resgate</b></td><td class="resp">Pricila</td></tr>
-      </table>
-    </details>
-
-    <details class="dt">
-      <summary>Reuni&atilde;o de 12/08<i>7 a&ccedil;&otilde;es &middot; 1 conclu&iacute;da &middot; 14%</i></summary>
-      <table>
-        <tr><td><span class="st c">conclu&iacute;da</span><b>Tabular a pesquisa de satisfa&ccedil;&atilde;o</b></td><td class="resp">atribu&iacute;da ao comercial<br>feita por Tiago</td></tr>
-        <tr><td><span class="st p">pendente</span><b>Levantar novatos em turmas avan&ccedil;adas e a defasagem</b> &mdash; <b>&eacute; a chave dos 18% de cancelamento por m&eacute;todo</b></td><td class="resp">atribu&iacute;da ao comercial<br>pertence &agrave; Pricila</td></tr>
-        <tr><td><span class="st p">pendente</span><b>Consultar o professor Vicente sobre integrar novatos</b></td><td class="resp">atribu&iacute;da ao comercial<br>pertence &agrave; Pricila</td></tr>
-        <tr><td><span class="st p">pendente</span><b>Refor&ccedil;ar a pesquisa com mensagens individuais</b></td><td class="resp">Valdemar</td></tr>
-        <tr><td><span class="st p">pendente</span><b>Aprender a rotina da coordena&ccedil;&atilde;o com a Jaciara</b> &mdash; <i>superada: a transi&ccedil;&atilde;o passou para a Pricila</i></td><td class="resp">Valdemar</td></tr>
-        <tr><td><span class="st p">pendente</span><b>Aprender o sistema Sponte com a Jaciara</b> &mdash; <i>superada pelo mesmo motivo</i></td><td class="resp">Valdemar</td></tr>
-        <tr><td><span class="st p">pendente</span><b>Verificar com a operadora a capacidade de upload</b> &mdash; os tablets n&atilde;o funcionam em sala</td><td class="resp">Leandra</td></tr>
-      </table>
-    </details>
-
-    <details class="dt">
-      <summary>Reuni&atilde;o de 25/08<i>15 a&ccedil;&otilde;es &middot; 9 conclu&iacute;das &middot; 60%</i></summary>
-      <table>
-        <tr><td><span class="st c">conclu&iacute;da</span><b>Validar e implantar a IA</b></td><td class="resp">Tiago</td></tr>
-        <tr><td><span class="st c">conclu&iacute;da</span><b>Integrar CRM e Pedag&oacute;gico</b></td><td class="resp">Tiago</td></tr>
-        <tr><td><span class="st c">conclu&iacute;da</span><b>Monitorar atendimento</b></td><td class="resp">Tiago</td></tr>
-        <tr><td><span class="st c">conclu&iacute;da</span><b>Testar a inst&acirc;ncia no n&uacute;mero designado</b></td><td class="resp">Tiago</td></tr>
-        <tr><td><span class="st c">conclu&iacute;da</span><b>Melhorias no CRM &mdash; aba Comercial</b></td><td class="resp">Tiago</td></tr>
-        <tr><td><span class="st c">conclu&iacute;da</span><b>Finalizar a pesquisa quantitativa</b></td><td class="resp">Pricila</td></tr>
-        <tr><td><span class="st c">conclu&iacute;da</span><b>Listar os ajustes estruturais</b></td><td class="resp">Pricila</td></tr>
-        <tr><td><span class="st c">conclu&iacute;da</span><b>Regularizar os acessos ao sistema e ao portal</b></td><td class="resp">Mac&aacute;rio</td></tr>
-        <tr><td><span class="st c">conclu&iacute;da</span><b>Mentorar a Rita no uso da IA</b></td><td class="resp">Tiago</td></tr>
-        <tr><td><span class="st a">em curso</span><b>Metas de matr&iacute;cula do per&iacute;odo</b> &mdash; planos documentados; valida&ccedil;&atilde;o com a equipe pendente</td><td class="resp">o grupo</td></tr>
-        <tr><td><span class="st a">em curso</span><b>Definir a rotina pedag&oacute;gica e alinhar hor&aacute;rios com a Leandra</b></td><td class="resp">Pricila</td></tr>
-        <tr><td><span class="st a">em curso</span><b>Gerenciar renova&ccedil;&otilde;es &mdash; validar interesse e apresentar propostas</b></td><td class="resp">Pricila</td></tr>
-        <tr><td><span class="st a">em curso</span><b>Estudar as atividades da Jaciara</b></td><td class="resp">Pricila</td></tr>
-        <tr><td><span class="st a">em curso</span><b>Contatar alunos para confirmar rematr&iacute;cula</b></td><td class="resp">Pricila</td></tr>
-        <tr><td><span class="st a">em curso</span><b>Capta&ccedil;&atilde;o em escolas</b> &mdash; meta de 12 visitas e 7 matr&iacute;culas em setembro</td><td class="resp">Valdemar + Tiago</td></tr>
-      </table>
-    </details>
-
-    <details class="dt">
-      <summary>Reuni&atilde;o de 02/09<i>7 a&ccedil;&otilde;es &middot; 1 conclu&iacute;da &middot; 14%</i></summary>
-      <table>
-        <tr><td><span class="st c">conclu&iacute;da</span><b>Remontar o plano de metas</b> &mdash; planos de setembro e bloco do pedag&oacute;gico</td><td class="resp">Tiago</td></tr>
-        <tr><td><span class="st p">pendente</span><b>Criar as perguntas de sondagem a partir do IP</b></td><td class="resp">Tiago</td></tr>
-        <tr><td><span class="st p">pendente</span><b>Mapear escolas para o programa bil&iacute;ngue</b> &mdash; <b>negocia&ccedil;&atilde;o prevista para outubro</b>, o m&ecirc;s mais fraco do ano</td><td class="resp">Tiago</td></tr>
-        <tr><td><span class="st p">pendente</span><b>Definir o hor&aacute;rio da aprendiz Laura</b></td><td class="resp">Pricila</td></tr>
-        <tr><td><span class="st p">pendente</span><b>Conversar com o professor Vicente sobre a perman&ecirc;ncia</b></td><td class="resp">Pricila</td></tr>
-        <tr><td><span class="st p">pendente</span><b>Investigar o instrumento legal da contrata&ccedil;&atilde;o</b></td><td class="resp">Mac&aacute;rio</td></tr>
-        <tr><td><span class="st p">pendente</span><b>Apresentar a proposta do evento no cinema</b></td><td class="resp">Valdemar</td></tr>
-      </table>
-    </details>
-
   </section>
 
   <section>
@@ -220,7 +267,9 @@
       <table>
         <tr><td class="org">Unidade de medida</td><td>A a&ccedil;&atilde;o, nunca o problema ou a reuni&atilde;o. <b>N&atilde;o se pergunta se avan&ccedil;amos no pedag&oacute;gico</b> &mdash; pergunta-se se cada a&ccedil;&atilde;o existe.</td></tr>
         <tr><td class="org">Percentual</td><td><b>Conclu&iacute;das dividido pelo total.</b> O que est&aacute; em curso aparece, mas n&atilde;o soma &mdash; porque n&atilde;o est&aacute; pronto.</td></tr>
-        <tr><td class="org">Status</td><td>Vem de <b>evid&ecirc;ncia</b>: arquivo, ata ou tela do sistema. <b>Sem prova, pendente</b> &mdash; mesmo que alguém afirme ter feito.</td></tr>
+        <tr><td class="org">Status</td><td>Vem de <b>evid&ecirc;ncia</b>: arquivo, ata ou tela do sistema. <b>Sem prova, pendente</b> &mdash; mesmo que algu&eacute;m afirme ter feito.</td></tr>
+        <tr><td class="org">Evid&ecirc;ncia</td><td>Cada a&ccedil;&atilde;o traz ao lado <b>onde a prova est&aacute;</b>. Os endere&ccedil;os de web s&atilde;o clic&aacute;veis. <b>Arquivos com nome de aluno ou dado financeiro n&atilde;o s&atilde;o publicados</b> &mdash; s&atilde;o nomeados e ficam na pasta da unidade.</td></tr>
+        <tr><td class="org">Respons&aacute;vel</td><td>A coluna mostra <b>quem executou</b>. Quando o plano designou outra pessoa, aparecem as duas informa&ccedil;&otilde;es na mesma linha.</td></tr>
         <tr><td class="org">Fontes</td><td>PLANO A&Ccedil;&Otilde;ES 5W2H.pdf &middot; Resumo_Radar_Pedagogico_Wizard.pdf &middot; transcri&ccedil;&otilde;es das reuni&otilde;es de 12/08, 25/08 e 02/09 &middot; pasta WIZARD DOCs &middot; CRM em produ&ccedil;&atilde;o</td></tr>
         <tr class="meta"><td class="org">Reclassifica&ccedil;&otilde;es</td><td>A&ccedil;&otilde;es repetidas entre a lista de decis&otilde;es e as pr&oacute;ximas etapas de 25/08 <b>foram contadas uma vez s&oacute;.</b> As duas a&ccedil;&otilde;es de aprender com a Jaciara permanecem no placar apesar de superadas pelos fatos.</td></tr>
         <tr><td class="org">Limite</td><td>Onde n&atilde;o havia arquivo nem men&ccedil;&atilde;o em ata, a a&ccedil;&atilde;o foi marcada pendente. <b>Uma a&ccedil;&atilde;o executada e n&atilde;o registrada aparece aqui como pendente</b> &mdash; e a corre&ccedil;&atilde;o &eacute; registrar, n&atilde;o discutir.</td></tr>
@@ -234,5 +283,62 @@
   </div>
 
 </div>
+
+<script>
+(function(){
+  var blocos = Array.prototype.slice.call(document.querySelectorAll('details.dt'));
+
+  /* 1 - o placar abre o bloco */
+  Array.prototype.forEach.call(document.querySelectorAll('a.lk[data-t]'), function(a){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      var d = document.getElementById(a.getAttribute('data-t'));
+      if(!d) return;
+      d.open = true;
+      d.scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  });
+
+  /* 2 - filtro por situacao */
+  function ajusta(d, f){
+    var linhas = Array.prototype.slice.call(d.querySelectorAll('tr[data-s]'));
+    var visiveis = 0;
+    linhas.forEach(function(tr){
+      var ok = (f === 'all') || (tr.getAttribute('data-s') === f);
+      tr.style.display = ok ? '' : 'none';
+      if(ok) visiveis++;
+    });
+    /* subtitulos: some quando nao sobra nada embaixo dele */
+    var todas = Array.prototype.slice.call(d.querySelectorAll('tr'));
+    todas.forEach(function(tr, i){
+      if(tr.className.indexOf('sub') < 0) return;
+      var achou = false;
+      for(var j = i + 1; j < todas.length; j++){
+        if(todas[j].className.indexOf('sub') >= 0) break;
+        if(todas[j].style.display !== 'none'){ achou = true; break; }
+      }
+      tr.style.display = achou ? '' : 'none';
+    });
+    d.style.display = (visiveis === 0 && f !== 'all') ? 'none' : '';
+    if(f !== 'all' && visiveis > 0) d.open = true;
+    return visiveis;
+  }
+
+  var botoes = Array.prototype.slice.call(document.querySelectorAll('.fbar button'));
+  botoes.forEach(function(b){
+    b.addEventListener('click', function(){
+      botoes.forEach(function(x){ x.className = ''; });
+      b.className = 'on';
+      var f = b.getAttribute('data-f');
+      blocos.forEach(function(d){
+        ajusta(d, f);
+        if(f === 'all') d.open = false;
+      });
+      document.getElementById('acoes').scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  });
+})();
+</script>
+
 </body>
 </html>
