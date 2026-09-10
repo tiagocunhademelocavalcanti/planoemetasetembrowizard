@@ -48,6 +48,21 @@
   .nota p{font-size:14.5px;color:#cfdcea;margin-bottom:10px}
   .nota p:last-child{margin-bottom:0}
   .nota b{color:#fff}
+  details.dt{background:#fff;border:1px solid #dde5ee;border-radius:13px;margin-bottom:12px;overflow:hidden;
+    box-shadow:0 1px 3px rgba(15,44,76,.05)}
+  details.dt summary{background:#0F2C4C;color:#fff;padding:14px 20px;cursor:pointer;list-style:none;
+    display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;
+    font-size:15px;font-weight:800}
+  details.dt summary::-webkit-details-marker{display:none}
+  details.dt summary:hover{background:#173d63}
+  details.dt summary i{font-style:normal;font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;
+    color:#9fb6cf;font-weight:700}
+  details.dt summary i::after{content:' \25BE';color:#F5C518}
+  details.dt[open] summary i::after{content:' \25B4'}
+  .st.c{background:#E9F7EF;color:#16A349}
+  .resp{width:150px;font-size:12px;color:#5b6b7d;font-style:italic}
+  .sub{background:#f0f4f9}
+  .sub td{font-weight:800;color:#0F2C4C;font-size:11px;letter-spacing:.05em;text-transform:uppercase}
   .rod{text-align:center;font-size:12.5px;color:#7c8b9c;margin-top:38px;padding-top:22px;border-top:1px solid #dde5ee}
   @media (max-width:620px){
     .capa{padding:34px 22px 28px} .capa h1{font-size:24px}
@@ -104,82 +119,98 @@
   </section>
 
   <section>
-    <div class="titulo"><span></span><h2>O que est&aacute; aberto, por respons&aacute;vel</h2></div>
-    <p class="desc">As 37 a&ccedil;&otilde;es que n&atilde;o est&atilde;o conclu&iacute;das, agrupadas por quem responde. <span class="st a">em curso</span> tem evid&ecirc;ncia de in&iacute;cio &middot; <span class="st p">pendente</span> n&atilde;o tem.</p>
+    <div class="titulo"><span></span><h2>As a&ccedil;&otilde;es, uma por uma</h2></div>
+    <p class="desc">Clique em qualquer origem para ver as a&ccedil;&otilde;es dela, com a situa&ccedil;&atilde;o e o respons&aacute;vel. <span class="st c">conclu&iacute;da</span> tem evid&ecirc;ncia de entrega &middot; <span class="st a">em curso</span> tem evid&ecirc;ncia de in&iacute;cio &middot; <span class="st p">pendente</span> n&atilde;o tem nenhuma das duas.</p>
 
-    <div class="plano">
-      <div class="cab"><h3>Pedag&oacute;gico</h3><span>17 A&Ccedil;&Otilde;ES ABERTAS</span></div>
+    <details class="dt">
+      <summary>Plano de A&ccedil;&atilde;o 5W2H<i>23 a&ccedil;&otilde;es &middot; 7 conclu&iacute;das &middot; 30%</i></summary>
       <table>
-        <tr><td><span class="st a">em curso</span><b>Processo de renova&ccedil;&atilde;o proativo</b> &mdash; parou em abril; 8 tarefas lan&ccedil;adas no Mural em 25/08 <span class="fonte">5W2H B</span></td></tr>
-        <tr><td><span class="st a">em curso</span><b>Radar de evas&atilde;o pela frequ&ecirc;ncia</b> &mdash; instrumentos existem; a folha de sexta passa a exigir o n&uacute;mero <span class="fonte">5W2H B</span></td></tr>
-        <tr><td><span class="st a">em curso</span><b>Onboarding e checkpoint pedag&oacute;gico</b> &mdash; boas-vindas autom&aacute;ticas no Mural; checkpoint sem evid&ecirc;ncia <span class="fonte">5W2H B</span></td></tr>
-        <tr class="meta"><td><span class="st p">pendente</span><b>Reten&ccedil;&atilde;o via Wizard ON</b> &mdash; nenhum registro. <b>&Eacute; a a&ccedil;&atilde;o de maior valor do plano:</b> ~47% dos cancelamentos s&atilde;o mudan&ccedil;a de endere&ccedil;o e trabalho <span class="fonte">5W2H B</span></td></tr>
-        <tr><td><span class="st p">pendente</span><b>Plano de Comunica&ccedil;&atilde;o do Aluno</b> <span class="fonte">5W2H B</span></td></tr>
-        <tr><td><span class="st p">pendente</span><b>Resgate ativo dos cancelados</b> &mdash; a coluna &ldquo;Proposta Resgate&rdquo; j&aacute; existe na planilha <span class="fonte">5W2H B</span></td></tr>
-        <tr class="meta"><td><span class="st p">pendente</span><b>Confirmar v&iacute;nculo aluno a aluno</b> &mdash; os 14 nomes <span class="fonte">Radar 03/08</span></td></tr>
-        <tr><td><span class="st p">pendente</span><b>Reagendar reposi&ccedil;&atilde;o e acionar resgate</b> <span class="fonte">Radar 03/08</span></td></tr>
-        <tr><td><span class="st a">em curso</span><b>Levar o placar &agrave; reuni&atilde;o semanal</b> &mdash; a folha de sexta come&ccedil;a em 11/09 <span class="fonte">Radar 03/08</span></td></tr>
-        <tr class="meta"><td><span class="st p">pendente</span><b>Levantar novatos em turmas avan&ccedil;adas</b> e a defasagem de cada um &mdash; <b>atribu&iacute;do ao comercial em 12/08.</b> &Eacute; a chave dos 18% de cancelamento por m&eacute;todo <span class="fonte">12/08</span></td></tr>
-        <tr><td><span class="st p">pendente</span><b>Consultar o professor Vicente</b> sobre integrar novatos no espanhol <span class="fonte">12/08</span></td></tr>
-        <tr><td><span class="st a">em curso</span><b>Definir a rotina pedag&oacute;gica</b> e alinhar hor&aacute;rios com a Leandra <span class="fonte">25/08</span></td></tr>
-        <tr><td><span class="st a">em curso</span><b>Gerenciar renova&ccedil;&otilde;es</b> &mdash; validar interesse e apresentar propostas <span class="fonte">25/08</span></td></tr>
-        <tr><td><span class="st a">em curso</span><b>Contatar alunos</b> individualmente para confirmar rematr&iacute;cula <span class="fonte">25/08</span></td></tr>
-        <tr><td><span class="st a">em curso</span><b>Estudar as atividades da Jaciara</b> para permitir a delega&ccedil;&atilde;o futura <span class="fonte">25/08</span></td></tr>
-        <tr><td><span class="st p">pendente</span><b>Definir o hor&aacute;rio da aprendiz Laura</b> <span class="fonte">02/09</span></td></tr>
-        <tr><td><span class="st p">pendente</span><b>Conversar com o professor Vicente</b> sobre as mudan&ccedil;as e a perman&ecirc;ncia dele <span class="fonte">02/09</span></td></tr>
+        <tr class="sub"><td colspan="2">Problema A &middot; Matr&iacute;culas e convers&atilde;o</td></tr>
+        <tr><td><span class="st c">conclu&iacute;da</span><b>Implantar an&uacute;ncios Click to WhatsApp</b></td><td class="resp">Marketing</td></tr>
+        <tr><td><span class="st c">conclu&iacute;da</span><b>Script de atendimento consultivo</b> <span class="fonte">TREINAMENTOS/Script_Atendimento_Consultivo_Wizard.pdf</span></td><td class="resp">Marketing + Comercial</td></tr>
+        <tr><td><span class="st c">conclu&iacute;da</span><b>Medir o funil por etapa</b> <span class="fonte">aba Relat&oacute;rios</span></td><td class="resp">Marketing</td></tr>
+        <tr><td><span class="st a">em curso</span><b>SLA de resposta em 15 minutos</b> &mdash; a regra est&aacute; escrita; o tempo real n&atilde;o &eacute; medido</td><td class="resp">Comercial</td></tr>
+        <tr><td><span class="st a">em curso</span><b>Cad&ecirc;ncia de 3 a 5 tentativas</b> &mdash; o repique conta; a r&eacute;gua n&atilde;o &eacute; conferida</td><td class="resp">Comercial</td></tr>
+        <tr class="sub"><td colspan="2">Problema B &middot; Renova&ccedil;&atilde;o e reten&ccedil;&atilde;o</td></tr>
+        <tr><td><span class="st a">em curso</span><b>Processo de renova&ccedil;&atilde;o proativo</b> &mdash; parou em abril; 8 tarefas no Mural em 25/08</td><td class="resp">Pedag&oacute;gico</td></tr>
+        <tr><td><span class="st a">em curso</span><b>Radar de evas&atilde;o pela frequ&ecirc;ncia</b> &mdash; instrumentos existem; a folha de sexta passa a exigir o n&uacute;mero</td><td class="resp">Pedag&oacute;gico</td></tr>
+        <tr><td><span class="st a">em curso</span><b>Onboarding e checkpoint pedag&oacute;gico</b> &mdash; boas-vindas autom&aacute;ticas; checkpoint sem evid&ecirc;ncia</td><td class="resp">Pedag&oacute;gico</td></tr>
+        <tr><td><span class="st p">pendente</span><b>Reten&ccedil;&atilde;o via Wizard ON</b> &mdash; <b>~47% dos cancelamentos s&atilde;o mudan&ccedil;a e trabalho</b></td><td class="resp">Pedag&oacute;gico + Comercial</td></tr>
+        <tr><td><span class="st p">pendente</span><b>Plano de Comunica&ccedil;&atilde;o do Aluno</b></td><td class="resp">Pedag&oacute;gico</td></tr>
+        <tr><td><span class="st p">pendente</span><b>Resgate ativo dos cancelados</b> &mdash; a coluna &ldquo;Proposta Resgate&rdquo; j&aacute; existe</td><td class="resp">Comercial + Pedag&oacute;gico</td></tr>
+        <tr class="sub"><td colspan="2">Problema C &middot; B2B e parcerias</td></tr>
+        <tr><td><span class="st c">conclu&iacute;da</span><b>Definir a oferta e o material B2B</b></td><td class="resp">Valdemar</td></tr>
+        <tr><td><span class="st c">conclu&iacute;da</span><b>Reativar o canal de escolas</b></td><td class="resp">Valdemar</td></tr>
+        <tr><td><span class="st c">conclu&iacute;da</span><b>Rotina de prospec&ccedil;&atilde;o de 17h por semana</b></td><td class="resp">Valdemar</td></tr>
+        <tr><td><span class="st c">conclu&iacute;da</span><b>Medir o funil B2B</b> <span class="fonte">aba Comercial</span></td><td class="resp">Valdemar</td></tr>
+        <tr><td><span class="st p">pendente</span><b>Abrir o in-company</b> &mdash; 53 empresas e 29 condom&iacute;nios mapeados; a linha segue em <b>zero</b></td><td class="resp">Valdemar</td></tr>
+        <tr><td><span class="st p">pendente</span><b>Focar nas contas em aberto</b> &mdash; excluir quem j&aacute; &eacute; do concorrente</td><td class="resp">Valdemar</td></tr>
+        <tr class="sub"><td colspan="2">Problema D &middot; Inadimpl&ecirc;ncia</td></tr>
+        <tr><td><span class="st p">pendente</span><b>Cart&atilde;o recorrente ou d&eacute;bito autom&aacute;tico</b> &mdash; <b>prazo era 30/09</b></td><td class="resp">Financeiro</td></tr>
+        <tr><td><span class="st p">pendente</span><b>R&eacute;gua de cobran&ccedil;a preventiva</b></td><td class="resp">Financeiro</td></tr>
+        <tr><td><span class="st p">pendente</span><b>Triagem por motivo</b></td><td class="resp">Financeiro</td></tr>
+        <tr><td><span class="st p">pendente</span><b>Facilitar o pagamento &mdash; PIX e link</b> &mdash; prazo era 15/08</td><td class="resp">Financeiro</td></tr>
+        <tr><td><span class="st p">pendente</span><b>Conectar com a reten&ccedil;&atilde;o</b> &mdash; cruzar inadimpl&ecirc;ncia com frequ&ecirc;ncia</td><td class="resp">Financeiro + Pedag&oacute;gico</td></tr>
+        <tr><td><span class="st p">pendente</span><b>Acompanhamento semanal da inadimpl&ecirc;ncia</b></td><td class="resp">Financeiro</td></tr>
       </table>
-    </div>
+    </details>
 
-    <div class="plano">
-      <div class="cab"><h3>Financeiro</h3><span>6 A&Ccedil;&Otilde;ES &middot; TODAS PENDENTES</span></div>
+    <details class="dt">
+      <summary>Radar Pedag&oacute;gico<i>3 a&ccedil;&otilde;es &middot; nenhuma conclu&iacute;da</i></summary>
       <table>
-        <tr class="meta"><td><span class="st p">pendente</span><b>Priorizar cart&atilde;o recorrente ou d&eacute;bito autom&aacute;tico</b> &mdash; <b>prazo era 30/09.</b> O plano chama de alavanca de maior impacto <span class="fonte">5W2H D</span></td></tr>
-        <tr><td><span class="st p">pendente</span><b>R&eacute;gua de cobran&ccedil;a preventiva</b> &mdash; lembrete antes do vencimento, no vencimento e ap&oacute;s <span class="fonte">5W2H D</span></td></tr>
-        <tr><td><span class="st p">pendente</span><b>Triagem por motivo</b> &mdash; esquecimento, dificuldade ou insatisfa&ccedil;&atilde;o <span class="fonte">5W2H D</span></td></tr>
-        <tr><td><span class="st p">pendente</span><b>Facilitar o pagamento</b> &mdash; PIX e link na hora. Prazo era 15/08 <span class="fonte">5W2H D</span></td></tr>
-        <tr><td><span class="st p">pendente</span><b>Conectar com a reten&ccedil;&atilde;o</b> &mdash; cruzar inadimpl&ecirc;ncia com o radar de frequ&ecirc;ncia <span class="fonte">5W2H D</span></td></tr>
-        <tr><td><span class="st p">pendente</span><b>Acompanhamento semanal da inadimpl&ecirc;ncia</b> <span class="fonte">5W2H D</span></td></tr>
+        <tr><td><span class="st a">em curso</span><b>Registrar no radar vivo e levar o placar &agrave; reuni&atilde;o semanal</b> &mdash; a folha de sexta come&ccedil;a em 11/09</td><td class="resp">Pricila</td></tr>
+        <tr><td><span class="st p">pendente</span><b>Confirmar v&iacute;nculo aluno a aluno</b> &mdash; <b>os 14 nomes</b>: ativo, trancou ou cancelou?</td><td class="resp">Pricila</td></tr>
+        <tr><td><span class="st p">pendente</span><b>Reagendar reposi&ccedil;&atilde;o e acionar resgate</b></td><td class="resp">Pricila</td></tr>
       </table>
-    </div>
+    </details>
 
-    <div class="plano">
-      <div class="cab"><h3>Comercial B2B</h3><span>7 A&Ccedil;&Otilde;ES ABERTAS</span></div>
+    <details class="dt">
+      <summary>Reuni&atilde;o de 12/08<i>7 a&ccedil;&otilde;es &middot; 1 conclu&iacute;da &middot; 14%</i></summary>
       <table>
-        <tr><td><span class="st a">em curso</span><b>Capta&ccedil;&atilde;o em escolas</b> &mdash; meta de 12 visitas e 7 matr&iacute;culas em setembro <span class="fonte">25/08</span></td></tr>
-        <tr class="meta"><td><span class="st p">pendente</span><b>Abrir o in-company</b> &mdash; 53 empresas e 29 condom&iacute;nios mapeados. <b>A linha &ldquo;matr&iacute;cula empresa&rdquo; segue em zero</b>, e a planilha pede 2 em setembro <span class="fonte">5W2H C</span></td></tr>
-        <tr><td><span class="st p">pendente</span><b>Focar nas contas em aberto</b> &mdash; excluir escolas j&aacute; parceiras do concorrente <span class="fonte">5W2H C</span></td></tr>
-        <tr><td><span class="st p">pendente</span><b>Refor&ccedil;ar a pesquisa</b> com mensagens individuais aos alunos <span class="fonte">12/08</span></td></tr>
-        <tr><td><span class="st p">pendente</span><b>Aprender a rotina da coordena&ccedil;&atilde;o com a Jaciara</b> <span class="fonte">12/08</span></td></tr>
-        <tr><td><span class="st p">pendente</span><b>Aprender o sistema Sponte com a Jaciara</b> <span class="fonte">12/08</span></td></tr>
-        <tr><td><span class="st p">pendente</span><b>Apresentar a proposta do evento no cinema</b> <span class="fonte">02/09</span></td></tr>
+        <tr><td><span class="st c">conclu&iacute;da</span><b>Tabular a pesquisa de satisfa&ccedil;&atilde;o</b></td><td class="resp">atribu&iacute;da ao comercial<br>feita por Tiago</td></tr>
+        <tr><td><span class="st p">pendente</span><b>Levantar novatos em turmas avan&ccedil;adas e a defasagem</b> &mdash; <b>&eacute; a chave dos 18% de cancelamento por m&eacute;todo</b></td><td class="resp">atribu&iacute;da ao comercial<br>pertence &agrave; Pricila</td></tr>
+        <tr><td><span class="st p">pendente</span><b>Consultar o professor Vicente sobre integrar novatos</b></td><td class="resp">atribu&iacute;da ao comercial<br>pertence &agrave; Pricila</td></tr>
+        <tr><td><span class="st p">pendente</span><b>Refor&ccedil;ar a pesquisa com mensagens individuais</b></td><td class="resp">Valdemar</td></tr>
+        <tr><td><span class="st p">pendente</span><b>Aprender a rotina da coordena&ccedil;&atilde;o com a Jaciara</b> &mdash; <i>superada: a transi&ccedil;&atilde;o passou para a Pricila</i></td><td class="resp">Valdemar</td></tr>
+        <tr><td><span class="st p">pendente</span><b>Aprender o sistema Sponte com a Jaciara</b> &mdash; <i>superada pelo mesmo motivo</i></td><td class="resp">Valdemar</td></tr>
+        <tr><td><span class="st p">pendente</span><b>Verificar com a operadora a capacidade de upload</b> &mdash; os tablets n&atilde;o funcionam em sala</td><td class="resp">Leandra</td></tr>
       </table>
-      <p class="desc" style="margin:0;padding:0 18px 14px;font-size:12.5px"><b>Nota:</b> as duas a&ccedil;&otilde;es de aprender com a Jaciara foram <b>superadas pelos fatos</b> &mdash; a transi&ccedil;&atilde;o da coordena&ccedil;&atilde;o passou para a Pricila entre 12 e 25 de agosto. Permanecem no placar porque a r&eacute;gua n&atilde;o muda de tamanho no meio da medi&ccedil;&atilde;o.</p>
-    </div>
+    </details>
 
-    <div class="plano">
-      <div class="cab"><h3>Comercial na unidade</h3><span>2 A&Ccedil;&Otilde;ES &middot; SEM MEDI&Ccedil;&Atilde;O</span></div>
+    <details class="dt">
+      <summary>Reuni&atilde;o de 25/08<i>15 a&ccedil;&otilde;es &middot; 9 conclu&iacute;das &middot; 60%</i></summary>
       <table>
-        <tr><td><span class="st a">em curso</span><b>SLA de resposta em 15 minutos</b> &mdash; a regra est&aacute; escrita no Script de Atendimento; <b>o tempo real n&atilde;o &eacute; medido</b> <span class="fonte">5W2H A</span></td></tr>
-        <tr><td><span class="st a">em curso</span><b>Cad&ecirc;ncia de 3 a 5 tentativas</b> &mdash; o repique conta tentativas; <b>a r&eacute;gua n&atilde;o &eacute; conferida</b> <span class="fonte">5W2H A</span></td></tr>
+        <tr><td><span class="st c">conclu&iacute;da</span><b>Validar e implantar a IA</b></td><td class="resp">Tiago</td></tr>
+        <tr><td><span class="st c">conclu&iacute;da</span><b>Integrar CRM e Pedag&oacute;gico</b></td><td class="resp">Tiago</td></tr>
+        <tr><td><span class="st c">conclu&iacute;da</span><b>Monitorar atendimento</b></td><td class="resp">Tiago</td></tr>
+        <tr><td><span class="st c">conclu&iacute;da</span><b>Testar a inst&acirc;ncia no n&uacute;mero designado</b></td><td class="resp">Tiago</td></tr>
+        <tr><td><span class="st c">conclu&iacute;da</span><b>Melhorias no CRM &mdash; aba Comercial</b></td><td class="resp">Tiago</td></tr>
+        <tr><td><span class="st c">conclu&iacute;da</span><b>Finalizar a pesquisa quantitativa</b></td><td class="resp">Pricila</td></tr>
+        <tr><td><span class="st c">conclu&iacute;da</span><b>Listar os ajustes estruturais</b></td><td class="resp">Pricila</td></tr>
+        <tr><td><span class="st c">conclu&iacute;da</span><b>Regularizar os acessos ao sistema e ao portal</b></td><td class="resp">Mac&aacute;rio</td></tr>
+        <tr><td><span class="st c">conclu&iacute;da</span><b>Mentorar a Rita no uso da IA</b></td><td class="resp">Tiago</td></tr>
+        <tr><td><span class="st a">em curso</span><b>Metas de matr&iacute;cula do per&iacute;odo</b> &mdash; planos documentados; valida&ccedil;&atilde;o com a equipe pendente</td><td class="resp">o grupo</td></tr>
+        <tr><td><span class="st a">em curso</span><b>Definir a rotina pedag&oacute;gica e alinhar hor&aacute;rios com a Leandra</b></td><td class="resp">Pricila</td></tr>
+        <tr><td><span class="st a">em curso</span><b>Gerenciar renova&ccedil;&otilde;es &mdash; validar interesse e apresentar propostas</b></td><td class="resp">Pricila</td></tr>
+        <tr><td><span class="st a">em curso</span><b>Estudar as atividades da Jaciara</b></td><td class="resp">Pricila</td></tr>
+        <tr><td><span class="st a">em curso</span><b>Contatar alunos para confirmar rematr&iacute;cula</b></td><td class="resp">Pricila</td></tr>
+        <tr><td><span class="st a">em curso</span><b>Capta&ccedil;&atilde;o em escolas</b> &mdash; meta de 12 visitas e 7 matr&iacute;culas em setembro</td><td class="resp">Valdemar + Tiago</td></tr>
       </table>
-    </div>
+    </details>
 
-    <div class="plano">
-      <div class="cab"><h3>Sistema e dire&ccedil;&atilde;o</h3><span>4 A&Ccedil;&Otilde;ES ABERTAS</span></div>
+    <details class="dt">
+      <summary>Reuni&atilde;o de 02/09<i>7 a&ccedil;&otilde;es &middot; 1 conclu&iacute;da &middot; 14%</i></summary>
       <table>
-        <tr><td><span class="st p">pendente</span><b>Criar as perguntas de sondagem</b> a partir da apresenta&ccedil;&atilde;o do IP, para as visitas institucionais <span class="fonte">02/09 &middot; Tiago</span></td></tr>
-        <tr class="meta"><td><span class="st p">pendente</span><b>Mapear escolas para o programa bil&iacute;ngue</b> &mdash; grade, contraturno, investimento, material e perfil. <b>Negocia&ccedil;&atilde;o prevista para outubro</b>, o m&ecirc;s mais fraco do ano <span class="fonte">02/09 &middot; Tiago</span></td></tr>
-        <tr><td><span class="st a">em curso</span><b>Metas de matr&iacute;cula do per&iacute;odo</b> &mdash; planos de setembro documentados; valida&ccedil;&atilde;o com a equipe pendente <span class="fonte">25/08 &middot; o grupo</span></td></tr>
-        <tr><td><span class="st p">pendente</span><b>Investigar o instrumento legal</b> da contrata&ccedil;&atilde;o da aprendiz <span class="fonte">02/09 &middot; dire&ccedil;&atilde;o</span></td></tr>
+        <tr><td><span class="st c">conclu&iacute;da</span><b>Remontar o plano de metas</b> &mdash; planos de setembro e bloco do pedag&oacute;gico</td><td class="resp">Tiago</td></tr>
+        <tr><td><span class="st p">pendente</span><b>Criar as perguntas de sondagem a partir do IP</b></td><td class="resp">Tiago</td></tr>
+        <tr><td><span class="st p">pendente</span><b>Mapear escolas para o programa bil&iacute;ngue</b> &mdash; <b>negocia&ccedil;&atilde;o prevista para outubro</b>, o m&ecirc;s mais fraco do ano</td><td class="resp">Tiago</td></tr>
+        <tr><td><span class="st p">pendente</span><b>Definir o hor&aacute;rio da aprendiz Laura</b></td><td class="resp">Pricila</td></tr>
+        <tr><td><span class="st p">pendente</span><b>Conversar com o professor Vicente sobre a perman&ecirc;ncia</b></td><td class="resp">Pricila</td></tr>
+        <tr><td><span class="st p">pendente</span><b>Investigar o instrumento legal da contrata&ccedil;&atilde;o</b></td><td class="resp">Mac&aacute;rio</td></tr>
+        <tr><td><span class="st p">pendente</span><b>Apresentar a proposta do evento no cinema</b></td><td class="resp">Valdemar</td></tr>
       </table>
-    </div>
+    </details>
 
-    <div class="plano">
-      <div class="cab"><h3>Secretaria</h3><span>1 A&Ccedil;&Atilde;O</span></div>
-      <table>
-        <tr><td><span class="st p">pendente</span><b>Verificar com a operadora a capacidade de upload da internet</b> &mdash; os tablets n&atilde;o funcionam em sala, e a estrutura aparece em 9 das 51 respostas da pesquisa <span class="fonte">12/08</span></td></tr>
-      </table>
-    </div>
   </section>
 
   <section>
