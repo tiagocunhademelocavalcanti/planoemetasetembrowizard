@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://planoemetasetembrowizard.vercel.app/atendimento.html">
+<meta property="og:site_name" content="Wizard by Pearson Piedade">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Atendimento &middot; o que as conversas ensinam">
+<meta property="og:description" content="Leitura diária das conversas do WhatsApp comercial — o que já converte bem e onde dá para melhorar.">
+<meta property="og:image" content="https://planoemetasetembrowizard.vercel.app/capa.png">
+<meta name="description" content="Leitura diária das conversas do WhatsApp comercial da Wizard Piedade.">
+<link rel="icon" type="image/png" href="logo.png">
+<title>Wizard Piedade &middot; Atendimento</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+       background:#eef2f7;color:#1e2c3a;line-height:1.62;padding:0 0 60px}
+  .capa{background:#0F2C4C;color:#fff;padding:52px 44px 40px;border-bottom:5px solid #C8102E}
+  .capa .tag{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#F5C518;font-weight:800;margin-bottom:14px}
+  .capa h1{font-size:31px;font-weight:800;line-height:1.2;margin-bottom:8px}
+  .capa h1 em{font-style:normal;color:#F5C518}
+  .capa p{font-size:14.5px;color:#b9cade}
+  .wrap{max-width:960px;margin:0 auto;padding:0 22px}
+  section{margin-top:38px}
+  .titulo{display:flex;align-items:center;gap:12px;margin-bottom:8px;padding-top:6px}
+  .titulo span{width:5px;height:26px;background:#C8102E;border-radius:3px;display:block}
+  .titulo h2{font-size:22px;font-weight:800;color:#0F2C4C}
+  .desc{font-size:14.5px;color:#4a5b6d;margin-bottom:18px}
+  .plano{background:#fff;border:1px solid #dde5ee;border-radius:13px;overflow:hidden;margin-bottom:18px;
+         box-shadow:0 1px 3px rgba(15,44,76,.05)}
+  .cab{background:#0F2C4C;color:#fff;padding:15px 20px;display:flex;justify-content:space-between;
+       align-items:center;gap:12px;flex-wrap:wrap}
+  .cab h3{font-size:16px;font-weight:800}
+  .cab span{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:#9fb6cf;font-weight:700}
+  table{width:100%;border-collapse:collapse}
+  td{padding:13px 18px;border-bottom:1px solid #eef2f7;font-size:14px;vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  .rot{width:150px;font-weight:800;color:#0F2C4C;font-size:11.5px;letter-spacing:.05em;
+       text-transform:uppercase;background:#f7fafd}
+  tr.meta td{background:#FFF9E8;font-weight:600;color:#0F2C4C}
+  tr.bom td{background:#F1FAF4}
+  .qd{width:100px;font-weight:800;color:#0F2C4C;font-size:12.5px;background:#f7fafd}
+  td.th{font-weight:800;color:#0F2C4C;font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;background:#f7fafd}
+  .gan{display:block;background:#f7fafd;border-left:3px solid #F5C518;padding:9px 13px;margin:8px 0;
+       font-style:italic;color:#3d4d60;font-size:13.4px;border-radius:0 7px 7px 0}
+  .nota{background:#0F2C4C;color:#fff;border-radius:13px;padding:24px 28px;margin-bottom:18px}
+  .nota h4{color:#F5C518;font-size:13px;letter-spacing:.07em;text-transform:uppercase;margin-bottom:12px}
+  .nota p{font-size:14.5px;color:#cfdcea;margin-bottom:10px}
+  .nota p:last-child{margin-bottom:0}
+  .nota b{color:#fff}
+  .verde{background:#0d7a35}
+  .verde h4{color:#c9f2d8}
+  .verde p{color:#dff5e7}
+  .num{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+  .num div{flex:1;min-width:150px;background:#fff;border:1px solid #dde5ee;border-radius:12px;padding:18px;text-align:center}
+  .num .k{font-size:30px;font-weight:800;color:#0F2C4C;line-height:1}
+  .num .l{font-size:11.5px;color:#6b7c8f;margin-top:6px;line-height:1.35}
+  .num div.dst{background:#FFF9E8;border-color:#F5C518}
+  .indice{display:flex;gap:9px;flex-wrap:wrap;padding:26px 0 0}
+  .indice a{font-size:12px;font-weight:700;color:#0F2C4C;background:#fff;border:1px solid #dbe4ef;
+    padding:8px 14px;border-radius:20px;text-decoration:none}
+  .indice a:hover{background:#0F2C4C;color:#fff}
+  .dia{background:#C8102E;color:#fff;border-radius:10px;padding:11px 18px;margin:44px 0 16px;
+       display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+  .dia h2{font-size:18px;font-weight:800}
+  .dia span{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#ffd9de;font-weight:700}
+  .rod{text-align:center;font-size:12.5px;color:#7c8b9c;margin-top:40px;padding-top:22px;border-top:1px solid #dde5ee}
+  @media (max-width:620px){
+    .capa{padding:34px 22px 28px} .capa h1{font-size:24px}
+    td{padding:11px 14px;font-size:13.4px} .rot,.qd{width:92px}
+    .titulo h2{font-size:19px}
+  }
+</style>
+</head>
+<body>
+
+<div class="capa">
+  <div class="tag">Wizard by Pearson Piedade &middot; leitura diária</div>
+  <h1>Atendimento<br><em>o que as conversas ensinam</em></h1>
+  <p>Wizard by Pearson Piedade &middot; Jaboatão dos Guararapes</p>
+</div>
+
+<div class="wrap">
+
+  <div class="indice">
+    <a href="index.html" style="background:#0F2C4C;color:#fff;border-color:#0F2C4C">&larr; Plano de setembro</a>
+    <a href="acompanhamento.html">Acompanhamento das ações</a>
+    <a href="analises-11-09.html">Análises</a>
+  </div>
+
+  <section>
+    <div class="titulo"><span></span><h2>Para que serve esta página</h2></div>
+    <p class="desc">Todo dia, algumas conversas do WhatsApp comercial são lidas por inteiro — da primeira mensagem do lead até a última resposta. <b>O objetivo é achar o que já funciona bem e repetir, e achar onde uma frase diferente renderia mais.</b></p>
+
+    <div class="nota">
+      <h4>Como esta leitura é feita</h4>
+      <p><b>Com a consultora sabendo, e com o material que ela mesma envia.</b> Não é acompanhamento por trás — é a mesma lógica de um time que assiste ao próprio jogo depois.</p>
+      <p><b>Os leads não são identificados aqui.</b> Nomes e telefones ficam de fora; só os horários, as perguntas e as respostas importam para a leitura.</p>
+      <p style="margin-bottom:0"><b>Cada dia vira um bloco</b>, com o mais recente no topo. Ao longo das semanas dá para ver o que melhorou.</p>
+    </div>
+  </section>
+
+  <!-- ================= 15/09 ================= -->
+
+  <div class="dia">
+    <h2>Segunda-feira, 15 de setembro</h2>
+    <span>2 conversas lidas</span>
+  </div>
+
+  <div class="num">
+    <div><div class="k">2</div><div class="l">conversas lidas<br>do início ao fim</div></div>
+    <div class="dst"><div class="k">9</div><div class="l">a nota que um dos leads<br>deu ao atendimento da Iza</div></div>
+    <div><div class="k">2</div><div class="l">qualificadas por completo<br>antes de chegar na consultora</div></div>
+    <div class="dst"><div class="k">0</div><div class="l">aulas agendadas<br>nas duas conversas</div></div>
+  </div>
+
+  <div class="nota verde">
+    <h4>O que já está bom e vale manter</h4>
+    <p><b>A Iza qualifica muito bem.</b> Em cinco trocas ela descobre para quem é o curso, a idade, o idioma, os dias e horários disponíveis e o motivo de estudar. <b>Depois confirma tudo por escrito antes de passar adiante.</b> A consultora recebe o lead pronto.</p>
+    <p><b>E o lead percebe.</b> Ao final, a Iza pede uma nota de 0 a 10 — <b>um dos leads respondeu 9.</b></p>
+    <p style="margin-bottom:0"><b>O material da consultora também é forte:</b> áudio personalizado, fotos e vídeos de turmas reais, vídeo do método. <b>Nada disso precisa mudar.</b></p>
+  </div>
+
+  <div class="plano">
+    <div class="cab"><h3>Conversa 1 &mdash; adulto, inglês, noite</h3><span>QUALIFICADA &middot; NOTA 9</span></div>
+    <table>
+      <tr><td class="rot">A Iza levantou</td><td>curso para ele mesmo &middot; 59 anos &middot; inglês &middot; <b>terça e quinta à noite</b> &middot; motivo: viagem e turismo</td></tr>
+      <tr><td class="qd">05:57</td><td>A Iza oferece a aula experimental gratuita. <b>O lead responde &ldquo;Sim&rdquo;.</b></td></tr>
+      <tr class="bom"><td class="qd">05:57</td><td>Pede a nota do atendimento. <b>O lead dá 9.</b></td></tr>
+      <tr><td class="qd">05:58</td><td>Encaminha para a consultora educacional.</td></tr>
+      <tr class="meta"><td class="qd">09:58</td><td><b>Primeira resposta humana</b> &mdash; cerca de quatro horas depois.</td></tr>
+      <tr><td class="qd">09:58&ndash;10:17</td><td>áudio de 46s &middot; vídeo de 1min50 &middot; vídeo do método &middot; quatro fotos e vídeos de turmas &middot; mais dois áudios</td></tr>
+      <tr><td class="qd">09:59</td><td><i>&ldquo;Quando, fala se fez sentido para vc!&rdquo;</i></td></tr>
+    </table>
+    <p class="desc" style="margin:0;padding:0 18px 16px;font-size:12.8px;color:#5b6b7d"><b>O lead já tinha dito sim para a aula às 05:57 e informado que pode terça e quinta à noite.</b> Nos prints não aparece proposta de data.</p>
+  </div>
+
+  <div class="plano">
+    <div class="cab"><h3>Conversa 2 &mdash; família de três, inglês, sábado</h3><span>QUALIFICADA &middot; PEDIU AULA EXPERIMENTAL</span></div>
+    <table>
+      <tr><td class="rot">A Iza levantou</td><td>curso para ela, o esposo e a filha de 10 anos &middot; inglês &middot; <b>sábados</b> &middot; motivo: trabalho e viagem</td></tr>
+      <tr><td class="qd">12:23</td><td>O lead abre a conversa perguntando sobre matrícula e carga horária.</td></tr>
+      <tr><td class="qd">12:27</td><td>A Iza encaminha para a consultora.</td></tr>
+      <tr class="meta"><td class="qd">16:20</td><td><b>O lead cobra:</b> <i>&ldquo;boa tarde / não me passaram o valor do curso de inglês&rdquo;</i></td></tr>
+      <tr><td class="qd">16:21</td><td>Tabela promocional: matrícula R$ 250 &middot; mensalidade R$ 269</td></tr>
+      <tr><td class="qd">16:25</td><td>O lead pergunta se há pacote para três da mesma família.</td></tr>
+      <tr class="meta"><td class="qd">16:27</td><td>Resposta: <b>matrícula 199 &middot; mensalidade 249</b> &mdash; sem dizer que o valor menor é por ser pacote familiar.</td></tr>
+      <tr class="meta"><td class="qd">16:29</td><td><b>O lead pergunta: &ldquo;tem aula experimental?&rdquo;</b><br>A resposta enviada foi o <b>vídeo do método</b>.</td></tr>
+      <tr><td class="qd">depois</td><td><i>&ldquo;esse sábado não tenho certeza se iremos conseguir ir… vou conversar com meu esposo&rdquo;</i></td></tr>
+    </table>
+  </div>
+
+  <div class="nota">
+    <h4>Três práticas que mudariam o resultado destas duas conversas</h4>
+    <p><b>1 &middot; Quando o lead pergunta por aula experimental, a resposta que converte é uma data.</b> <span class="gan" style="background:rgba(255,255,255,.08);border-left-color:#F5C518;color:#e6eef7">&ldquo;Tenho sábado às 9h e às 10h30 &mdash; qual fica melhor para vocês três?&rdquo;</span> O vídeo do método é ótimo, mas ele vem <b>depois</b> da data marcada, para a pessoa chegar preparada. <b>Conteúdo antes da data adia; conteúdo depois da data confirma.</b></p>
+    <p><b>2 &middot; Todo desconto precisa do motivo na mesma mensagem.</b> Quando o valor cai de 250 para 199 sem explicação, o lead aprende que o preço é negociável e pede de novo. <span class="gan" style="background:rgba(255,255,255,.08);border-left-color:#F5C518;color:#e6eef7">&ldquo;Como são três da mesma família, consigo fechar a matrícula em 199 e a mensalidade em 249.&rdquo;</span> <b>Mesmo número, valor preservado.</b></p>
+    <p style="margin-bottom:0"><b>3 &middot; Uma linha curta em até 30 minutos segura o lead.</b> Não precisa ser a resposta completa &mdash; precisa ser sinal de vida. <span class="gan" style="background:rgba(255,255,255,.08);border-left-color:#F5C518;color:#e6eef7">&ldquo;Oi! Recebi sua mensagem, já te mando os horários disponíveis.&rdquo;</span> <b>No dia em que o lead cobra o valor, ele já esfriou sozinho.</b></p>
+  </div>
+
+  <div class="plano">
+    <div class="cab"><h3>Por que isso importa para o mês</h3><span>O DEGRAU QUE MAIS PESA</span></div>
+    <table>
+      <tr><td class="th">Lead de anúncio que chegou a agendar aula</td><td class="th">Agosto</td><td class="th">Setembro</td></tr>
+      <tr class="meta"><td class="rot">Taxa de agendamento</td><td><b>54%</b></td><td><b>31%</b></td></tr>
+    </table>
+    <p class="desc" style="margin:0;padding:0 18px 16px;font-size:12.8px;color:#5b6b7d"><b>O agendamento é o degrau que mais caiu entre agosto e setembro</b> &mdash; e é exatamente o degrau que estas duas conversas não alcançaram. <b>Não por falta de esforço:</b> as duas tiveram atenção, áudio personalizado e material de qualidade. <b>Faltou a pergunta que marca a data.</b></p>
+  </div>
+
+  <div class="rod">
+    Wizard by Pearson Piedade &middot; Jaboatão dos Guararapes<br>
+    Leitura das conversas do WhatsApp comercial &middot; rotina definida na reunião de 11 de setembro de 2026
+  </div>
+
+</div>
+</body>
+</html>
