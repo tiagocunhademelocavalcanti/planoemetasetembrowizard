@@ -8,7 +8,7 @@
 <meta property="og:site_name" content="Wizard by Pearson Piedade">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:title" content="Atendimento &middot; o que as conversas ensinam">
-<meta property="og:description" content="Leitura diária das conversas do WhatsApp comercial — o que já converte bem e onde dá para melhorar.">
+<meta property="og:description" content="Leitura diária das conversas do WhatsApp comercial — com evidência de cada afirmação.">
 <meta property="og:image" content="https://planoemetasetembrowizard.vercel.app/capa.png">
 <meta name="description" content="Leitura diária das conversas do WhatsApp comercial da Wizard Piedade.">
 <link rel="icon" type="image/png" href="logo.png">
@@ -23,11 +23,6 @@
   .capa h1 em{font-style:normal;color:#F5C518}
   .capa p{font-size:14.5px;color:#b9cade}
   .wrap{max-width:960px;margin:0 auto;padding:0 22px}
-  section{margin-top:38px}
-  .titulo{display:flex;align-items:center;gap:12px;margin-bottom:8px;padding-top:6px}
-  .titulo span{width:5px;height:26px;background:#C8102E;border-radius:3px;display:block}
-  .titulo h2{font-size:22px;font-weight:800;color:#0F2C4C}
-  .desc{font-size:14.5px;color:#4a5b6d;margin-bottom:18px}
   .plano{background:#fff;border:1px solid #dde5ee;border-radius:13px;overflow:hidden;margin-bottom:18px;
          box-shadow:0 1px 3px rgba(15,44,76,.05)}
   .cab{background:#0F2C4C;color:#fff;padding:15px 20px;display:flex;justify-content:space-between;
@@ -35,16 +30,14 @@
   .cab h3{font-size:16px;font-weight:800}
   .cab span{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:#9fb6cf;font-weight:700}
   table{width:100%;border-collapse:collapse}
-  td{padding:13px 18px;border-bottom:1px solid #eef2f7;font-size:14px;vertical-align:top}
+  td{padding:12px 18px;border-bottom:1px solid #eef2f7;font-size:14px;vertical-align:top}
   tr:last-child td{border-bottom:none}
-  .rot{width:150px;font-weight:800;color:#0F2C4C;font-size:11.5px;letter-spacing:.05em;
+  .rot{width:120px;font-weight:800;color:#0F2C4C;font-size:11.5px;letter-spacing:.05em;
        text-transform:uppercase;background:#f7fafd}
   tr.meta td{background:#FFF9E8;font-weight:600;color:#0F2C4C}
   tr.bom td{background:#F1FAF4}
-  .qd{width:100px;font-weight:800;color:#0F2C4C;font-size:12.5px;background:#f7fafd}
+  .qd{width:88px;font-weight:800;color:#0F2C4C;font-size:12.5px;background:#f7fafd}
   td.th{font-weight:800;color:#0F2C4C;font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;background:#f7fafd}
-  .gan{display:block;background:#f7fafd;border-left:3px solid #F5C518;padding:9px 13px;margin:8px 0;
-       font-style:italic;color:#3d4d60;font-size:13.4px;border-radius:0 7px 7px 0}
   .nota{background:#0F2C4C;color:#fff;border-radius:13px;padding:24px 28px;margin-bottom:18px}
   .nota h4{color:#F5C518;font-size:13px;letter-spacing:.07em;text-transform:uppercase;margin-bottom:12px}
   .nota p{font-size:14.5px;color:#cfdcea;margin-bottom:10px}
@@ -58,19 +51,29 @@
   .num .k{font-size:30px;font-weight:800;color:#0F2C4C;line-height:1}
   .num .l{font-size:11.5px;color:#6b7c8f;margin-top:6px;line-height:1.35}
   .num div.dst{background:#FFF9E8;border-color:#F5C518}
+  .num div.ok{background:#F1FAF4;border-color:#9fd9b4}
+  .num div.ok .k{color:#0d7a35}
   .indice{display:flex;gap:9px;flex-wrap:wrap;padding:26px 0 0}
   .indice a{font-size:12px;font-weight:700;color:#0F2C4C;background:#fff;border:1px solid #dbe4ef;
     padding:8px 14px;border-radius:20px;text-decoration:none}
   .indice a:hover{background:#0F2C4C;color:#fff}
-  .dia{background:#C8102E;color:#fff;border-radius:10px;padding:11px 18px;margin:44px 0 16px;
+  .dia{background:#C8102E;color:#fff;border-radius:10px;padding:11px 18px;margin:40px 0 16px;
        display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
   .dia h2{font-size:18px;font-weight:800}
   .dia span{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#ffd9de;font-weight:700}
+  .ev{display:flex;gap:14px;flex-wrap:wrap;padding:16px 18px;background:#f7fafd;border-top:1px solid #eef2f7}
+  .ev figure{flex:1;min-width:170px;max-width:230px}
+  .ev img{width:100%;border:1px solid #dbe4ef;border-radius:8px;display:block;background:#fff}
+  .ev figcaption{font-size:11px;color:#6b7c8f;margin-top:6px;line-height:1.4}
+  .tr{background:#fff;border:1px solid #dbe4ef;border-left:4px solid #0d7a35;border-radius:0 9px 9px 0;
+      padding:14px 18px;margin:0 18px 16px}
+  .tr .lb{font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:#0d7a35;font-weight:800;margin-bottom:6px}
+  .tr p{font-size:14.5px;font-style:italic;color:#2f4053}
+  .tr b{font-style:normal;color:#0F2C4C}
   .rod{text-align:center;font-size:12.5px;color:#7c8b9c;margin-top:40px;padding-top:22px;border-top:1px solid #dde5ee}
   @media (max-width:620px){
     .capa{padding:34px 22px 28px} .capa h1{font-size:24px}
-    td{padding:11px 14px;font-size:13.4px} .rot,.qd{width:92px}
-    .titulo h2{font-size:19px}
+    td{padding:11px 14px;font-size:13.4px} .rot,.qd{width:84px}
   }
 </style>
 </head>
@@ -79,7 +82,7 @@
 <div class="capa">
   <div class="tag">Wizard by Pearson Piedade &middot; leitura diária</div>
   <h1>Atendimento<br><em>o que as conversas ensinam</em></h1>
-  <p>Wizard by Pearson Piedade &middot; Jaboatão dos Guararapes</p>
+  <p>Todo dia, conversas do WhatsApp comercial lidas do início ao desfecho &mdash; com evidência de cada afirmação.</p>
 </div>
 
 <div class="wrap">
@@ -90,104 +93,93 @@
     <a href="analises-11-09.html">Análises</a>
   </div>
 
-  <section>
-    <div class="titulo"><span></span><h2>Para que serve esta página</h2></div>
-    <p class="desc">Todo dia, algumas conversas do WhatsApp comercial são lidas por inteiro — da primeira mensagem do lead até a última resposta. <b>O objetivo é achar o que já funciona bem e repetir, e achar onde uma frase diferente renderia mais.</b></p>
-
-    <div class="nota">
-      <h4>Como esta leitura é feita</h4>
-      <p><b>Com a consultora sabendo, e com o material que ela mesma envia.</b> Não é acompanhamento por trás — é a mesma lógica de um time que assiste ao próprio jogo depois.</p>
-      <p><b>Os leads não são identificados aqui.</b> Nomes e telefones ficam de fora; só os horários, as perguntas e as respostas importam para a leitura.</p>
-      <p style="margin-bottom:0"><b>Cada dia vira um bloco</b>, com o mais recente no topo. Ao longo das semanas dá para ver o que melhorou.</p>
-    </div>
-  </section>
-
-  <!-- ================= 15/09 ================= -->
-
   <div class="dia">
     <h2>Segunda-feira, 15 de setembro</h2>
     <span>2 conversas lidas</span>
   </div>
 
   <div class="num">
-    <div><div class="k">2</div><div class="l">conversas lidas<br>do início ao fim</div></div>
-    <div class="dst"><div class="k">9</div><div class="l">a nota que um dos leads<br>deu ao atendimento da Iza</div></div>
-    <div><div class="k">2</div><div class="l">qualificadas por completo<br>antes de chegar na consultora</div></div>
-    <div class="dst"><div class="k">0</div><div class="l">aulas agendadas<br>nas duas conversas</div></div>
+    <div class="ok"><div class="k">2</div><div class="l">leads ativos<br>nenhum se perdeu</div></div>
+    <div class="dst"><div class="k">0</div><div class="l">aulas confirmadas<br>até o fim desta leitura</div></div>
+    <div class="dst"><div class="k">9</div><div class="l">a nota que a lead deu<br>ao atendimento da Iza</div></div>
+    <div class="dst"><div class="k">4h</div><div class="l">entre a lead dizer sim<br>e alguém responder</div></div>
   </div>
 
   <div class="nota verde">
-    <h4>O que já está bom e vale manter</h4>
-    <p><b>A Iza qualifica muito bem.</b> Em cinco trocas ela descobre para quem é o curso, a idade, o idioma, os dias e horários disponíveis e o motivo de estudar. <b>Depois confirma tudo por escrito antes de passar adiante.</b> A consultora recebe o lead pronto.</p>
-    <p><b>E o lead percebe.</b> Ao final, a Iza pede uma nota de 0 a 10 — <b>um dos leads respondeu 9.</b></p>
-    <p style="margin-bottom:0"><b>O material da consultora também é forte:</b> áudio personalizado, fotos e vídeos de turmas reais, vídeo do método. <b>Nada disso precisa mudar.</b></p>
+    <h4>Duas conversas bem conduzidas &mdash; e nenhuma fechada ainda</h4>
+    <p style="margin-bottom:0"><b>Os dois leads seguem vivos e interessados.</b> Uma recebeu o material, gostou, e está em negociação. A outra vai confirmar com o esposo e devolver os dados preenchidos. <b>Nenhuma aula está confirmada ainda &mdash; e as duas dependem de um retorno que precisa ser buscado, não esperado.</b></p>
   </div>
 
   <div class="plano">
-    <div class="cab"><h3>Conversa 1 &mdash; adulto, inglês, noite</h3><span>QUALIFICADA &middot; NOTA 9</span></div>
+    <div class="cab"><h3>A Iza qualifica em quatro minutos</h3><span>E RECEBE NOTA 9 DA PRÓPRIA LEAD</span></div>
     <table>
-      <tr><td class="rot">A Iza levantou</td><td>curso para ele mesmo &middot; 59 anos &middot; inglês &middot; <b>terça e quinta à noite</b> &middot; motivo: viagem e turismo</td></tr>
-      <tr><td class="qd">05:57</td><td>A Iza oferece a aula experimental gratuita. <b>O lead responde &ldquo;Sim&rdquo;.</b></td></tr>
-      <tr class="bom"><td class="qd">05:57</td><td>Pede a nota do atendimento. <b>O lead dá 9.</b></td></tr>
-      <tr><td class="qd">05:58</td><td>Encaminha para a consultora educacional.</td></tr>
-      <tr class="meta"><td class="qd">09:58</td><td><b>Primeira resposta humana</b> &mdash; cerca de quatro horas depois.</td></tr>
-      <tr><td class="qd">09:58&ndash;10:17</td><td>áudio de 46s &middot; vídeo de 1min50 &middot; vídeo do método &middot; quatro fotos e vídeos de turmas &middot; mais dois áudios</td></tr>
-      <tr><td class="qd">09:59</td><td><i>&ldquo;Quando, fala se fez sentido para vc!&rdquo;</i></td></tr>
+      <tr><td class="qd">05:53</td><td>Cláudia escreve: <i>&ldquo;Vi o anúncio e tenho interesse e queria mais informações, por favor.&rdquo;</i></td></tr>
+      <tr class="bom"><td class="qd">05:54<br>05:56</td><td>A Iza levanta <b>cinco informações</b>: para quem é o curso &middot; <b>59 anos</b> &middot; <b>inglês</b> &middot; <b>terça e quinta à noite</b> &middot; <b>viagem e turismo</b></td></tr>
+      <tr><td class="qd">05:57</td><td>Oferece a aula experimental. <b>Cláudia responde &ldquo;Sim&rdquo;.</b></td></tr>
+      <tr class="bom"><td class="qd">05:57</td><td>Resume tudo por escrito e pede a nota do atendimento. <b>Cláudia dá 9.</b></td></tr>
     </table>
-    <p class="desc" style="margin:0;padding:0 18px 16px;font-size:12.8px;color:#5b6b7d"><b>O lead já tinha dito sim para a aula às 05:57 e informado que pode terça e quinta à noite.</b> Nos prints não aparece proposta de data.</p>
+    <div class="ev">
+      <figure><img src="ev-iza-qualificacao.jpg" alt="Iza levantando idade, idioma e horários"><figcaption><b>Evidência</b> &middot; a qualificação, das 05:54 às 05:56</figcaption></figure>
+      <figure><img src="ev-iza-nota9.jpg" alt="Resumo da Iza e a nota 9 dada pela lead"><figcaption><b>Evidência</b> &middot; o resumo por escrito e a nota <b>9</b>, às 05:57</figcaption></figure>
+    </div>
   </div>
 
   <div class="plano">
-    <div class="cab"><h3>Conversa 2 &mdash; família de três, inglês, sábado</h3><span>QUALIFICADA &middot; PEDIU AULA EXPERIMENTAL</span></div>
+    <div class="cab"><h3>A consultora entra oferecendo dia e hora</h3><span>CLÁUDIA &middot; 15/09 &middot; HOJE EM NEGOCIAÇÃO</span></div>
+    <div class="tr">
+      <div class="lb">Transcrição do áudio enviado às 09:58</div>
+      <p>&ldquo;Tenho na quinta-feira a turma e na terça é a conversação. São três horas semanais. Você já poderia começar essa quinta, né? Aí <b>você me diz se consegue vir às 19 horas</b>, e a gente consegue fazer a tua matrícula tudo direitinho e você já inicia o seu curso nessa quinta-feira.&rdquo;</p>
+    </div>
     <table>
-      <tr><td class="rot">A Iza levantou</td><td>curso para ela, o esposo e a filha de 10 anos &middot; inglês &middot; <b>sábados</b> &middot; motivo: trabalho e viagem</td></tr>
-      <tr><td class="qd">12:23</td><td>O lead abre a conversa perguntando sobre matrícula e carga horária.</td></tr>
-      <tr><td class="qd">12:27</td><td>A Iza encaminha para a consultora.</td></tr>
-      <tr class="meta"><td class="qd">16:20</td><td><b>O lead cobra:</b> <i>&ldquo;boa tarde / não me passaram o valor do curso de inglês&rdquo;</i></td></tr>
-      <tr><td class="qd">16:21</td><td>Tabela promocional: matrícula R$ 250 &middot; mensalidade R$ 269</td></tr>
-      <tr><td class="qd">16:25</td><td>O lead pergunta se há pacote para três da mesma família.</td></tr>
-      <tr class="meta"><td class="qd">16:27</td><td>Resposta: <b>matrícula 199 &middot; mensalidade 249</b> &mdash; sem dizer que o valor menor é por ser pacote familiar.</td></tr>
-      <tr class="meta"><td class="qd">16:29</td><td><b>O lead pergunta: &ldquo;tem aula experimental?&rdquo;</b><br>A resposta enviada foi o <b>vídeo do método</b>.</td></tr>
-      <tr><td class="qd">depois</td><td><i>&ldquo;esse sábado não tenho certeza se iremos conseguir ir… vou conversar com meu esposo&rdquo;</i></td></tr>
+      <tr class="meta"><td class="qd">05:58<br>&darr;<br>09:58</td><td><b>Quatro horas sem ninguém</b> &mdash; logo depois de Cláudia dizer sim e dar nota 9.</td></tr>
+      <tr class="bom"><td class="qd">09:58</td><td><b>Dia, hora e uma pergunta de duas respostas.</b> É assim que se marca aula.</td></tr>
+      <tr><td class="qd">depois</td><td>Cláudia pede o preço. A consultora manda e <b>reoferece a aula mais duas vezes</b> &mdash; <i>&ldquo;consigo marcar para você vir na quinta, conhecer direitinho&rdquo;</i>. Matrícula <b>R$ 250</b> &middot; mensalidade <b>R$ 269</b> fixa.</td></tr>
+      <tr class="meta"><td class="qd">depois</td><td><b>Só agora Cláudia descobre o material:</b> <i>&ldquo;eu pagaria a mensalidade mais 116 por mês? Esse kit sai por quase R$ 1.400?&rdquo;</i> &mdash; o material é comprado na Pearson, <b>R$ 1.200</b>, em até 12 vezes.</td></tr>
+      <tr class="bom"><td class="qd">desfecho</td><td><b>Recebeu o material, disse que gostou. Segue em negociação.</b></td></tr>
     </table>
+    <div class="ev">
+      <figure><img src="ev-consultora-audios.jpg" alt="Áudios da consultora a partir das 09:58"><figcaption><b>Evidência</b> &middot; os áudios da consultora a partir das 09:58 &mdash; <b>as falas acima são a transcrição deles</b></figcaption></figure>
+    </div>
   </div>
 
   <div class="plano">
-    <div class="cab" style="background:#C8102E"><h3>O ponto exato onde o agendamento se perde</h3><span style="color:#ffd9de">O ACHADO DO DIA</span></div>
+    <div class="cab"><h3>Edinaide &mdash; família de três, inglês aos sábados</h3><span>AGUARDANDO CONFIRMAÇÃO DO ESPOSO</span></div>
     <table>
-      <tr><td class="th">&nbsp;</td><td class="th">Conversa 1</td><td class="th">Conversa 2</td></tr>
-      <tr class="bom"><td class="rot">A Iza perguntou quando a pessoa pode</td><td><b>terça e quinta à noite</b></td><td><b>sábados</b></td></tr>
-      <tr class="bom"><td class="rot">O lead pediu a aula</td><td><b>&ldquo;Sim&rdquo;</b> &mdash; 05:57</td><td><b>&ldquo;tem aula experimental?&rdquo;</b> &mdash; 16:29</td></tr>
-      <tr class="meta"><td class="rot">Foi oferecido um horário?</td><td><b>não</b></td><td><b>não</b></td></tr>
+      <tr class="bom"><td class="qd">sáb 12:23<br>12:25</td><td><b>A Iza qualifica em dois minutos:</b> curso para ela, o esposo e a filha de 10 anos &middot; inglês &middot; <b>sábados</b> &middot; trabalho e viagem. Oferece a aula experimental &mdash; <b>Edinaide responde &ldquo;sim&rdquo; às 12:27</b> &mdash; e confirma tudo por escrito às 12:46.</td></tr>
+      <tr class="meta"><td class="qd">outro dia<br>16:20</td><td><b>Edinaide cobra o valor:</b> <i>&ldquo;não me passaram o valor do curso de inglês&rdquo;</i></td></tr>
+      <tr class="meta"><td class="qd">16:27</td><td>Pacote para três: <b>matrícula 199 &middot; mensalidade 249</b> &mdash; sem dizer que o valor menor é por ser família</td></tr>
+      <tr class="meta"><td class="qd">último<br>áudio</td><td><b>A conversa para aqui:</b> <i>&ldquo;ela só pode ir com ele, <b>eu não vou ter como ir</b> por conta da minha outra pequenininha… a gente não tem com quem deixar elas. Aí eu vou saber <b>se ele consegue ir no sábado, se ele confirmar que vai</b>, aí eu preencho tudo e mando pra senhora.&rdquo;</i></td></tr>
     </table>
-    <p class="desc" style="margin:0;padding:0 18px 16px;font-size:12.8px;color:#5b6b7d"><b>Não é falta de interesse, nem de qualificação, nem de contato.</b> Nas duas conversas o lead pediu a aula &mdash; e nas duas a disponibilidade dele <b>já estava coletada, confirmada por escrito e visível na tela.</b> A informação estava pronta e não foi usada.</p>
-  </div>
-
-  <div class="nota" style="background:#8a0d22">
-    <h4 style="color:#ffd9de">A frase que faltou nas duas</h4>
-    <p style="color:#ffe6ea;font-size:17px;font-style:italic;margin-bottom:10px">&ldquo;Perfeito! Tenho terça às 19h ou quinta às 19h. Qual fica melhor para você?&rdquo;</p>
-    <p style="margin-bottom:0;color:#ffd9de">Uma frase, dois horários, uma pergunta fechada. <b>É o degrau inteiro.</b></p>
-  </div>
-
-  <div class="nota">
-    <h4>Três práticas que mudariam o resultado destas duas conversas</h4>
-    <p><b>1 &middot; Quando o lead pergunta por aula experimental, a resposta que converte é uma data.</b> <span class="gan" style="background:rgba(255,255,255,.08);border-left-color:#F5C518;color:#e6eef7">&ldquo;Tenho sábado às 9h e às 10h30 &mdash; qual fica melhor para vocês três?&rdquo;</span> O vídeo do método é ótimo, mas ele vem <b>depois</b> da data marcada, para a pessoa chegar preparada. <b>Conteúdo antes da data adia; conteúdo depois da data confirma.</b></p>
-    <p><b>2 &middot; Todo desconto precisa do motivo na mesma mensagem.</b> Quando o valor cai de 250 para 199 sem explicação, o lead aprende que o preço é negociável e pede de novo. <span class="gan" style="background:rgba(255,255,255,.08);border-left-color:#F5C518;color:#e6eef7">&ldquo;Como são três da mesma família, consigo fechar a matrícula em 199 e a mensalidade em 249.&rdquo;</span> <b>Mesmo número, valor preservado.</b></p>
-    <p style="margin-bottom:0"><b>3 &middot; Uma linha curta em até 30 minutos segura o lead.</b> Não precisa ser a resposta completa &mdash; precisa ser sinal de vida. <span class="gan" style="background:rgba(255,255,255,.08);border-left-color:#F5C518;color:#e6eef7">&ldquo;Oi! Recebi sua mensagem, já te mando os horários disponíveis.&rdquo;</span> <b>No dia em que o lead cobra o valor, ele já esfriou sozinho.</b></p>
+    <p style="margin:0;padding:14px 18px 16px;font-size:13.2px;color:#5b6b7d;background:#FFF9E8;border-top:1px solid #f0e4bc"><b>Duas coisas aparecem neste áudio, e as duas pedem ação.</b> A primeira: <b>a aula depende do esposo e ninguém ainda voltou para saber.</b> A segunda, mais importante: <b>o pacote foi montado para três, mas Edinaide não consegue frequentar o sábado</b> &mdash; ela tem uma bebê e não tem com quem deixar. <b>Se ninguém tratar disso, a venda encolhe de três para dois em silêncio.</b></p>
+    <div class="ev">
+      <figure><img src="ev-edinaide-iza.jpg" alt="Iza qualificando a Edinaide"><figcaption><b>Evidência</b> &middot; a qualificação da Iza, das 12:23 às 12:25</figcaption></figure>
+      <figure><img src="ev-edinaide-sim.jpg" alt="Edinaide aceitando a aula experimental"><figcaption><b>Evidência</b> &middot; o &ldquo;sim&rdquo; para a aula experimental, às 12:27</figcaption></figure>
+    </div>
   </div>
 
   <div class="plano">
-    <div class="cab"><h3>Por que isso importa para o mês</h3><span>O DEGRAU QUE MAIS PESA</span></div>
+    <div class="cab" style="background:#C8102E"><h3>O que dá para acelerar</h3><span style="color:#ffd9de">TRÊS AJUSTES &middot; NENHUM CUSTA NADA</span></div>
     <table>
-      <tr><td class="th">Lead de anúncio que chegou a agendar aula</td><td class="th">Agosto</td><td class="th">Setembro</td></tr>
-      <tr class="meta"><td class="rot">Taxa de agendamento</td><td><b>54%</b></td><td><b>31%</b></td></tr>
+      <tr><td class="th" style="width:120px">O que acontece</td><td class="th">O que fazer</td></tr>
+      <tr><td class="rot">A Iza não marca</td><td>Ela pergunta <i>&ldquo;quer que eu encaminhe seu interesse para a equipe verificar os horários?&rdquo;</i> &mdash; e a lead diz sim e fica esperando. <b>Mas a grade de horários existe e a consultora a tem na mão.</b> Não é sistema a construir: <b>é informação a repassar.</b><br><i>&ldquo;Temos turma de inglês terça e quinta às 19h. Posso reservar uma vaga para você conhecer nesta quinta?&rdquo;</i></td></tr>
+      <tr class="meta"><td class="rot">Quatro horas de silêncio</td><td><b>Uma linha em até 30 minutos segura a lead.</b> Não precisa ser a resposta completa:<br><i>&ldquo;Oi! Recebi sua mensagem, daqui a pouco te confirmo o horário da quinta.&rdquo;</i></td></tr>
+      <tr><td class="rot">O custo aparece em duas partes</td><td>R$ 269 soa acessível; <b>R$ 1.200 de material depois muda a conta</b> na cabeça de quem ouviu. <b>Dito de uma vez, evita o susto:</b><br><i>&ldquo;São R$ 250 de matrícula, R$ 269 por mês, e o material da Pearson, R$ 1.200, que dá para dividir em até 12 vezes.&rdquo;</i></td></tr>
     </table>
-    <p class="desc" style="margin:0;padding:0 18px 16px;font-size:12.8px;color:#5b6b7d"><b>O agendamento é o degrau que mais caiu entre agosto e setembro</b> &mdash; e é exatamente o degrau que estas duas conversas não alcançaram. <b>Não por falta de esforço:</b> as duas tiveram atenção, áudio personalizado e material de qualidade. <b>Faltou a pergunta que marca a data.</b></p>
+    <p style="margin:0;padding:0 18px 16px;font-size:12.8px;color:#5b6b7d"><b>O atendimento humano não é o gargalo</b> &mdash; os dois desfechos do dia mostram isso. <b>O que dá para acelerar está antes dele e depois dele.</b></p>
+  </div>
+
+  <div class="plano">
+    <div class="cab" style="background:#0d7a35"><h3>O que fazer com estes dois amanhã</h3><span style="color:#c9f2d8">DOIS RETORNOS &middot; NENHUM PODE ESPERAR</span></div>
+    <table>
+      <tr><td class="rot">Cláudia</td><td>Gostou do material e está em negociação. <b>A aula de quinta às 19h nunca foi confirmada.</b><br><i>&ldquo;Cláudia, que bom que gostou! <b>Deixo reservada a sua vaga na quinta às 19h?</b> Você conhece a turma e decide depois.&rdquo;</i></td></tr>
+      <tr><td class="rot">Edinaide</td><td>Está esperando a resposta do esposo. <b>E ela mesma não consegue ir no sábado.</b><br><i>&ldquo;Edinaide, conseguiu falar com seu esposo sobre sábado? <b>E para você</b> &mdash; tem algum outro dia que funcionaria, mesmo diferente do deles? A gente dá um jeito.&rdquo;</i></td></tr>
+    </table>
+    <p style="margin:0;padding:0 18px 16px;font-size:12.8px;color:#5b6b7d"><b>Os dois leads estão vivos e esperando alguém voltar.</b> Nenhum deles vai voltar sozinho.</p>
   </div>
 
   <div class="rod">
     Wizard by Pearson Piedade &middot; Jaboatão dos Guararapes<br>
-    Leitura das conversas do WhatsApp comercial &middot; rotina definida na reunião de 11 de setembro de 2026
+    Cada afirmação desta página tem print ou transcrição de áudio como evidência &middot; rotina definida na reunião de 11 de setembro de 2026
   </div>
 
 </div>
