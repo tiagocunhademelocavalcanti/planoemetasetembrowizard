@@ -8,7 +8,7 @@
 <meta property="og:site_name" content="Wizard by Pearson Piedade">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:title" content="Quadro de tarefas &middot; quatro blocos">
-<meta property="og:description" content="Tudo o que está aberto, por área, com dono, status e prazo proposto.">
+<meta property="og:description" content="Tudo o que está aberto, por área, com dono, situação e prazo semanal.">
 <meta property="og:image" content="https://planoemetasetembrowizard.vercel.app/capa.png">
 <meta name="description" content="Quadro de tarefas da Wizard Piedade organizado em gestão, comercial, B2B e pedagógico.">
 <link rel="icon" type="image/png" href="logo.png">
@@ -34,11 +34,13 @@
   .prop{display:inline-block;background:#FFF9E8;border:1.5px solid #F5C518;color:#8a6d1a;
         font-size:11.5px;font-weight:800;padding:4px 11px;border-radius:20px;margin-bottom:14px}
   .num{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:8px}
-  .num div{flex:1;min-width:160px;background:#fff;border:1px solid #dde5ee;border-radius:12px;padding:16px;text-align:center}
+  .num div{flex:1;min-width:158px;background:#fff;border:1px solid #dde5ee;border-radius:12px;padding:16px;text-align:center}
   .num .k{font-size:28px;font-weight:800;color:#0F2C4C;line-height:1}
   .num .l{font-size:11.5px;color:#6b7c8f;margin-top:5px;line-height:1.35}
   .num div.alta{background:#FDECEF;border-color:#f0b9c2}
   .num div.alta .k{color:#C8102E}
+  .num div.ok{background:#F1FAF4;border-color:#9fd9b4}
+  .num div.ok .k{color:#0d7a35}
   details{background:#fff;border:1px solid #dde5ee;border-radius:13px;overflow:hidden;margin-bottom:14px;
           box-shadow:0 1px 3px rgba(15,44,76,.05)}
   summary{background:#0F2C4C;color:#fff;padding:15px 20px;font-size:16px;font-weight:800;cursor:pointer;
@@ -51,6 +53,9 @@
   td{padding:11px 16px;border-bottom:1px solid #eef2f7;font-size:13.6px;vertical-align:top}
   tr:last-child td{border-bottom:none}
   tr.alta td{background:#FDF6F7}
+  tr.feito td{background:#F1FAF4}
+  tr.susp td{background:#f4f6f9;color:#7c8b9c}
+  tr.susp b{color:#5b6b7d}
   .p{display:inline-block;font-size:9.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;
      padding:2px 7px;border-radius:4px;margin-right:7px;vertical-align:1.5px}
   .p.a{background:#C8102E;color:#fff}
@@ -58,28 +63,44 @@
   .p.b{background:#eef2f7;color:#8496aa}
   .st{display:inline-block;font-size:9.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;
       padding:2px 7px;border-radius:4px;margin-left:7px;vertical-align:1.5px}
+  .st.c{background:#16A349;color:#fff}
   .st.e{background:#B5530A;color:#fff}
-  .dono{width:170px;color:#0F2C4C;font-weight:700;font-size:12.2px}
-  .prazo{width:120px;font-size:12.2px;color:#5b6b7d;font-weight:700}
+  .st.s{background:#64748b;color:#fff}
+  .dono{width:160px;color:#0F2C4C;font-weight:700;font-size:12.2px}
+  .prazo{width:104px;font-size:12.2px;color:#5b6b7d;font-weight:700}
   .prazo b{color:#C8102E}
+  .tog{cursor:pointer}
+  .tog b:first-of-type{border-bottom:1.5px dotted #9db4cc}
+  .tog:hover b:first-of-type{border-bottom-color:#C8102E}
+  .tog td:first-child::after{content:' \25BE';color:#C8102E;font-weight:800;font-size:11px}
+  tr.det{display:none}
+  tr.det.on{display:table-row}
+  tr.det td{background:#0F2C4C;color:#cfdcea;font-size:13.4px;padding:16px 20px}
+  tr.det b{color:#fff}
+  tr.det .lb{color:#F5C518;font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;font-weight:800;display:block;margin-bottom:7px}
   .nota{background:#0F2C4C;color:#fff;border-radius:13px;padding:24px 28px;margin:18px 0}
   .nota h4{color:#F5C518;font-size:13px;letter-spacing:.07em;text-transform:uppercase;margin-bottom:12px}
   .nota p{font-size:14.5px;color:#cfdcea;margin-bottom:10px}
   .nota p:last-child{margin-bottom:0}
   .nota b{color:#fff}
+  .destaque{background:#C8102E;color:#fff;border-radius:11px;padding:18px 22px;margin:14px 0;
+            font-size:16.5px;font-weight:700;line-height:1.5}
+  .destaque b{font-weight:800}
+  .destaque small{display:block;font-size:13px;font-weight:400;color:#ffd9de;margin-top:7px;line-height:1.5}
   .rod{text-align:center;font-size:12.5px;color:#7c8b9c;margin-top:40px;padding-top:22px;border-top:1px solid #dde5ee}
   @media (max-width:680px){
     .capa{padding:34px 22px 28px} .capa h1{font-size:24px}
-    td{padding:10px 13px;font-size:13px} .dono{width:120px} .prazo{width:88px}
+    td{padding:10px 13px;font-size:13px} .dono{width:112px} .prazo{width:80px}
+    .destaque{font-size:15px}
   }
 </style>
 </head>
 <body>
 
 <div class="capa">
-  <div class="tag">Wizard by Pearson Piedade &middot; 15 de setembro de 2026</div>
+  <div class="tag">Wizard by Pearson Piedade &middot; atualizado em 15 de setembro de 2026</div>
   <h1>Quadro de tarefas<br><em>gestão · comercial · B2B · pedagógico</em></h1>
-  <p>Tudo o que está aberto, por área, com dono, situação e prazo.</p>
+  <p>Tudo o que está aberto, por área, com dono, situação e prazo. <b style="color:#F5C518">Clique no nome de uma tarefa para ver o que está acontecendo com ela.</b></p>
 </div>
 
 <div class="wrap">
@@ -92,49 +113,64 @@
   </div>
 
   <div class="titulo"><span></span><h2>O que este quadro é</h2></div>
-  <p class="desc">O <b>Acompanhamento das ações</b> guarda o histórico e a evidência de tudo o que foi combinado desde julho &mdash; é lá que está o percentual de implementação. <b>Este quadro é outra coisa: é só o que está aberto</b>, reorganizado por área de trabalho, como foi pedido na reunião de 11/09. <b>São 64 tarefas</b> &mdash; 35 que vinham de trás e 29 definidas na própria reunião.</p>
-
-  <div class="prop">Prazos propostos &middot; nada foi combinado ainda</div>
+  <p class="desc">O <b>Acompanhamento das ações</b> guarda o histórico e a evidência de tudo o que foi combinado desde julho. <b>Este quadro é o que está aberto agora</b>, reorganizado por área de trabalho como foi pedido em 11/09. <b>Os prazos são semanais</b> &mdash; a reunião é toda sexta, então cada tarefa vence numa sexta.</p>
 
   <div class="num">
-    <div><div class="k">64</div><div class="l">tarefas abertas<br>nos quatro blocos</div></div>
-    <div class="alta"><div class="k">19</div><div class="l">de prioridade alta<br>impacto direto em meta ou aprendizagem</div></div>
-    <div><div class="k">10</div><div class="l">em curso<br>com evidência de início</div></div>
-    <div><div class="k">17</div><div class="l">são do Tiago<br>o maior volume individual</div></div>
+    <div class="ok"><div class="k">3</div><div class="l">concluídas<br>desde a reunião de 11/09</div></div>
+    <div><div class="k">61</div><div class="l">seguem abertas<br>nos quatro blocos</div></div>
+    <div class="alta"><div class="k">19</div><div class="l">de prioridade alta<br>impacto em meta ou aprendizagem</div></div>
+    <div><div class="k">19</div><div class="l">suspensas esta semana<br>ausência da coordenação</div></div>
   </div>
 
   <div class="nota">
     <h4>O critério de prioridade</h4>
     <p><b>Alta</b> &mdash; afeta diretamente <b>a matrícula de setembro</b> ou <b>a aprendizagem e a permanência de quem já é aluno</b>. É o critério que a direção pediu em 11/09.</p>
     <p><b>Média</b> &mdash; estrutura que sustenta o resultado, mas não muda o número desta semana.</p>
-    <p style="margin-bottom:0"><b>Baixa</b> &mdash; administrativo, ou já superado pelos fatos. <b>Boa parte destas merece ser encerrada em vez de perseguida</b> &mdash; a lista é grande demais para o time que existe, e correr atrás de 64 é o caminho mais rápido para terminar o mês em 38% de novo.</p>
+    <p style="margin-bottom:0"><b>Baixa</b> &mdash; administrativo, ou já superado pelos fatos.</p>
   </div>
 
   <div class="titulo"><span></span><h2>Os quatro blocos</h2></div>
-  <p class="desc">Clique em qualquer bloco para abrir. <span class="p a">alta</span> <span class="p m">média</span> <span class="p b">baixa</span> &nbsp;&middot;&nbsp; <span class="st e">em curso</span> tem evidência de início; o resto está parado.</p>
+  <p class="desc"><span class="p a">alta</span> <span class="p m">média</span> <span class="p b">baixa</span> &nbsp;&middot;&nbsp; <span class="st c">concluída</span> <span class="st e">em curso</span> <span class="st s">suspensa</span> &nbsp;&middot;&nbsp; <b>onde o nome aparece sublinhado, clique para abrir o andamento.</b></p>
 
   <!-- ===================== GESTÃO ===================== -->
   <details open>
     <summary>1 &middot; Gestão<i>20 tarefas &middot; 5 de prioridade alta</i></summary>
     <table>
-      <tr class="alta"><td><span class="p a">alta</span><b>Montar este quadro em quatro blocos</b></td><td class="dono">Tiago</td><td class="prazo"><b>18/09</b></td></tr>
-      <tr class="alta"><td><span class="p a">alta</span><b>Atribuir prazo a todas as atividades</b> &mdash; com a direção, sobre este quadro</td><td class="dono">Tiago + Macário</td><td class="prazo"><b>18/09</b></td></tr>
-      <tr class="alta"><td><span class="p a">alta</span><b>Organizar o radar e os encontros por categoria</b></td><td class="dono">Tiago</td><td class="prazo"><b>18/09</b></td></tr>
-      <tr class="alta"><td><span class="p a">alta</span><b>Alinhar a rotina semanal com o Valdemar</b> &mdash; plano da semana por área</td><td class="dono">Tiago + Valdemar</td><td class="prazo">17/09</td></tr>
-      <tr class="alta"><td><span class="p a">alta</span><b>Alinhar a rotina semanal com a Pricila</b> &mdash; rotina da semana dividida por áreas</td><td class="dono">Tiago + Pricila</td><td class="prazo">17/09</td></tr>
+      <tr class="feito tog" data-d="g1"><td><span class="p a">alta</span><b>Montar este quadro em quatro blocos</b><span class="st c">concluída</span></td><td class="dono">Tiago</td><td class="prazo">15/09</td></tr>
+      <tr class="det" id="g1"><td colspan="3"><span class="lb">O que foi feito</span>O quadro foi montado em <b>15/09</b> com as 64 tarefas abertas distribuídas em gestão, comercial, B2B e pedagógico, cada uma com prioridade, dono e prazo. <b>É este documento.</b> Atende também ao pedido de priorização por impacto na aprendizagem e nas metas.</td></tr>
+
+      <tr class="feito tog" data-d="g2"><td><span class="p a">alta</span><b>Organizar o radar e os encontros por categoria</b><span class="st c">concluída</span></td><td class="dono">Tiago</td><td class="prazo">15/09</td></tr>
+      <tr class="det" id="g2"><td colspan="3"><span class="lb">O que foi feito</span>As prioridades do radar e os itens vindos das reuniões foram reclassificados nas quatro categorias deste quadro. <b>Era a mesma entrega da tarefa anterior</b> &mdash; feito o quadro, esta fecha junto.</td></tr>
+
+      <tr class="feito tog" data-d="g3"><td><span class="p a">alta</span><b>Alinhar a rotina semanal com o Valdemar</b><span class="st c">concluída</span></td><td class="dono">Tiago + Valdemar</td><td class="prazo">12/09</td></tr>
+      <tr class="det" id="g3"><td colspan="3"><span class="lb">O que foi feito</span>Encontro na <b>sexta-feira, 12/09, à tarde.</b> Foram tratados dois pontos: <b>o uso da aba Comercial do CRM</b>, com o Valdemar aprendendo a registrar visitas e alimentar as fichas das escolas; e <b>as artes do panfleto do assessment</b>, produzidas para ele distribuir nas escolas. <b>A rotina dele é de rua</b> &mdash; o alinhamento acontece nos pontos de passagem pela unidade.</td></tr>
+
+      <tr class="susp tog" data-d="g4"><td><span class="p a">alta</span><b>Alinhar a rotina semanal com a Pricila</b><span class="st s">suspensa</span></td><td class="dono">Tiago + Pricila</td><td class="prazo">retomar</td></tr>
+      <tr class="det" id="g4"><td colspan="3"><span class="lb">Por que está parada</span><b>A coordenação não esteve na unidade esta semana e não estará.</b> O alinhamento da rotina depende de encontro presencial e fica para a semana seguinte. <b>Não é atraso de execução &mdash; é ausência.</b></td></tr>
+
+      <tr class="alta tog" data-d="g5"><td><span class="p a">alta</span><b>Atribuir prazo a todas as atividades</b> &mdash; com a direção, sobre este quadro</td><td class="dono">Tiago + Macário</td><td class="prazo"><b>18/09</b></td></tr>
+      <tr class="det" id="g5"><td colspan="3"><span class="lb">Andamento</span>Os prazos deste quadro estão propostos, <b>semanais, ancorados na reunião de sexta.</b> Falta a validação da direção na reunião de 18/09 &mdash; é o que fecha esta tarefa.</td></tr>
+
       <tr><td><span class="p m">média</span><b>Metas de matrícula do período</b> &mdash; planos documentados; falta validar com a equipe<span class="st e">em curso</span></td><td class="dono">o grupo</td><td class="prazo">18/09</td></tr>
-      <tr><td><span class="p m">média</span><b>Registrar no radar vivo e levar o placar à reunião semanal</b><span class="st e">em curso</span></td><td class="dono">Pricila</td><td class="prazo">semanal</td></tr>
-      <tr><td><span class="p m">média</span><b>Implementar o Excon com o Pierre</b> &mdash; pontuação PEF do comercial</td><td class="dono">Tiago</td><td class="prazo">30/09</td></tr>
-      <tr><td><span class="p m">média</span><b>Avaliar a viabilidade econômica dos prêmios</b> &mdash; custo dos brindes contra o que geram</td><td class="dono">Tiago</td><td class="prazo">18/09</td></tr>
-      <tr><td><span class="p m">média</span><b>Decidir a convenção de Atibaia</b> &mdash; quem vai e como se divide o custo</td><td class="dono">Tiago + Valdemar</td><td class="prazo">30/09</td></tr>
-      <tr><td><span class="p m">média</span><b>Encaminhar os chamados de suporte para a Zanine</b></td><td class="dono">Valdemar</td><td class="prazo">17/09</td></tr>
-      <tr><td><span class="p m">média</span><b>Apresentar duas soluções para o caso da colaboradora Lívia</b></td><td class="dono">Valdemar</td><td class="prazo">18/09</td></tr>
+      <tr class="susp"><td><span class="p m">média</span><b>Registrar no radar vivo e levar o placar à reunião semanal</b><span class="st s">suspensa</span></td><td class="dono">Pricila</td><td class="prazo">retomar</td></tr>
+
+      <tr class="tog" data-d="g6"><td><span class="p m">média</span><b>Implementar o Excon com o Pierre</b> &mdash; pontuação PEF do comercial</td><td class="dono">Tiago</td><td class="prazo">25/09</td></tr>
+      <tr class="det" id="g6"><td colspan="3"><span class="lb">Andamento</span>Aguardando o <b>contato do Pierre</b> e a lista de <b>protocolos comerciais em aberto</b>, pedidos à direção em 15/09. Assim que chegarem, vai uma mensagem só resolvendo as duas coisas: apresentação e alinhamento do preenchimento do CRM para a pontuação.</td></tr>
+
+      <tr class="tog" data-d="g7"><td><span class="p m">média</span><b>Avaliar a viabilidade econômica dos prêmios</b> &mdash; custo dos brindes contra o que geram</td><td class="dono">Tiago</td><td class="prazo"><b>18/09</b></td></tr>
+      <tr class="det" id="g7"><td colspan="3"><span class="lb">Andamento</span><b>Agendado para quinta-feira, 17/09, às 9h</b>, junto com o comparativo das ações comerciais &mdash; é a mesma planilha e a mesma conversa.</td></tr>
+
+      <tr class="feito tog" data-d="g8"><td><span class="p m">média</span><b>Decidir a convenção de Atibaia</b><span class="st c">decidida</span></td><td class="dono">Valdemar</td><td class="prazo">15/09</td></tr>
+      <tr class="det" id="g8"><td colspan="3"><span class="lb">A decisão</span>Conversado entre <b>Valdemar, Tiago e Pricila</b>. <b>O Valdemar é a pessoa certa para ir</b> &mdash; é quem está na frente comercial e de prospecção. Custo total de cerca de R$ 4.000, dividido meio a meio entre a escola e o participante. <b>Falta apenas a confirmação formal da direção e a definição do pagamento.</b></td></tr>
+
+      <tr class="susp"><td><span class="p m">média</span><b>Encaminhar os chamados de suporte para a Zanine</b><span class="st s">suspensa</span></td><td class="dono">Pricila</td><td class="prazo">retomar</td></tr>
+      <tr><td><span class="p m">média</span><b>Apresentar duas soluções para o caso da colaboradora Lívia</b></td><td class="dono">Valdemar</td><td class="prazo"><b>18/09</b></td></tr>
       <tr><td><span class="p m">média</span><b>Decidir casos financeiros fora do contrato</b> &mdash; com o padrão de três diretrizes</td><td class="dono">Valdemar</td><td class="prazo">contínuo</td></tr>
-      <tr><td><span class="p m">média</span><b>Investigar o instrumento legal da contratação da aprendiz</b></td><td class="dono">Macário</td><td class="prazo">30/09</td></tr>
-      <tr><td><span class="p m">média</span><b>Cartão recorrente ou débito automático</b> &mdash; prazo original 30/09, ainda dentro</td><td class="dono">Financeiro</td><td class="prazo"><b>30/09</b></td></tr>
-      <tr><td><span class="p b">baixa</span><b>Obter orçamentos de pintura</b></td><td class="dono">Valdemar</td><td class="prazo">30/09</td></tr>
-      <tr><td><span class="p b">baixa</span><b>Propor economia de R$ 50 para material de manutenção</b></td><td class="dono">Valdemar</td><td class="prazo">30/09</td></tr>
-      <tr><td><span class="p b">baixa</span><b>Verificar com a operadora a capacidade de upload</b> &mdash; os tablets não funcionam em sala</td><td class="dono">Leandra</td><td class="prazo">a definir</td></tr>
+      <tr><td><span class="p m">média</span><b>Investigar o instrumento legal da contratação da aprendiz</b></td><td class="dono">Macário</td><td class="prazo">02/10</td></tr>
+      <tr><td><span class="p m">média</span><b>Cartão recorrente ou débito automático</b> &mdash; prazo original 30/09, ainda dentro</td><td class="dono">Financeiro</td><td class="prazo"><b>02/10</b></td></tr>
+      <tr><td><span class="p b">baixa</span><b>Obter orçamentos de pintura</b> &mdash; o primeiro, de quase R$ 5.000, foi descartado</td><td class="dono">Valdemar</td><td class="prazo">02/10</td></tr>
+      <tr class="susp"><td><span class="p b">baixa</span><b>Propor economia de R$ 50 para material de manutenção</b><span class="st s">suspensa</span></td><td class="dono">Pricila + Valdemar</td><td class="prazo">retomar</td></tr>
+      <tr><td><span class="p b">baixa</span><b>Verificar com a operadora a capacidade de upload</b> &mdash; os tablets não funcionam em sala</td><td class="dono">Leandra</td><td class="prazo">25/09</td></tr>
       <tr><td><span class="p b">baixa</span><b>Régua de cobrança preventiva &middot; triagem por motivo &middot; PIX e link</b> &mdash; três ações financeiras paradas desde agosto</td><td class="dono">Financeiro</td><td class="prazo">rever</td></tr>
       <tr><td><span class="p b">baixa</span><b>Acompanhamento semanal da inadimplência</b> &mdash; e cruzar inadimplência com frequência</td><td class="dono">Financeiro + Pedagógico</td><td class="prazo">rever</td></tr>
     </table>
@@ -144,15 +180,28 @@
   <details open>
     <summary>2 &middot; Comercial<i>9 tarefas &middot; 5 de prioridade alta</i></summary>
     <table>
-      <tr class="alta"><td><span class="p a">alta</span><b>Monitorar as negociações da Rita diariamente</b> &mdash; rotina diária já iniciada em 15/09<span class="st e">em curso</span></td><td class="dono">Tiago</td><td class="prazo">diário</td></tr>
-      <tr class="alta"><td><span class="p a">alta</span><b>Coletar o histórico de conversas e ligações</b> &mdash; dez conversas: cinco que agendaram, cinco que não</td><td class="dono">Tiago + Rita</td><td class="prazo"><b>16/09</b></td></tr>
-      <tr class="alta"><td><span class="p a">alta</span><b>Treinar a Rita com o agente de simulação</b> &mdash; em cima das conversas reais</td><td class="dono">Tiago</td><td class="prazo">a partir de 17/09</td></tr>
-      <tr class="alta"><td><span class="p a">alta</span><b>Comparativo das ações comerciais</b> &mdash; micro-ônibus, cinema com a OAB e Kids Day, com retorno de 3 a 4 vezes o investimento</td><td class="dono">Tiago</td><td class="prazo"><b>18/09</b></td></tr>
-      <tr class="alta"><td><span class="p a">alta</span><b>Conversar com a Rita para definir responsabilidades comerciais</b></td><td class="dono">Macário</td><td class="prazo">16/09</td></tr>
-      <tr><td><span class="p m">média</span><b>Avaliar o Kids Day</b> &mdash; incluir no comparativo e ouvir a Rita sobre riscos operacionais</td><td class="dono">Tiago + Rita</td><td class="prazo">18/09</td></tr>
-      <tr><td><span class="p m">média</span><b>Ajustar o filtro de período no CRM</b></td><td class="dono">Tiago</td><td class="prazo">18/09</td></tr>
-      <tr><td><span class="p m">média</span><b>Encaminhar os protocolos comerciais para o Pierre</b></td><td class="dono">Tiago</td><td class="prazo">16/09</td></tr>
-      <tr><td><span class="p m">média</span><b>Resgate ativo dos cancelados</b> &mdash; 40 cancelados, 17 com anotação na coluna Proposta Resgate</td><td class="dono">Comercial + Pedagógico</td><td class="prazo">30/09</td></tr>
+      <tr class="alta tog" data-d="c1"><td><span class="p a">alta</span><b>Monitorar as negociações da Rita diariamente</b><span class="st e">em curso</span></td><td class="dono">Tiago</td><td class="prazo">diário</td></tr>
+      <tr class="det" id="c1"><td colspan="3"><span class="lb">Andamento &mdash; começou em 15/09</span><b>A rotina está funcionando.</b> Em 15/09 foram lidas duas conversas inteiras, do primeiro contato ao desfecho, com os prints e a transcrição dos áudios. <b>O resultado está publicado na página Atendimento</b>, com evidência de cada afirmação. Há um lembrete diário às 9h30 para pedir os prints do dia. <b>Achados de 15/09:</b> a Iza qualifica em quatro minutos e tirou nota 9; a consultora entra oferecendo dia e hora. O que dá para acelerar são as <b>quatro horas entre uma e outra</b> e o <b>custo do material didático, que aparece tarde na conversa.</b></td></tr>
+
+      <tr class="alta tog" data-d="c2"><td><span class="p a">alta</span><b>Coletar o histórico de conversas e ligações</b> &mdash; cinco que agendaram, cinco que não<span class="st e">em curso</span></td><td class="dono">Tiago + Rita</td><td class="prazo"><b>18/09</b></td></tr>
+      <tr class="det" id="c2"><td colspan="3"><span class="lb">Andamento</span>Pedido à consultora em 15/09 e <b>atendido no mesmo dia</b> &mdash; prints das conversas da Iza e dela, mais as transcrições dos áudios. <b>A coleta é diária a partir de agora.</b> Falta completar o par de comparação: conversas que <b>terminaram em aula marcada</b> ao lado das que não terminaram. É na diferença entre os dois grupos que está o aprendizado.</td></tr>
+
+      <tr class="alta tog" data-d="c3"><td><span class="p a">alta</span><b>Treinar a Rita com o agente de simulação</b> &mdash; em cima das conversas reais</td><td class="dono">Tiago</td><td class="prazo">25/09</td></tr>
+      <tr class="det" id="c3"><td colspan="3"><span class="lb">Andamento</span>Depende da coleta acima. <b>O material de treino já existe:</b> as conversas lidas em 15/09 servem de roteiro, e delas já saiu <b>uma frase que vira padrão da casa</b> &mdash; <i>&ldquo;você me diz se consegue vir às 19 horas, e a gente faz a tua matrícula&rdquo;</i>: dia, hora e uma pergunta de duas respostas.</td></tr>
+
+      <tr class="alta tog" data-d="c4"><td><span class="p a">alta</span><b>Comparativo das ações comerciais</b> &mdash; micro-ônibus, cinema com a OAB e Kids Day</td><td class="dono">Tiago</td><td class="prazo"><b>18/09</b></td></tr>
+      <tr class="det" id="c4"><td colspan="3"><span class="lb">Andamento</span><b>Sessão agendada para quinta, 17/09, às 9h.</b> O critério é o da direção: <b>retorno de 3 a 4 vezes o investimento.</b> Cada ação entra com custo, alcance esperado, leads esperados e matrículas esperadas. <b>Falta levantar o custo real de cada uma</b> &mdash; sem isso não há comparativo, só opinião. A opinião da Rita sobre os riscos operacionais do Kids Day entra na mesma sessão.</td></tr>
+
+      <tr class="alta"><td><span class="p a">alta</span><b>Conversar com a Rita para definir responsabilidades comerciais</b></td><td class="dono">Macário</td><td class="prazo"><b>18/09</b></td></tr>
+      <tr><td><span class="p m">média</span><b>Avaliar o Kids Day</b> &mdash; incluir no comparativo e ouvir a Rita sobre riscos operacionais</td><td class="dono">Tiago + Rita</td><td class="prazo"><b>18/09</b></td></tr>
+
+      <tr class="tog" data-d="c5"><td><span class="p m">média</span><b>Ajustar o filtro de período no CRM</b></td><td class="dono">Tiago</td><td class="prazo">25/09</td></tr>
+      <tr class="det" id="c5"><td colspan="3"><span class="lb">Andamento</span><b>Aguardando a descrição do que está errado.</b> O filtro existe &mdash; falta saber se ele não aparece em alguma tela, se não muda nada ao ser trocado, ou se faltam opções como &ldquo;este mês&rdquo; e &ldquo;mês passado&rdquo;. <b>Sem isso não dá para corrigir.</b></td></tr>
+
+      <tr class="tog" data-d="c6"><td><span class="p m">média</span><b>Encaminhar os protocolos comerciais para o Pierre</b></td><td class="dono">Tiago</td><td class="prazo"><b>18/09</b></td></tr>
+      <tr class="det" id="c6"><td colspan="3"><span class="lb">Andamento</span>Mensagem pronta. <b>Faltam duas informações pedidas à direção em 15/09:</b> os números dos protocolos comerciais em aberto e o contato do Pierre. <b>Se não houver nenhum protocolo aberto, a tarefa fecha do mesmo jeito</b> &mdash; vira apresentação e alinhamento do Excon.</td></tr>
+
+      <tr><td><span class="p m">média</span><b>Resgate ativo dos cancelados</b> &mdash; 40 cancelados, 17 com anotação na coluna Proposta Resgate</td><td class="dono">Comercial + Pedagógico</td><td class="prazo">02/10</td></tr>
     </table>
   </details>
 
@@ -160,107 +209,133 @@
   <details open>
     <summary>3 &middot; B2B<i>10 tarefas &middot; 4 de prioridade alta</i></summary>
     <table>
-      <tr class="alta"><td><span class="p a">alta</span><b>Captação em escolas</b> &mdash; meta de 12 visitas e 7 matrículas em setembro; ritmo acima do necessário<span class="st e">em curso</span></td><td class="dono">Valdemar + Tiago</td><td class="prazo"><b>30/09</b></td></tr>
-      <tr class="alta"><td><span class="p a">alta</span><b>Registrar no CRM as visitas já feitas</b> &mdash; oito aconteceram, uma está registrada. <b>É o que faz o painel mostrar a verdade</b></td><td class="dono">Valdemar</td><td class="prazo"><b>17/09</b></td></tr>
-      <tr class="alta"><td><span class="p a">alta</span><b>Apresentar o WIP nas escolas, com a direção</b> &mdash; sextas-feiras</td><td class="dono">Macário + Valdemar</td><td class="prazo">18/09</td></tr>
-      <tr class="alta"><td><span class="p a">alta</span><b>Reunião com a coordenação pedagógica do Colégio Elo</b> &mdash; parado desde 04/09, é a escola de maior prioridade</td><td class="dono">Valdemar</td><td class="prazo"><b>16/09</b></td></tr>
-      <tr><td><span class="p m">média</span><b>Novos campos no CRM de escolas</b> &mdash; número de alunos e potencial WIP. <i>Data da primeira visita e alunos captados o sistema calcula, se as visitas forem registradas</i></td><td class="dono">Tiago</td><td class="prazo">18/09</td></tr>
-      <tr><td><span class="p m">média</span><b>Filtrar a lista de 70 escolas para 40 prioritárias</b> &mdash; Piedade, Candeias, Barra de Jangada e Prazeres</td><td class="dono">Tiago + Valdemar</td><td class="prazo">22/09</td></tr>
-      <tr><td><span class="p m">média</span><b>Criar as perguntas de sondagem a partir do WIP</b> &mdash; guia para o Valdemar usar nas visitas</td><td class="dono">Tiago + Valdemar</td><td class="prazo">18/09</td></tr>
-      <tr><td><span class="p m">média</span><b>Mapear escolas para o programa bilíngue</b> &mdash; negociação prevista para outubro</td><td class="dono">Valdemar</td><td class="prazo">15/10</td></tr>
+      <tr class="alta tog" data-d="b1"><td><span class="p a">alta</span><b>Registrar no CRM as visitas já feitas</b> &mdash; oito aconteceram, uma está registrada</td><td class="dono">Valdemar</td><td class="prazo"><b>18/09</b></td></tr>
+      <tr class="det" id="b1"><td colspan="3"><span class="lb">Andamento</span><b>A parte do Tiago está feita.</b> O treinamento no uso da aba Comercial aconteceu na sexta, 12/09 &mdash; o Valdemar sabe registrar visita e alimentar as fichas. <b>Agora é execução dele.</b> As oito visitas estão escritas no campo de observações das fichas; basta abrir cada uma, clicar em <i>Registrar visita</i> e pôr a data que já está lá. <b>Feito isso, o painel passa a mostrar o trabalho que foi feito de verdade</b> &mdash; hoje ele mostra quase nada.</td></tr>
+
+      <tr class="alta tog" data-d="b2"><td><span class="p a">alta</span><b>Captação em escolas</b> &mdash; meta de 12 visitas e 7 matrículas em setembro<span class="st e">em curso</span></td><td class="dono">Valdemar</td><td class="prazo"><b>02/10</b></td></tr>
+      <tr class="det" id="b2"><td colspan="3"><span class="lb">Andamento</span><b>Ritmo acima do necessário.</b> Sete visitas até 11/09 contra meta de doze no mês, e a expectativa relatada é fechar entre <b>15 e 18 escolas</b>. Quatro retornos marcados. <b>O gargalo não é o ritmo &mdash; é o registro</b>, que é a tarefa acima.</td></tr>
+
+      <tr class="alta"><td><span class="p a">alta</span><b>Apresentar o WIP nas escolas</b> &mdash; apresentações às sextas-feiras</td><td class="dono">Valdemar</td><td class="prazo"><b>18/09</b></td></tr>
+
+      <tr class="alta tog" data-d="b3"><td><span class="p a">alta</span><b>Reunião com a coordenação do Colégio Elo</b> &mdash; a escola de maior prioridade</td><td class="dono">Valdemar</td><td class="prazo"><b>18/09</b></td></tr>
+      <tr class="det" id="b3"><td colspan="3"><span class="lb">Por que é prioridade</span>A direção do colégio ficou de <b>entregar a lista de alunos em 04/09</b> e não houve retorno registrado desde então. <b>É a escola de maior prioridade da lista</b>, e a relação foi aberta pelo Valdemar. A visita chegou a ser reagendada por conta de um evento escolar no sábado.</td></tr>
+
+      <tr class="tog" data-d="b4"><td><span class="p m">média</span><b>Novos campos no CRM de escolas</b> &mdash; número de alunos e potencial WIP</td><td class="dono">Tiago</td><td class="prazo">25/09</td></tr>
+      <tr class="det" id="b4"><td colspan="3"><span class="lb">Proposta de ajuste, a levar à direção</span>Foram pedidos quatro campos. <b>Só um é campo de verdade:</b> o número total de alunos da escola, que só a escola sabe. <b>A data da primeira visita o sistema calcula</b> &mdash; é o registro mais antigo do botão <i>Registrar visita</i>. <b>Alunos captados também é cálculo</b>, se o lead estiver ligado à escola no cadastro. E <b>potencial WIP precisa de critério objetivo</b> &mdash; sem duas ou três perguntas de sim ou não, tudo vira &ldquo;alto&rdquo; em duas semanas. <b>Campo digitado para o que o sistema calcula cria duas verdades que se contradizem depois.</b></td></tr>
+
+      <tr><td><span class="p m">média</span><b>Filtrar a lista de 70 escolas para 40 prioritárias</b> &mdash; Piedade, Candeias, Barra de Jangada e Prazeres</td><td class="dono">Tiago + Valdemar</td><td class="prazo">25/09</td></tr>
+      <tr><td><span class="p m">média</span><b>Criar as perguntas de sondagem a partir do WIP</b> &mdash; guia para as visitas</td><td class="dono">Tiago + Valdemar</td><td class="prazo">25/09</td></tr>
+      <tr><td><span class="p m">média</span><b>Mapear escolas para o programa bilíngue</b> &mdash; negociação prevista para outubro</td><td class="dono">Valdemar</td><td class="prazo">16/10</td></tr>
       <tr><td><span class="p b">baixa</span><b>Abrir o in-company</b> &mdash; 53 empresas mapeadas; a linha de matrícula empresa segue em zero</td><td class="dono">Valdemar</td><td class="prazo">rever</td></tr>
-      <tr><td><span class="p b">baixa</span><b>Focar nas contas em aberto</b> &mdash; tirar da fila as escolas já parceiras do concorrente</td><td class="dono">Valdemar</td><td class="prazo">22/09</td></tr>
+      <tr><td><span class="p b">baixa</span><b>Focar nas contas em aberto</b> &mdash; tirar da fila as escolas já parceiras do concorrente</td><td class="dono">Valdemar</td><td class="prazo">02/10</td></tr>
     </table>
   </details>
 
   <!-- ===================== PEDAGÓGICO ===================== -->
   <details open>
-    <summary>4 &middot; Pedagógico<i>25 tarefas &middot; 5 de prioridade alta</i></summary>
+    <summary>4 &middot; Pedagógico<i>22 tarefas &middot; 5 de prioridade alta &middot; a maior parte suspensa</i></summary>
     <table>
-      <tr class="alta"><td><span class="p a">alta</span><b>Confirmar o vínculo dos 14 alunos sem registro</b> &mdash; ativo, trancou ou cancelou? <b>61 a 121 dias sem registro</b></td><td class="dono">Pricila</td><td class="prazo"><b>18/09</b></td></tr>
-      <tr class="alta"><td><span class="p a">alta</span><b>Radar de evasão pela frequência</b> &mdash; a folha vai até julho e o radar está zerado. Pede um número por semana: alunos abaixo de 75%<span class="st e">em curso</span></td><td class="dono">Pedagógico</td><td class="prazo"><b>18/09</b></td></tr>
-      <tr class="alta"><td><span class="p a">alta</span><b>Levantar novatos em turmas avançadas e a defasagem</b> &mdash; <b>é a chave dos 18% de cancelamento por método</b></td><td class="dono">Pricila</td><td class="prazo">22/09</td></tr>
-      <tr class="alta"><td><span class="p a">alta</span><b>Retenção via Wizard ON</b> &mdash; oferecer o on-line antes do cancelamento. <b>~47% dos cancelamentos são mudança de endereço ou trabalho</b></td><td class="dono">Pedagógico + Comercial</td><td class="prazo">22/09</td></tr>
-      <tr class="alta"><td><span class="p a">alta</span><b>Investigar a reclamação sobre o corpo docente</b> &mdash; tempo de contrato, duração da ausência de professor titular e situação atual da aluna</td><td class="dono">Valdemar</td><td class="prazo"><b>17/09</b></td></tr>
-      <tr><td><span class="p m">média</span><b>Processo de renovação proativo</b> &mdash; a aba Renovacao para em abril; as renovações de setembro estão no Mural do CRM<span class="st e">em curso</span></td><td class="dono">Pedagógico</td><td class="prazo">30/09</td></tr>
-      <tr><td><span class="p m">média</span><b>Gerenciar renovações &mdash; validar interesse e apresentar propostas</b><span class="st e">em curso</span></td><td class="dono">Pricila</td><td class="prazo">30/09</td></tr>
-      <tr><td><span class="p m">média</span><b>Contatar alunos para confirmar rematrícula</b><span class="st e">em curso</span></td><td class="dono">Pricila</td><td class="prazo">30/09</td></tr>
-      <tr><td><span class="p m">média</span><b>Definir a rotina pedagógica e alinhar horários com a Leandra</b><span class="st e">em curso</span></td><td class="dono">Pricila</td><td class="prazo">18/09</td></tr>
-      <tr><td><span class="p m">média</span><b>Checkpoint pedagógico nas primeiras aulas</b> &mdash; escuta nas primeiras semanas, para captar cedo quem não se adapta<span class="st e">em curso</span></td><td class="dono">Pedagógico</td><td class="prazo">30/09</td></tr>
-      <tr><td><span class="p m">média</span><b>Estudar as atividades da Jaciara</b><span class="st e">em curso</span></td><td class="dono">Pricila</td><td class="prazo">22/09</td></tr>
-      <tr><td><span class="p m">média</span><b>Reagendar reposição e acionar resgate</b></td><td class="dono">Pricila</td><td class="prazo">22/09</td></tr>
-      <tr><td><span class="p m">média</span><b>Definir o horário da aprendiz Laura</b></td><td class="dono">Pricila</td><td class="prazo">17/09</td></tr>
-      <tr><td><span class="p m">média</span><b>Conversar com o professor Vicente sobre a permanência</b> &mdash; preferencialmente por videochamada</td><td class="dono">Pricila</td><td class="prazo">18/09</td></tr>
-      <tr><td><span class="p m">média</span><b>Consultar o professor Vicente sobre integrar novatos</b></td><td class="dono">Pricila</td><td class="prazo">18/09</td></tr>
-      <tr><td><span class="p m">média</span><b>Decidir a isenção da aluna Maria Lídia</b> &mdash; analisar o tempo de interrupção dos estudos</td><td class="dono">Valdemar</td><td class="prazo">18/09</td></tr>
-      <tr><td><span class="p m">média</span><b>Aprender a usar as ferramentas de assessment</b> &mdash; com apoio da Zanine</td><td class="dono">Valdemar</td><td class="prazo">22/09</td></tr>
-      <tr><td><span class="p m">média</span><b>Verificar vínculos empregatícios do professor Guilherme</b></td><td class="dono">Valdemar</td><td class="prazo">17/09</td></tr>
-      <tr><td><span class="p m">média</span><b>Plano de Comunicação do Aluno</b> &mdash; onboarding, agenda, lembretes e checkpoints. O 5W2H o descreve como já documentado; não localizado na pasta</td><td class="dono">Pedagógico</td><td class="prazo">30/09</td></tr>
+      <tr class="susp tog" data-d="p0"><td colspan="3"><b>A coordenação esteve ausente da unidade durante toda a semana.</b> As tarefas abaixo que dependem dela seguem <span class="st s">suspensas</span> e são retomadas no retorno &mdash; não houve atraso de execução.</td></tr>
+
+      <tr class="susp"><td><span class="p a">alta</span><b>Confirmar o vínculo dos 14 alunos sem registro</b> &mdash; ativo, trancou ou cancelou? <b>61 a 121 dias sem registro</b><span class="st s">suspensa</span></td><td class="dono">Pricila</td><td class="prazo">retomar</td></tr>
+      <tr class="susp"><td><span class="p a">alta</span><b>Ligar o radar de evasão pela frequência</b> &mdash; um número por semana: alunos abaixo de 75%<span class="st s">suspensa</span></td><td class="dono">Pricila</td><td class="prazo">retomar</td></tr>
+      <tr class="susp"><td><span class="p a">alta</span><b>Levantar novatos em turmas avançadas e a defasagem</b> &mdash; <b>é a chave dos 18% de cancelamento por método</b><span class="st s">suspensa</span></td><td class="dono">Pricila</td><td class="prazo">retomar</td></tr>
+      <tr class="susp"><td><span class="p a">alta</span><b>Retenção via Wizard ON</b> &mdash; oferecer o on-line antes do cancelamento. <b>~47% dos cancelamentos são mudança de endereço ou trabalho</b><span class="st s">suspensa</span></td><td class="dono">Pricila</td><td class="prazo">retomar</td></tr>
+      <tr class="alta"><td><span class="p a">alta</span><b>Investigar a reclamação sobre o corpo docente</b> &mdash; tempo de contrato, duração da ausência de professor titular e situação atual da aluna</td><td class="dono">Valdemar</td><td class="prazo"><b>18/09</b></td></tr>
+      <tr class="susp"><td><span class="p m">média</span><b>Processo de renovação proativo</b> &mdash; a aba Renovacao para em abril; as de setembro estão no Mural do CRM<span class="st s">suspensa</span></td><td class="dono">Pricila</td><td class="prazo">retomar</td></tr>
+      <tr class="susp"><td><span class="p m">média</span><b>Gerenciar renovações &mdash; validar interesse e apresentar propostas</b><span class="st s">suspensa</span></td><td class="dono">Pricila</td><td class="prazo">retomar</td></tr>
+      <tr class="susp"><td><span class="p m">média</span><b>Contatar alunos para confirmar rematrícula</b><span class="st s">suspensa</span></td><td class="dono">Pricila</td><td class="prazo">retomar</td></tr>
+      <tr class="susp"><td><span class="p m">média</span><b>Definir a rotina pedagógica e alinhar horários com a Leandra</b><span class="st s">suspensa</span></td><td class="dono">Pricila</td><td class="prazo">retomar</td></tr>
+      <tr class="susp"><td><span class="p m">média</span><b>Checkpoint pedagógico nas primeiras aulas</b> &mdash; escuta nas primeiras semanas<span class="st s">suspensa</span></td><td class="dono">Pricila</td><td class="prazo">retomar</td></tr>
+      <tr class="susp"><td><span class="p m">média</span><b>Estudar as atividades da Jaciara</b><span class="st s">suspensa</span></td><td class="dono">Pricila</td><td class="prazo">retomar</td></tr>
+      <tr class="susp"><td><span class="p m">média</span><b>Reagendar reposição e acionar resgate</b><span class="st s">suspensa</span></td><td class="dono">Pricila</td><td class="prazo">retomar</td></tr>
+      <tr class="susp"><td><span class="p m">média</span><b>Definir o horário da aprendiz Laura</b><span class="st s">suspensa</span></td><td class="dono">Pricila</td><td class="prazo">retomar</td></tr>
+      <tr class="susp"><td><span class="p m">média</span><b>Conversar com o professor Vicente sobre a permanência</b> &mdash; preferencialmente por videochamada<span class="st s">suspensa</span></td><td class="dono">Pricila</td><td class="prazo">retomar</td></tr>
+      <tr class="susp"><td><span class="p m">média</span><b>Consultar o professor Vicente sobre integrar novatos</b><span class="st s">suspensa</span></td><td class="dono">Pricila</td><td class="prazo">retomar</td></tr>
+      <tr class="susp"><td><span class="p m">média</span><b>Plano de Comunicação do Aluno</b> &mdash; onboarding, agenda, lembretes e checkpoints<span class="st s">suspensa</span></td><td class="dono">Pricila</td><td class="prazo">retomar</td></tr>
+      <tr><td><span class="p m">média</span><b>Decidir a isenção da aluna Maria Lídia</b> &mdash; analisar o tempo de interrupção dos estudos</td><td class="dono">Valdemar</td><td class="prazo"><b>18/09</b></td></tr>
+      <tr><td><span class="p m">média</span><b>Aprender a usar as ferramentas de assessment</b> &mdash; com apoio da Zanine</td><td class="dono">Valdemar</td><td class="prazo">25/09</td></tr>
+      <tr><td><span class="p m">média</span><b>Verificar vínculos empregatícios do professor Guilherme</b></td><td class="dono">Valdemar</td><td class="prazo"><b>18/09</b></td></tr>
       <tr><td><span class="p b">baixa</span><b>Reforçar a pesquisa com mensagens individuais</b></td><td class="dono">Valdemar</td><td class="prazo">rever</td></tr>
-      <tr><td><span class="p b">baixa</span><b>Aprender a rotina da coordenação com a Jaciara</b> &mdash; <i>superada: a transição passou para a Pricila</i></td><td class="dono">Valdemar</td><td class="prazo">encerrar</td></tr>
-      <tr><td><span class="p b">baixa</span><b>Aprender o sistema Sponte com a Jaciara</b> &mdash; <i>superada pelo mesmo motivo</i></td><td class="dono">Valdemar</td><td class="prazo">encerrar</td></tr>
+      <tr class="tog" data-d="p1"><td><span class="p b">baixa</span><b>Aprender a rotina da coordenação e o sistema Sponte com a Jaciara</b> &mdash; <i>duas tarefas superadas</i></td><td class="dono">Pricila</td><td class="prazo"><b>encerrar</b></td></tr>
+      <tr class="det" id="p1"><td colspan="3"><span class="lb">Proposta de encerramento</span><b>A Jaciara não está mais na escola</b> e a transição da coordenação passou para a Pricila. <b>As duas tarefas, como estão escritas, não têm como ser cumpridas.</b> A necessidade permanece &mdash; a direção já se comprometeu a buscar suporte externo para o Sponte e a Zanine está apoiando. <b>Encerrar não é desistir: é parar de contar como pendente algo que ninguém pode executar, e abrir tarefa nova com o dono certo.</b></td></tr>
     </table>
   </details>
 
+  <!-- ===================== TRIAGEM ===================== -->
   <div class="titulo" id="triagem"><span></span><h2>Triagem &mdash; proposta para a sexta</h2></div>
-  <p class="desc"><b>São 64 tarefas abertas e 17 delas são do Tiago.</b> Terminar as 64 nesta semana não é possível, e perseguir todas é o caminho mais rápido para o mês fechar em 38% de novo. <b>Três propostas para a direção decidir.</b></p>
+  <p class="desc"><b>São 61 tarefas abertas.</b> Terminar todas nesta semana não é possível, e perseguir todas é o caminho mais rápido para o mês fechar em 38% de novo. <b>Três propostas para a direção decidir.</b></p>
 
   <div class="prop">Proposta &middot; nada foi encerrado nem adiado ainda</div>
 
   <details open>
     <summary>1 &middot; Encerrar duas tarefas superadas pelos fatos<i>decisão da direção</i></summary>
     <table>
-      <tr><td><b>Aprender a rotina da coordenação com a Jaciara</b> &mdash; a transição passou para a Pricila. <b>A Jaciara não está mais na escola.</b></td><td class="dono">Valdemar</td><td class="prazo"><b>encerrar</b></td></tr>
-      <tr><td><b>Aprender o sistema Sponte com a Jaciara</b> &mdash; mesmo motivo. <i>A necessidade continua existindo &mdash; o Macário já se comprometeu a buscar suporte externo, e a Zanine está apoiando. Mas a tarefa como está escrita não tem como ser cumprida.</i></td><td class="dono">Valdemar</td><td class="prazo"><b>encerrar</b></td></tr>
+      <tr><td><b>Aprender a rotina da coordenação com a Jaciara</b> &mdash; a transição passou para a Pricila e <b>a Jaciara não está mais na escola</b></td><td class="dono">Pricila</td><td class="prazo"><b>encerrar</b></td></tr>
+      <tr><td><b>Aprender o sistema Sponte com a Jaciara</b> &mdash; mesmo motivo. <i>A necessidade continua: a direção já se comprometeu a buscar suporte externo e a Zanine está apoiando</i></td><td class="dono">Pricila</td><td class="prazo"><b>encerrar</b></td></tr>
     </table>
     <p style="margin:0;padding:0 16px 14px;font-size:12.6px;color:#5b6b7d"><b>Encerrar não é desistir.</b> É parar de contar como pendente uma tarefa que ninguém pode executar do jeito que foi definida. <b>Se a necessidade permanece, ela vira tarefa nova, com o dono certo.</b></p>
   </details>
 
   <details open>
-    <summary>2 &middot; Rever o prazo das seis ações financeiras<i>paradas desde agosto</i></summary>
+    <summary>2 &middot; Rever o prazo das cinco ações financeiras<i>paradas desde agosto</i></summary>
     <table>
       <tr><td><b>Régua de cobrança preventiva</b></td><td class="dono">Financeiro</td><td class="prazo">rever</td></tr>
       <tr><td><b>Triagem da inadimplência por motivo</b></td><td class="dono">Financeiro</td><td class="prazo">rever</td></tr>
       <tr><td><b>Facilitar o pagamento &mdash; PIX e link</b> &mdash; o prazo original era <b>15/08</b></td><td class="dono">Financeiro</td><td class="prazo">rever</td></tr>
       <tr><td><b>Conectar inadimplência com frequência</b></td><td class="dono">Financeiro + Pedagógico</td><td class="prazo">rever</td></tr>
       <tr><td><b>Acompanhamento semanal da inadimplência</b></td><td class="dono">Financeiro</td><td class="prazo">rever</td></tr>
-      <tr><td><b>Cartão recorrente ou débito automático</b> &mdash; <i>esta ainda está dentro do prazo original</i></td><td class="dono">Financeiro</td><td class="prazo"><b>30/09</b></td></tr>
     </table>
-    <p style="margin:0;padding:0 16px 14px;font-size:12.6px;color:#5b6b7d"><b>A pergunta a responder é uma só: quem executa?</b> As seis estão atribuídas ao financeiro, e o financeiro não está na unidade. <b>Sem alguém presente com a tarefa na mão, elas seguem sendo pendência em toda reunião sem sair do lugar.</b></p>
+    <p style="margin:0;padding:0 16px 14px;font-size:12.6px;color:#5b6b7d"><b>A pergunta a responder é uma só: quem executa?</b> As cinco estão atribuídas ao financeiro, e o financeiro não está na unidade. <b>Sem alguém presente com a tarefa na mão, elas seguem sendo pendência em toda reunião sem sair do lugar.</b> <i>O cartão recorrente fica de fora desta revisão &mdash; ainda está dentro do prazo original.</i></p>
   </details>
 
   <details open>
-    <summary>3 &middot; Concentrar a semana nas 19 de prioridade alta<i>16 a 18 de setembro</i></summary>
+    <summary>3 &middot; A semana, por pessoa<i>até sexta, 18 de setembro</i></summary>
     <table>
-      <tr><td class="th" style="font-weight:800;color:#0F2C4C;font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;background:#f7fafd">Quem</td><td class="th" style="font-weight:800;color:#0F2C4C;font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;background:#f7fafd">O que fica na semana</td></tr>
-      <tr class="alta"><td class="dono">Tiago</td><td>Prazos com a direção &middot; rotina com Valdemar e com Pricila &middot; monitorar a Rita todo dia &middot; coletar as dez conversas &middot; iniciar o treino com o agente &middot; <b>comparativo das ações comerciais</b><br><i>Quadro e categorias do radar: entregues hoje.</i></td></tr>
-      <tr class="alta"><td class="dono">Valdemar</td><td><b>Registrar no CRM as oito visitas já feitas</b> &middot; Colégio Elo &middot; apresentar o WIP com a direção na sexta &middot; investigar a reclamação sobre o corpo docente &middot; seguir a captação em escolas</td></tr>
-      <tr class="alta"><td class="dono">Pricila</td><td><b>Confirmar o vínculo dos 14 alunos sem registro</b> &middot; levantar novatos em turmas avançadas &middot; alinhar a rotina da semana</td></tr>
-      <tr class="alta"><td class="dono">Macário</td><td>Conversar com a Rita sobre responsabilidades comerciais &middot; fechar os prazos deste quadro &middot; apresentar o WIP nas escolas</td></tr>
-      <tr class="alta"><td class="dono">Pedagógico</td><td><b>Ligar o radar de evasão</b> &mdash; um número por semana: alunos abaixo de 75% &middot; oferecer o Wizard ON antes do cancelamento</td></tr>
+      <tr class="alta"><td class="dono">Tiago</td><td>Fechar os prazos com a direção &middot; monitorar a Rita todo dia &middot; completar o par de conversas &middot; <b>comparativo das ações comerciais na quinta às 9h</b> &middot; protocolos para o Pierre<br><i>Quadro, categorias do radar e rotina com o Valdemar: entregues.</i></td></tr>
+      <tr class="alta"><td class="dono">Valdemar</td><td><b>Registrar no CRM as oito visitas já feitas</b> &middot; Colégio Elo &middot; apresentar o WIP nas escolas na sexta &middot; investigar a reclamação sobre o corpo docente &middot; caso da Maria Lídia &middot; vínculos do professor Guilherme &middot; seguir a captação</td></tr>
+      <tr class="alta"><td class="dono">Macário</td><td>Conversar com a Rita sobre responsabilidades comerciais &middot; fechar os prazos deste quadro &middot; decidir sobre as duas tarefas a encerrar e as cinco financeiras</td></tr>
+      <tr class="susp"><td class="dono">Pricila</td><td><b>Dezessete tarefas suspensas</b> &mdash; retomadas no retorno à unidade. <b>Quatro delas são de prioridade alta</b>, incluindo os 14 alunos sem registro e o radar de evasão.</td></tr>
     </table>
-    <p style="margin:0;padding:0 16px 14px;font-size:12.6px;color:#5b6b7d"><b>Dez das dezenove prioridades altas passam pelo Tiago.</b> Não é queixa &mdash; é informação para a direção decidir se a distribuição está certa ou se alguma dessas muda de dono.</p>
   </details>
 
-  <div class="num" style="margin-top:18px">
-    <div><div class="k">64 &rarr; 62</div><div class="l">tarefas abertas<br>se as duas forem encerradas</div></div>
-    <div class="alta"><div class="k">19</div><div class="l">no foco da semana<br>de 16 a 18 de setembro</div></div>
-    <div><div class="k">5</div><div class="l">financeiras estacionadas<br>até haver dono presente</div></div>
-    <div><div class="k">38</div><div class="l">ficam na fila<br>sem prazo desta semana</div></div>
+  <div class="destaque">
+    Dez das dezenove prioridades altas passam pelo Tiago.
+    <small>Não é queixa &mdash; é informação para a direção decidir se a distribuição está certa ou se alguma dessas muda de dono.</small>
+  </div>
+
+  <div class="num" style="margin-top:14px">
+    <div class="ok"><div class="k">3</div><div class="l">concluídas<br>desde 11/09</div></div>
+    <div><div class="k">61 &rarr; 59</div><div class="l">abertas<br>se as duas forem encerradas</div></div>
+    <div class="alta"><div class="k">19</div><div class="l">suspensas<br>até o retorno da coordenação</div></div>
+    <div><div class="k">5</div><div class="l">financeiras<br>à espera de dono presente</div></div>
   </div>
 
   <div class="nota">
     <h4>O que eu proporia dizer na sexta</h4>
-    <p><b>São 64 tarefas abertas e 17 delas são minhas.</b> Terminar as 64 nesta semana não é possível.</p>
-    <p><b>Proponho três coisas:</b> concentrar a semana nas <b>19 de prioridade alta</b>; <b>encerrar as duas que já estão superadas</b> pela saída da Jaciara; e <b>rever o prazo das seis ações financeiras</b>, que estão paradas desde agosto e não têm dono presente na escola.</p>
-    <p style="margin-bottom:0"><b>Prefiro chegar aqui na semana que vem com dez resolvidas e oito adiadas conscientemente</b> do que com sessenta e quatro pela metade.</p>
+    <p><b>Três tarefas fechadas desde a última reunião</b> &mdash; o quadro em quatro blocos, as categorias do radar e a rotina com o Valdemar. <b>E dezenove suspensas pela ausência da coordenação</b>, que não são atraso de execução.</p>
+    <p><b>Proponho três decisões:</b> <b>encerrar as duas tarefas superadas</b> pela saída da Jaciara; <b>definir quem executa as cinco financeiras</b>, paradas desde agosto sem dono presente; e <b>confirmar os prazos semanais</b> deste quadro.</p>
+    <p style="margin-bottom:0"><b>Prefiro chegar aqui na semana que vem com dez resolvidas e oito adiadas conscientemente</b> do que com sessenta e uma pela metade.</p>
   </div>
 
   <div class="rod">
     Wizard by Pearson Piedade &middot; Jaboatão dos Guararapes<br>
-    Quadro montado em 15/09/2026 a pedido da reunião de 11 de setembro &middot; prazos são proposta, não combinado
+    Quadro montado em 15/09/2026 a pedido da reunião de 11 de setembro &middot; prazos semanais, ancorados na reunião de sexta &middot; proposta, não combinado
   </div>
 
 </div>
+
+<script>
+(function(){
+  var linhas = document.querySelectorAll('tr.tog[data-d]');
+  Array.prototype.forEach.call(linhas, function(tr){
+    tr.addEventListener('click', function(){
+      var alvo = document.getElementById(tr.getAttribute('data-d'));
+      if(!alvo) return;
+      alvo.classList.toggle('on');
+    });
+  });
+})();
+</script>
 </body>
 </html>
