@@ -340,58 +340,73 @@
   </section>
 
   <section id="quebra">
-    <div class="titulo"><span></span><h2>A data em que o funil virou</h2></div>
-    <p class="desc">Setembro chegou ao dia 10 sem matr&iacute;cula e a pergunta virou <b>&ldquo;de quem &eacute; a culpa&rdquo;</b>. Esta se&ccedil;&atilde;o n&atilde;o responde isso &mdash; ela responde <b>quando</b>. Todos os n&uacute;meros saem do CRM, medindo <b>cada lead na mesma idade</b>: s&oacute; entram leads que j&aacute; completaram sete dias de vida, e conta-se quantos agendaram <b>dentro desses sete dias</b>. Assim nenhum lead de agosto leva vantagem por ter mais tempo de estrada.</p>
+    <div class="titulo"><span></span><h2>O que aconteceu na virada do m&ecirc;s</h2></div>
+
+    <div class="nota" style="background:#8a0d22">
+      <h4 style="color:#ffd9de">Correção publicada em 17/09</h4>
+      <p style="color:#ffe6ea">A primeira versão desta seção afirmava que <b>a taxa de agendamento caiu de 54% para 23% a partir de 22 de agosto</b>, com 0,7% de chance de ser acaso. <b>Os dois números estavam errados.</b></p>
+      <p style="color:#ffe6ea"><b>Por quê:</b> a contagem de agendamentos usava uma regra que também considera agendado quem chegou a <i>Matriculado</i>. Essa regra foi criada para resolver outro problema &mdash; a equipe pula a etapa &ldquo;Compareceu&rdquo; &mdash; e acabou inflando o agendamento: <b>toda matrícula contava como aula marcada, mesmo quando nenhuma aula foi marcada.</b></p>
+      <p style="color:#ffe6ea">Refeita com o registro explícito de &ldquo;Aula agendada&rdquo;, a taxa de agosto cai de 54% para <b>35%</b> e a de setembro sobe de 23% para <b>26%</b>. <b>A queda de 31 pontos vira uma diferença de 9 &mdash; e 9 pontos com estas bases está dentro do acaso. A quebra de 22 de agosto não se sustenta.</b></p>
+      <p style="margin-bottom:0;color:#ffd9de"><b>Segunda correção, no mesmo dia:</b> a série semanal publicada mais cedo hoje trazia <b>3 agendamentos na semana de 08 a 14/08</b>, e são <b>5</b>. Com o número certo, as quatro semanas de agosto fecham exatamente nos 24 de 68. <b>E a série, estendida até hoje, mostra uma coisa que não estava em nenhuma versão anterior: a semana de 05 a 11/09 foi a melhor do per&iacute;odo.</b></p>
+    </div>
+
+    <p class="desc">Todos os n&uacute;meros saem do CRM. O per&iacute;odo &eacute; cortado em <b>blocos de sete dias a partir de 1&ordm; de agosto</b>, e cada lead &eacute; contado como agendado se tem o registro expl&iacute;cito de <b>&ldquo;Aula agendada&rdquo;</b> no hist&oacute;rico de status &mdash; em qualquer momento, n&atilde;o apenas nos primeiros dias. <b>&Eacute; a mesma regra para todos os blocos</b>, e &eacute; por isso que a soma das semanas fecha com o total do m&ecirc;s.</p>
 
     <div class="plano">
-      <div class="cab"><h3>Leads de an&uacute;ncio, semana a semana</h3><span>BLOCOS DE 7 DIAS &middot; JANELA DE 7 DIAS PARA AGENDAR</span></div>
+      <div class="cab"><h3>Leads de an&uacute;ncio, semana a semana</h3><span>BLOCOS DE 7 DIAS &middot; REGISTRO EXPL&Iacute;CITO DE AULA AGENDADA</span></div>
       <table>
-        <tr><td class="th">Entraram entre</td><td class="th">Leads</td><td class="th">Agendaram em 7 dias</td><td class="th">Taxa</td></tr>
-        <tr><td class="qd">01 a 07/08</td><td>15</td><td>8</td><td><b>53%</b></td></tr>
-        <tr><td class="qd">08 a 14/08</td><td>15</td><td>6</td><td><b>40%</b></td></tr>
-        <tr><td class="qd">15 a 21/08</td><td>18</td><td>12</td><td><b>67%</b></td></tr>
-        <tr class="meta"><td class="qd">22 a 28/08</td><td>20</td><td>6</td><td><b>30%</b></td></tr>
-        <tr class="meta"><td class="qd">29/08 a 04/09</td><td>10</td><td>1</td><td><b>10%</b></td></tr>
+        <tr><td class="th">Entraram entre</td><td class="th">Leads</td><td class="th">Agendaram</td><td class="th">Taxa</td></tr>
+        <tr><td class="qd">01 a 07/08</td><td>15</td><td>5</td><td><b>33%</b></td></tr>
+        <tr><td class="qd">08 a 14/08</td><td>15</td><td>5</td><td><b>33%</b></td></tr>
+        <tr><td class="qd">15 a 21/08</td><td>18</td><td>8</td><td><b>44%</b></td></tr>
+        <tr><td class="qd">22 a 28/08</td><td>20</td><td>6</td><td><b>30%</b></td></tr>
+        <tr class="meta"><td class="qd">29/08 a 04/09</td><td>10</td><td><b>0</b></td><td><b>0%</b></td></tr>
+        <tr><td class="qd">05 a 11/09</td><td>16</td><td>7</td><td><b>44%</b></td></tr>
+        <tr><td class="qd">12 a 17/09 <small>bloco ainda aberto</small></td><td>8</td><td>2</td><td><b>25%</b></td></tr>
       </table>
-      <p class="desc" style="margin:0;padding:0 18px 16px;font-size:12.8px;color:#5b6b7d"><b>As tr&ecirc;s primeiras semanas oscilam entre si</b> &mdash; 53, 40 e 67 &mdash; e essa varia&ccedil;&atilde;o &eacute; normal para blocos de cerca de 16 leads. <b>N&atilde;o d&aacute; para dizer que sejam diferentes umas das outras.</b> As duas &uacute;ltimas est&atilde;o claramente abaixo. <b>Fonte:</b> CRM, tabelas <i>leads</i> e <i>status_log</i>, consultado em 12/09/2026.</p>
+      <p class="desc" style="margin:0;padding:0 18px 16px;font-size:12.8px;color:#5b6b7d"><b>Seis dos sete blocos oscilam entre 25% e 44%</b>, e essa varia&ccedil;&atilde;o &eacute; normal para blocos de 8 a 20 leads &mdash; <b>n&atilde;o d&aacute; para dizer que sejam diferentes uns dos outros.</b> O bloco de 29/08 a 04/09 &eacute; o &uacute;nico que se destaca, e a semana seguinte, de 05 a 11/09, <b>empata com a melhor do per&iacute;odo.</b> O &uacute;ltimo bloco tem seis dias em vez de sete e cont&eacute;m leads de ontem &mdash; alguns ainda podem agendar. <b>Fonte:</b> CRM, tabelas <i>leads</i> e <i>status_log</i>, refeito em 17/09/2026.</p>
     </div>
 
     <div class="num">
       <div>
-        <div class="k">54%</div>
-        <div class="l">agendavam em 7 dias<br>at&eacute; 21 de agosto</div>
+        <div class="k">35%</div>
+        <div class="l">agendaram em agosto<br>24 de 68</div>
+      </div>
+      <div class="dst">
+        <div class="k">0 de 10</div>
+        <div class="l">no bloco de 29/08 a 04/09<br>&eacute; o &uacute;nico que se destaca</div>
       </div>
       <div>
-        <div class="k">23%</div>
-        <div class="l">passaram a agendar<br>de 22 de agosto em diante</div>
-      </div>
-      <div>
-        <div class="k">0,7%</div>
-        <div class="l">de chance de essa<br>diferen&ccedil;a ser acaso</div>
+        <div class="k">44%</div>
+        <div class="l">na semana seguinte, 05 a 11/09<br>a melhor do per&iacute;odo</div>
       </div>
     </div>
 
     <div class="plano">
-      <div class="cab"><h3>O corte</h3><span>ANTES E DEPOIS DE 22 DE AGOSTO</span></div>
+      <div class="cab"><h3>O que sobrevive: um buraco de quatro dias</h3><span>1&ordm; A 4 DE SETEMBRO &middot; DEZ LEADS, NENHUMA AULA</span></div>
       <table>
-        <tr><td class="th">&nbsp;</td><td class="th">Leads</td><td class="th">Agendaram em 7 dias</td><td class="th">Taxa</td></tr>
-        <tr><td class="rot">At&eacute; 21/08</td><td>48</td><td>26</td><td><b>54%</b></td></tr>
-        <tr class="meta"><td class="rot">De 22/08 em diante</td><td>30</td><td>7</td><td><b>23%</b></td></tr>
+        <tr><td class="th">&nbsp;</td><td class="th">Leads</td><td class="th">Agendaram</td><td class="th">Taxa</td></tr>
+        <tr><td class="rot">Agosto inteiro</td><td>68</td><td>24</td><td><b>35%</b></td></tr>
+        <tr class="meta"><td class="rot">O bloco de 29/08 a 04/09</td><td>10</td><td><b>0</b></td><td><b>0%</b></td></tr>
+        <tr><td class="rot">A semana seguinte, 05 a 11/09</td><td>16</td><td>7</td><td><b>44%</b></td></tr>
       </table>
-      <p class="desc" style="margin:0;padding:0 18px 16px;font-size:12.8px;color:#5b6b7d">S&atilde;o 78 leads de an&uacute;ncio no total. <b>A diferen&ccedil;a entre os dois grupos tem cerca de 0,7% de probabilidade de ser acaso</b> &mdash; &eacute; a evid&ecirc;ncia mais s&oacute;lida desta an&aacute;lise, mais forte do que qualquer compara&ccedil;&atilde;o entre agosto e setembro.</p>
+      <p class="desc" style="margin:0;padding:0 18px 16px;font-size:12.8px;color:#5b6b7d"><b>Sair zero em dez, partindo de uma taxa de 35%, tem cerca de 2% de probabilidade de ser acaso.</b> &Eacute; o &uacute;nico bloco da s&eacute;rie que se destaca de verdade. <b>E ele n&atilde;o durou:</b> na semana seguinte a escola fez 44%, a melhor taxa do per&iacute;odo. <b>Detalhe que importa:</b> os dez leads desse bloco entraram todos <b>entre 1&ordm; e 4 de setembro</b> &mdash; 29, 30 e 31 de agosto n&atilde;o trouxeram nenhum lead. <b>O buraco tem quatro dias, n&atilde;o sete.</b></p>
     </div>
 
     <div class="nota">
-      <h4>O que isso explica</h4>
-      <p><b>A quebra n&atilde;o &eacute; de setembro. &Eacute; de 22 de agosto.</b> E &eacute; exatamente isso que explica o m&ecirc;s: <b>o lead que entra no fim de agosto &eacute; o que matricularia no come&ccedil;o de setembro.</b> A turma que deveria estar virando matr&iacute;cula agora &eacute; a que agendou 23% em vez de 54%.</p>
-      <p style="margin-bottom:0">Tamb&eacute;m explica por que <b>agosto fechou com 13 matr&iacute;culas parecendo normal</b>: elas vieram das tr&ecirc;s primeiras semanas, que estavam boas. <b>O problema j&aacute; existia quando o m&ecirc;s fechou bem</b> &mdash; s&oacute; n&atilde;o era vis&iacute;vel ainda.</p>
+      <h4>A hist&oacute;ria, em tr&ecirc;s frases</h4>
+      <p><b>1 &middot; O ingl&ecirc;s agenda a 26% h&aacute; dois meses seguidos.</b> Foram 26% em agosto e 27% em setembro &mdash; n&atilde;o caiu nem subiu. E o ingl&ecirc;s &eacute; <b>80 dos 102 leads</b> do per&iacute;odo, ou seja, praticamente todo o volume. <b>Essa &eacute; a taxa real da escola, e &eacute; o n&uacute;mero a atacar.</b></p>
+      <p><b>2 &middot; Agosto pareceu melhor por causa de catorze leads de franc&ecirc;s e espanhol</b>, que agendaram a 71%. Curso pequeno com taxa alta puxa a m&eacute;dia do m&ecirc;s para cima. Em setembro esses mesmos cursos trouxeram oito leads e agendaram dois. <b>N&atilde;o foi o funil que mudou &mdash; foi a mistura de cursos.</b></p>
+      <p><b>3 &middot; Houve um buraco de quatro dias, de 1&ordm; a 4 de setembro</b> &mdash; dez leads, nenhuma aula marcada. Coincide com duas coisas j&aacute; documentadas: os <b>tr&ecirc;s dias sem nenhum lead</b> em 29, 30 e 31 de agosto, e a explica&ccedil;&atilde;o que a pr&oacute;pria ag&ecirc;ncia deu no grupo em 31/08 &mdash; <i>&ldquo;final de m&ecirc;s isso acontece; a &uacute;ltima semana, se n&atilde;o dobrar verba, tende acontecer&rdquo;</i>. <b>Na semana seguinte a escola fez 44%.</b></p>
+      <p style="margin-bottom:0"><b>N&atilde;o houve virada no dia 22 e n&atilde;o houve colapso em setembro.</b> O que existe &eacute; um n&iacute;vel geral de cerca de <b>um ter&ccedil;o</b> &mdash; e no ingl&ecirc;s, um quarto &mdash; que se manteve est&aacute;vel o m&ecirc;s todo. <b>Isso vale mesmo sem nenhuma hist&oacute;ria de queda, e &eacute; o que merece aten&ccedil;&atilde;o.</b></p>
     </div>
 
     <div class="plano">
       <div class="cab"><h3>O que precisa ser verificado</h3><span>DOS DOIS LADOS &middot; NENHUM EST&Aacute; DESCARTADO</span></div>
       <table>
-        <tr><td class="rot">Fora da escola</td><td>O relat&oacute;rio semanal da ag&ecirc;ncia de <b>22 a 28 de agosto</b> &mdash; CPC, alcance, frequ&ecirc;ncia e qual criativo estava no ar naquela semana.</td></tr>
-        <tr><td class="rot">Dentro da escola</td><td>O que mudou na rotina comercial naquela mesma semana &mdash; <b>agenda, aus&ecirc;ncias, turnos, quem atendia</b>. Isso o CRM n&atilde;o mostra.</td></tr>
+        <tr><td class="rot">Fora da escola</td><td>O relat&oacute;rio da ag&ecirc;ncia de <b>29 de agosto a 4 de setembro</b> &mdash; CPC, alcance, frequ&ecirc;ncia e qual criativo estava no ar. &Eacute; a janela do buraco, e &eacute; tamb&eacute;m a v&eacute;spera da campanha nova, que come&ccedil;ou em <b>07/09</b>.</td></tr>
+        <tr><td class="rot">Dentro da escola</td><td>O que aconteceu na rotina comercial naqueles quatro dias &mdash; <b>agenda, aus&ecirc;ncias, turnos, quem atendia</b>. Isso o CRM n&atilde;o mostra.</td></tr>
+        <tr><td class="rot">A pergunta nova</td><td><b>O que a semana de 05 a 11/09 fez de diferente para chegar a 44%?</b> Entender o melhor bloco vale tanto quanto entender o pior &mdash; e essa &eacute; a semana em que a campanha nova entrou no ar.</td></tr>
       </table>
       <p class="desc" style="margin:0;padding:0 18px 16px;font-size:12.8px;color:#5b6b7d"><b>A data &eacute; um fato. A causa ainda n&atilde;o.</b> Verificar s&oacute; um dos lados garante encontrar o que se foi procurar.</p>
     </div>
@@ -399,7 +414,8 @@
     <div class="nota">
       <h4>Os limites deste n&uacute;mero</h4>
       <p><b>A contactabilidade foi 100% nos dois meses</b> &mdash; todo lead que entrou foi contatado, em agosto e em setembro. O primeiro degrau do funil n&atilde;o &eacute; o problema.</p>
-      <p><b>O bloco de 29/08 a 04/09 tem apenas 10 leads</b>, e cada lead vale dez pontos percentuais. Ele sozinho n&atilde;o sustenta conclus&atilde;o nenhuma &mdash; o que sustenta &eacute; o conjunto dos dois &uacute;ltimos blocos, com 30 leads.</p>
+      <p><b>O bloco de 29/08 a 04/09 tem apenas 10 leads</b>, e cada lead vale dez pontos percentuais. <b>Dez de dez sem agendar &eacute; improv&aacute;vel &mdash; cerca de 2% &mdash; mas base pequena pede cautela.</b> Uma semana a mais de dados confirma ou dissolve.</p>
+      <p><b>Se alguma aula foi marcada e o status n&atilde;o foi registrado, ela n&atilde;o aparece aqui.</b> O registro de &ldquo;Aula agendada&rdquo; &eacute; usado &mdash; agosto tem 24 &mdash; mas depende de a equipe marcar a etapa.</p>
       <p style="margin-bottom:0"><b>A m&eacute;dia de tentativas por lead n&atilde;o foi usada aqui, de prop&oacute;sito.</b> Ela &eacute; um contador sem data: lead de agosto teve quarenta dias para acumular tentativas e lead de setembro teve quatro. <b>Comparar essa m&eacute;dia entre meses mede tempo de vida, n&atilde;o esfor&ccedil;o.</b></p>
     </div>
   </section>
