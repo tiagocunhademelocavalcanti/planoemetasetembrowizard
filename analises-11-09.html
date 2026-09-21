@@ -510,34 +510,43 @@
 
     <p class="desc">Tudo acima nesta se&ccedil;&atilde;o &eacute; o que <b>a ag&ecirc;ncia reportou</b>. Daqui para baixo &eacute; o que <b>o CRM da escola registrou</b>, no mesmo per&iacute;odo. S&atilde;o dois sistemas que n&atilde;o se falam &mdash; e por isso um serve de confer&ecirc;ncia para o outro. <b>A data em que o funil virou est&aacute; na se&ccedil;&atilde;o anterior e n&atilde;o se repete aqui.</b></p>
 
+    <div class="nota" style="background:#8a0d22">
+      <h4 style="color:#ffd9de">Corre&ccedil;&atilde;o publicada em 21/09</h4>
+      <p style="color:#ffe6ea">At&eacute; 21/09 esta se&ccedil;&atilde;o trazia <b>ingl&ecirc;s de agosto a 48%, espanhol a 67% e ingl&ecirc;s de setembro a 38%</b>. Eram os n&uacute;meros do <b>mesmo marcador contaminado</b> que j&aacute; havia sido corrigido na se&ccedil;&atilde;o anterior &mdash; aquele que contava como agendado quem chegou a <i>Matriculado</i>. <b>A p&aacute;gina mostrava agosto com duas taxas diferentes em duas se&ccedil;&otilde;es.</b></p>
+      <p style="margin-bottom:0;color:#ffd9de">Refeita com o registro expl&iacute;cito de &ldquo;Aula agendada&rdquo;. <b>A aritm&eacute;tica estava errada &mdash; mas a leitura estava certa, e o n&uacute;mero certo a deixa mais forte:</b> o buraco de setembro n&atilde;o &eacute; &ldquo;dois ter&ccedil;os no franc&ecirc;s&rdquo;. <b>&Eacute; praticamente todo ele.</b></p>
+    </div>
+
     <div class="plano">
-      <div class="cab"><h3>O lead de an&uacute;ncio, curso por curso</h3><span>QUANTOS CHEGARAM A AGENDAR AULA</span></div>
+      <div class="cab"><h3>O lead de an&uacute;ncio, curso por curso</h3><span>REGISTRO EXPL&Iacute;CITO DE AULA AGENDADA</span></div>
       <table>
         <tr><td class="th">Curso</td><td class="th">Leads</td><td class="th">Agendaram</td><td class="th">Taxa</td></tr>
-        <tr><td class="qd">Ingl&ecirc;s &middot; agosto</td><td>54</td><td>26</td><td><b>48%</b></td></tr>
+        <tr><td class="qd">Ingl&ecirc;s &middot; agosto</td><td>54</td><td>14</td><td><b>26%</b></td></tr>
         <tr class="meta"><td class="qd">Franc&ecirc;s &middot; agosto</td><td>8</td><td>7</td><td><b>88%</b></td></tr>
-        <tr><td class="qd">Espanhol &middot; agosto</td><td>6</td><td>4</td><td><b>67%</b></td></tr>
-        <tr><td class="qd">Ingl&ecirc;s &middot; setembro</td><td>21</td><td>8</td><td><b>38%</b></td></tr>
-        <tr class="meta"><td class="qd">Franc&ecirc;s &middot; setembro</td><td><b>5</b></td><td><b>0</b></td><td><b>0%</b></td></tr>
+        <tr><td class="qd">Espanhol &middot; agosto</td><td>6</td><td>3</td><td><b>50%</b></td></tr>
+        <tr class="bom"><td class="qd">Ingl&ecirc;s &middot; setembro</td><td>26</td><td>7</td><td><b>27%</b></td></tr>
+        <tr class="meta"><td class="qd">Franc&ecirc;s &middot; setembro</td><td><b>7</b></td><td><b>2</b></td><td><b>29%</b></td></tr>
+        <tr><td class="qd">Espanhol &middot; setembro</td><td>1</td><td>0</td><td><b>0%</b></td></tr>
       </table>
-      <p class="desc" style="margin:0;padding:0 18px 16px;font-size:12.8px;color:#5b6b7d"><b>Em agosto, o franc&ecirc;s foi o melhor lead da escola</b> &mdash; sete de oito agendaram. <b>Em setembro, nenhum dos cinco.</b> <b>Fonte:</b> CRM, tabela <i>leads</i>, consultado em 14/09/2026.</p>
+      <p class="desc" style="margin:0;padding:0 18px 16px;font-size:12.8px;color:#5b6b7d"><b>O ingl&ecirc;s n&atilde;o mexeu: 26% em agosto, 27% em setembro</b> &mdash; e ele &eacute; <b>80 dos 102 leads</b> do per&iacute;odo. <b>O que caiu foi o franc&ecirc;s</b>, de 88% para 29%. <b>Fonte:</b> CRM, tabelas <i>leads</i> e <i>status_log</i>, refeito em 17/09/2026.</p>
     </div>
 
     <div class="plano">
       <div class="cab"><h3>Onde est&atilde;o os agendamentos que faltaram</h3><span>APLICANDO AS TAXAS DE AGOSTO AOS LEADS DE SETEMBRO</span></div>
       <table>
         <tr><td class="th">Curso</td><td class="th">Deviam agendar</td><td class="th">Agendaram</td><td class="th">Falta</td></tr>
-        <tr><td class="qd">Ingl&ecirc;s</td><td>21 &times; 48% = <b>10</b></td><td>8</td><td>&minus;2</td></tr>
-        <tr class="meta"><td class="qd">Franc&ecirc;s</td><td>5 &times; 88% = <b>4</b></td><td>0</td><td><b>&minus;4</b></td></tr>
-        <tr><td class="rot">Total</td><td><b>14</b></td><td><b>8</b></td><td><b>&minus;6</b></td></tr>
+        <tr class="bom"><td class="qd">Ingl&ecirc;s</td><td>26 &times; 26% = <b>7</b></td><td>7</td><td><b>0</b></td></tr>
+        <tr class="meta"><td class="qd">Franc&ecirc;s</td><td>7 &times; 88% = <b>6</b></td><td>2</td><td><b>&minus;4</b></td></tr>
+        <tr><td class="qd">Espanhol</td><td>1 &times; 50% = <b>1</b></td><td>0</td><td>&minus;1</td></tr>
+        <tr><td class="rot">Total</td><td><b>14</b></td><td><b>9</b></td><td><b>&minus;5</b></td></tr>
       </table>
-      <p class="desc" style="margin:0;padding:0 18px 16px;font-size:12.8px;color:#5b6b7d"><b>Dois ter&ccedil;os do buraco de setembro est&atilde;o no franc&ecirc;s</b>, que &eacute; menos de um quinto do volume. <b>Ressalva:</b> s&atilde;o cinco leads. A data de entrada dos cinco ainda precisa ser conferida &mdash; se entraram nos &uacute;ltimos dias, n&atilde;o houve tempo de agendar.</p>
+      <p class="desc" style="margin:0;padding:0 18px 16px;font-size:12.8px;color:#5b6b7d"><b>O ingl&ecirc;s entregou exatamente o que devia.</b> Zero de diferen&ccedil;a, em 26 leads. <b>O buraco inteiro est&aacute; no franc&ecirc;s</b>, que &eacute; menos de um quinto do volume. <b>Ressalva que continua valendo:</b> s&atilde;o oito leads em agosto contra sete em setembro. A chance de essa queda ser acaso &eacute; de cerca de <b>4%</b> &mdash; pouca, mas com bases desse tamanho n&atilde;o se fecha quest&atilde;o.</p>
     </div>
 
     <div class="nota">
       <h4>Como ler esses n&uacute;meros</h4>
-      <p>Imagine bater em dez portas por dia para vender alguma coisa, sempre na mesma rua e no mesmo hor&aacute;rio. <b>Em agosto, cerca de metade das portas de ingl&ecirc;s abria &mdash; e quase todas as de franc&ecirc;s.</b></p>
-      <p style="margin-bottom:0">Em setembro bateu-se em 26 portas. <b>Pelo ritmo de agosto, catorze deviam abrir. Abriram oito, e nenhuma delas era de franc&ecirc;s.</b> N&atilde;o se mudou de rua, nem de hor&aacute;rio, nem o jeito de bater. <b>Ou mudaram as pessoas atr&aacute;s das portas, ou mudou quem escolhe as portas.</b></p>
+      <p>Imagine bater em portas para vender alguma coisa, sempre na mesma rua. <b>Em agosto, cerca de uma em cada quatro portas de ingl&ecirc;s abria &mdash; e quase todas as de franc&ecirc;s.</b></p>
+      <p><b>Em setembro, as portas de ingl&ecirc;s abriram na mesma propor&ccedil;&atilde;o.</b> Bateu-se em 26 e abriram 7, que &eacute; exatamente o ritmo de agosto. <b>Nada mudou ali.</b></p>
+      <p style="margin-bottom:0"><b>O que mudou foi o franc&ecirc;s.</b> Sete portas, duas abriram &mdash; onde antes abriam quase todas. <b>E como o franc&ecirc;s &eacute; pouca porta e taxa alta, ele puxava a m&eacute;dia do m&ecirc;s inteiro para cima.</b> Quando ele parou de abrir, a m&eacute;dia caiu sem que o ingl&ecirc;s tivesse piorado em nada. <b>N&atilde;o foi o funil que quebrou &mdash; foi a mistura de cursos que mudou.</b></p>
     </div>
 
     <div class="plano">
