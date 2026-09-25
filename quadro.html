@@ -83,6 +83,10 @@
   .nota p{font-size:14.5px;color:#cfdcea;margin-bottom:10px}
   .nota p:last-child{margin-bottom:0}
   .nota b{color:#fff}
+  .nota.amarelo{background:#FFF9E8;border:1px solid #F5C518}
+  .nota.amarelo h4{color:#8a6d1a}
+  .nota.amarelo p{color:#6b5514}
+  .nota.amarelo b{color:#4a3a06}
   .destaque{background:#C8102E;color:#fff;border-radius:11px;padding:18px 22px;margin:14px 0;
             font-size:16.5px;font-weight:700;line-height:1.5}
   .destaque b{font-weight:800}
@@ -98,7 +102,7 @@
 <body>
 
 <div class="capa">
-  <div class="tag">Wizard by Pearson Piedade &middot; atualizado em 17 de setembro de 2026</div>
+  <div class="tag">Wizard by Pearson Piedade &middot; atualizado em 25 de setembro de 2026</div>
   <h1>Quadro de tarefas<br><em>gestão · comercial · B2B · pedagógico</em></h1>
   <p>Tudo o que está aberto, por área, com dono, situação e prazo. <b style="color:#F5C518">Clique no nome de uma tarefa para ver o que está acontecendo com ela.</b></p>
 </div>
@@ -116,10 +120,22 @@
   <p class="desc">O <b>Acompanhamento das ações</b> guarda o histórico e a evidência de tudo o que foi combinado desde julho. <b>Este quadro é o que está aberto agora</b>, reorganizado por área de trabalho como foi pedido em 11/09. <b>Os prazos são semanais</b> &mdash; a reunião é toda sexta, então cada tarefa vence numa sexta.</p>
 
   <div class="num">
-    <div class="ok"><div class="k">3</div><div class="l">concluídas<br>desde a reunião de 11/09</div></div>
+    <div class="ok"><div class="k">4</div><div class="l">concluídas<br>desde a reunião de 11/09</div></div>
     <div><div class="k">61</div><div class="l">seguem abertas<br>nos quatro blocos</div></div>
     <div class="alta"><div class="k">19</div><div class="l">de prioridade alta<br>impacto em meta ou aprendizagem</div></div>
-    <div><div class="k">19</div><div class="l">suspensas esta semana<br>ausência da coordenação</div></div>
+    <div class="alta"><div class="k">2</div><div class="l">apuradas &middot; <b>aguardam a direção</b><br>as duas envolvem dinheiro</div></div>
+  </div>
+
+  <div class="nota">
+    <h4>O pedagógico voltou a andar em 22/09</h4>
+    <p>A coordenação retomou em <b>22/09</b> e trabalha com <b>folha diária impressa</b>: a folha entra em branco pela manhã e sai preenchida à mão no fim do dia, fotografada como evidência. São <b>11 dias de trabalho até 06/10</b>.</p>
+    <p><b>Dia 1, terça 22/09, 3h30:</b> três das sete tarefas concluídas, duas apuradas e enviadas à direção, uma parcial. <b>Dia 2, quarta 23/09, 4h:</b> quatro das sete concluídas, e as duas de prioridade alta remarcadas com data, nome e motivo escritos.</p>
+    <p style="margin-bottom:0"><b>As folhas preenchidas ficam em 04 PEDAGOGICO &rsaquo; PLANO ATE 06-10 &rsaquo; EVIDENCIAS</b>, com foto e transcrição de cada dia. <b>São de uso interno</b> &mdash; trazem nome de aluna, de responsável e de professor, e por isso o detalhe não aparece nesta página.</p>
+  </div>
+
+  <div class="nota amarelo">
+    <h4>O risco desta sexta, 25/09</h4>
+    <p style="margin-bottom:0">A sexta já tinha <b>três tarefas do plano</b> e recebeu <b>mais duas de prioridade alta</b>, vindas de quarta &mdash; e é o dia da reunião com a direção. <b>Das cinco, só uma tem data fatal: o treinamento do assessment</b>, porque a aplicação no Colégio Elo é no sábado, 26/09. As tarefas do professor Vicente podem ir para segunda, 28/09, se o dia apertar.</p>
   </div>
 
   <div class="nota">
@@ -234,15 +250,17 @@
 
   <!-- ===================== PEDAGÓGICO ===================== -->
   <details open>
-    <summary>4 &middot; Pedagógico<i>22 tarefas &middot; 5 de prioridade alta &middot; a maior parte suspensa</i></summary>
+    <summary>4 &middot; Pedagógico<i>23 tarefas &middot; 6 de prioridade alta &middot; em execução desde 22/09</i></summary>
     <table>
-      <tr class="susp tog" data-d="p0"><td colspan="3"><b>A coordenação esteve ausente da unidade durante toda a semana.</b> As tarefas abaixo que dependem dela seguem <span class="st s">suspensas</span> e são retomadas no retorno &mdash; não houve atraso de execução.</td></tr>
+      <tr class="tog" data-d="p0"><td colspan="3"><b>A coordenação retornou em 22/09 e as tarefas voltaram a andar.</b> As que aparecem marcadas como <span class="st s">suspensa</span> abaixo <b>não estão paradas</b>: cada uma tem dia marcado no <b>plano até 06/10</b>, e o andamento é registrado na folha diária, preenchida à mão e fotografada. <b>Aqui elas mantêm o rótulo antigo até serem concluídas</b> &mdash; o que muda de situação recebe a data do dia em que mudou.</td></tr>
+      <tr class="det" id="p0"><td colspan="3"><span class="lb">Onde ver o dia a dia</span><b>04 PEDAGOGICO &rsaquo; PLANO ATE 06-10</b> tem o plano completo e as onze folhas diárias. A subpasta <b>EVIDENCIAS</b> guarda as folhas já preenchidas, com foto e transcrição.<br><br><span class="lb">Por que o detalhe não está nesta página</span>As folhas trazem <b>nome de aluna, de responsável e de professor</b>, e casos em aberto de cancelamento e isenção. <b>Esta página é pública.</b> Por isso aqui fica só o andamento, e o detalhe fica na pasta.</td></tr>
 
       <tr class="susp"><td><span class="p a">alta</span><b>Confirmar o vínculo dos 14 alunos sem registro</b> &mdash; ativo, trancou ou cancelou? <b>61 a 121 dias sem registro</b><span class="st s">suspensa</span></td><td class="dono">Pricila</td><td class="prazo">retomar</td></tr>
       <tr class="susp"><td><span class="p a">alta</span><b>Ligar o radar de evasão pela frequência</b> &mdash; um número por semana: alunos abaixo de 75%<span class="st s">suspensa</span></td><td class="dono">Pricila</td><td class="prazo">retomar</td></tr>
       <tr class="susp"><td><span class="p a">alta</span><b>Levantar novatos em turmas avançadas e a defasagem</b> &mdash; <b>é a chave dos 18% de cancelamento por método</b><span class="st s">suspensa</span></td><td class="dono">Pricila</td><td class="prazo">retomar</td></tr>
       <tr class="susp"><td><span class="p a">alta</span><b>Retenção via Wizard ON</b> &mdash; oferecer o on-line antes do cancelamento. <b>~47% dos cancelamentos são mudança de endereço ou trabalho</b><span class="st s">suspensa</span></td><td class="dono">Pricila</td><td class="prazo">retomar</td></tr>
-      <tr class="alta"><td><span class="p a">alta</span><b>Investigar a reclamação sobre o corpo docente</b> &mdash; tempo de contrato, duração da ausência de professor titular e situação atual da aluna</td><td class="dono">Pricila</td><td class="prazo"><b>18/09</b></td></tr>
+      <tr class="alta tog" data-d="pd1"><td><span class="p a">alta</span><b>Investigar a reclamação sobre o corpo docente</b> &mdash; tempo de contrato, duração da ausência de professor titular e situação atual da aluna<span class="st e">apurada &middot; aguarda a direção</span></td><td class="dono">Pricila</td><td class="prazo"><b>18/09</b></td></tr>
+      <tr class="det" id="pd1"><td colspan="3"><span class="lb">Onde parou</span><b>A coordenação ouviu a responsável e apurou o caso em 22/09</b>, com o relato escrito à mão na folha do dia. A queixa é de <b>trocas de professor ao longo do ano</b> e de um período com aula dada por quem não era professor. <b>A família pede o cancelamento do contrato sem multa.</b><br><br><b>A tarefa da coordenação está cumprida. O que falta é decisão da direção</b> &mdash; cancelamento sem multa é concessão financeira e não cabe à coordenação. Levado à direção em <b>25/09</b>, no documento <i>Decisões para a direção</i>.<br><br><span class="lb">Evidência</span>Folha diária de 22/09, fotografada e arquivada em <b>04 PEDAGOGICO &rsaquo; PLANO ATE 06-10 &rsaquo; EVIDENCIAS</b>. <b>Uso interno</b>: contém nome de aluna e de responsável, e por isso não aparece aqui.</td></tr>
       <tr class="susp"><td><span class="p m">média</span><b>Processo de renovação proativo</b> &mdash; a aba Renovacao para em abril; as de setembro estão no Mural do CRM<span class="st s">suspensa</span></td><td class="dono">Pricila</td><td class="prazo">retomar</td></tr>
       <tr class="susp"><td><span class="p m">média</span><b>Gerenciar renovações &mdash; validar interesse e apresentar propostas</b><span class="st s">suspensa</span></td><td class="dono">Pricila</td><td class="prazo">retomar</td></tr>
       <tr class="susp"><td><span class="p m">média</span><b>Contatar alunos para confirmar rematrícula</b><span class="st s">suspensa</span></td><td class="dono">Pricila</td><td class="prazo">retomar</td></tr>
@@ -254,9 +272,13 @@
       <tr class="susp"><td><span class="p m">média</span><b>Conversar com o professor Vicente sobre a permanência</b> &mdash; preferencialmente por videochamada<span class="st s">suspensa</span></td><td class="dono">Pricila</td><td class="prazo">retomar</td></tr>
       <tr class="susp"><td><span class="p m">média</span><b>Consultar o professor Vicente sobre integrar novatos</b><span class="st s">suspensa</span></td><td class="dono">Pricila</td><td class="prazo">retomar</td></tr>
       <tr class="susp"><td><span class="p m">média</span><b>Plano de Comunicação do Aluno</b> &mdash; onboarding, agenda, lembretes e checkpoints<span class="st s">suspensa</span></td><td class="dono">Pricila</td><td class="prazo">retomar</td></tr>
-      <tr><td><span class="p m">média</span><b>Decidir a isenção da aluna Maria Lídia</b> &mdash; analisar o tempo de interrupção dos estudos</td><td class="dono">Pricila</td><td class="prazo"><b>18/09</b></td></tr>
-      <tr><td><span class="p m">média</span><b>Aprender a usar as ferramentas de assessment</b> &mdash; com apoio da Zanine</td><td class="dono">Valdemar</td><td class="prazo">25/09</td></tr>
-      <tr><td><span class="p m">média</span><b>Verificar vínculos empregatícios do professor Guilherme</b></td><td class="dono">Pricila</td><td class="prazo"><b>18/09</b></td></tr>
+      <tr class="tog" data-d="pd2"><td><span class="p m">média</span><b>Decidir a isenção de uma aluna</b> &mdash; analisar o tempo de interrupção dos estudos<span class="st e">apurada &middot; aguarda a direção</span></td><td class="dono">Pricila</td><td class="prazo"><b>18/09</b></td></tr>
+      <tr class="det" id="pd2"><td colspan="3"><span class="lb">Onde parou</span><b>Apurada em 22/09.</b> A aluna ficou <b>cerca de quatro meses sem acesso à ferramenta de estudo</b>, desde o fim de maio. Sem ela não há lição nem exercício. O problema foi relatado e não foi resolvido a tempo. <b>A aluna continua matriculada</b> &mdash; aqui ainda é conversa de retenção, não de saída.<br><br><b>A apuração está cumprida. Isenção é concessão financeira e a decisão é da direção:</b> se concede, de quanto, e referente a quantos meses. Levada à direção em <b>25/09</b>.<br><br><span class="lb">Evidência</span>Folha diária de 22/09, arquivada em <b>04 PEDAGOGICO &rsaquo; PLANO ATE 06-10 &rsaquo; EVIDENCIAS</b>, junto com o documento <i>Decisões para a direção</i>, que traz o nome da aluna e o caso completo. <b>Uso interno</b> &mdash; esta página é pública.</td></tr>
+      <tr><td><span class="p m">média</span><b>Apresentar o assessment nas escolas</b> &mdash; a venda, com o material e o panfleto</td><td class="dono">Valdemar</td><td class="prazo">25/09</td></tr>
+      <tr class="alta tog" data-d="pd4"><td><span class="p a">alta</span><b>Aprender a aplicar, corrigir e ler o resultado do assessment</b> &mdash; com a Zanine<span class="st e">marcada para 25/09</span></td><td class="dono">Pricila</td><td class="prazo"><b>25/09</b></td></tr>
+      <tr class="det" id="pd4"><td colspan="3"><span class="lb">Por que são duas tarefas e não uma</span><b>Vender o assessment nas escolas é do comercial. Aplicar a prova, corrigir e ler o resultado é da coordenação pedagógica.</b> Estavam juntas numa linha só e foram separadas.<br><br><span class="lb">Situação</span>Estava prevista para <b>23/09</b> e não coube no dia &mdash; a própria folha registra o motivo: <b>falta de tempo</b>. Remarcada pela coordenação para <b>25/09</b>, com Rita e Tiago.<br><br><span class="lb">Por que não pode escorregar de novo</span><b>O assessment do Colégio Elo é no sábado, 26/09.</b> O treinamento precisa acontecer antes. É a única tarefa da semana com data fatal.</td></tr>
+      <tr class="tog" data-d="pd3"><td><span class="p m">média</span><b>Verificar a disponibilidade de um professor</b><span class="st c">resolvida em 23/09</span></td><td class="dono">Pricila</td><td class="prazo"><b>18/09</b></td></tr>
+      <tr class="det" id="pd3"><td colspan="3"><span class="lb">Como foi resolvida</span>A coordenação falou com o professor em <b>23/09</b>. Ele <b>segue com a turma das quartas</b>, o que garante continuidade. Recebeu também o convite para <b>assumir uma turma Kids às sextas</b>, com uma assistente na sala, e <b>ficou de responder</b>.<br><br><span class="lb">Por que isso importa mais do que parece</span>Esta conversa estava agendada para <b>05/10</b>, no fim do plano, e foi feita no <b>segundo dia</b>. E ela ataca a raiz da reclamação sobre o corpo docente: <b>enquanto a direção decide um caso de troca de professor, a coordenação já está fechando a escala que evita o próximo.</b><br><br><span class="lb">O que ainda falta</span><b>A resposta do professor sobre a turma de sexta precisa de prazo.</b><br><br><span class="lb">Quem é</span>O nome está na folha diária de 23/09, em <b>04 PEDAGOGICO &rsaquo; PLANO ATE 06-10 &rsaquo; EVIDENCIAS</b>. <b>Esta página é pública</b> &mdash; nome de professor e de aluno ficam na pasta.</td></tr>
       <tr><td><span class="p b">baixa</span><b>Reforçar a pesquisa com mensagens individuais</b></td><td class="dono">Pricila</td><td class="prazo">rever</td></tr>
       <tr class="tog" data-d="p1"><td><span class="p b">baixa</span><b>Aprender a rotina da coordenação e o sistema Sponte com a Jaciara</b> &mdash; <i>duas tarefas superadas</i></td><td class="dono">Pricila</td><td class="prazo"><b>encerrar</b></td></tr>
       <tr class="det" id="p1"><td colspan="3"><span class="lb">Proposta de encerramento</span><b>A Jaciara não está mais na escola</b> e a transição da coordenação passou para a Pricila. <b>As duas tarefas, como estão escritas, não têm como ser cumpridas.</b> A necessidade permanece &mdash; a direção já se comprometeu a buscar suporte externo para o Sponte e a Zanine está apoiando. <b>Encerrar não é desistir: é parar de contar como pendente algo que ninguém pode executar, e abrir tarefa nova com o dono certo.</b></td></tr>
