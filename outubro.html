@@ -97,6 +97,16 @@
   .pessoa.tia{border-left-color:#C8102E}
   .resumo-meta{font-size:13.5px;color:#0F2C4C;background:#eef2f7;border-radius:7px;padding:8px 12px;margin-bottom:10px;font-weight:700}
 
+  details.gav{background:#fff;border:1px solid #dde5ee;border-left:4px solid #C8102E;border-radius:12px;
+              padding:0;margin-bottom:12px;overflow:hidden}
+  details.gav>summary{cursor:pointer;list-style:none;padding:17px 20px;font-size:16px;font-weight:800;color:#0F2C4C;
+                      display:flex;align-items:center;justify-content:space-between;gap:12px}
+  details.gav>summary::-webkit-details-marker{display:none}
+  details.gav>summary i{font-style:normal;font-size:12px;font-weight:700;color:#8496aa;letter-spacing:.03em}
+  details.gav>summary:hover{background:#f7fafc}
+  details.gav[open]>summary{border-bottom:1px solid #e6ecf3;background:#f7fafc}
+  details.gav .conteudo{padding:16px 20px 20px}
+  details.gav .conteudo p{font-size:14px;color:#44566b;margin-bottom:9px}
   .rod{text-align:center;font-size:12.5px;color:#7c8b9c;margin-top:38px;padding-top:22px;border-top:1px solid #dde5ee}
   @media (max-width:620px){
     .capa{padding:34px 22px 28px} .capa h1{font-size:25px}
@@ -134,7 +144,8 @@
       <h3>Agosto &times; setembro<small>agosto &eacute; a r&eacute;gua porque os leads dele j&aacute; tiveram tempo de fechar ou de se perder</small></h3>
       <table>
         <tr><th>Indicador</th><th class="n">Agosto</th><th class="n">Setembro</th><th>Leitura</th></tr>
-        <tr class="dest"><td><b>Leads que entraram</b></td><td class="n"><b>101</b></td><td class="n">66</td><td><span class="down">&minus;35 leads</span> &mdash; chegou menos gente</td></tr>
+        <tr class="dest"><td><b>Leads que entraram</b> &middot; todas as fontes</td><td class="n"><b>101</b></td><td class="n">66</td><td><span class="down">&minus;35 leads</span> &mdash; chegou menos gente</td></tr>
+        <tr class="dest"><td style="padding-left:24px">&#8627; <b>dos quais, de an&uacute;ncio</b></td><td class="n"><b>68</b></td><td class="n">43</td><td><span class="down">&minus;25 leads</span></td></tr>
         <tr><td>Contactabilidade</td><td class="n">100%</td><td class="n">100%</td><td>igual &mdash; ningu&eacute;m fica sem resposta</td></tr>
         <tr class="dest"><td><b>Agendamento</b></td><td class="n"><b>50%</b></td><td class="n">27%</td><td><span class="down">caiu pela metade</span></td></tr>
         <tr><td>Comparecimento</td><td class="n">85%</td><td class="n">89%</td><td><span class="up">melhorou</span> &mdash; quem marca, vem</td></tr>
@@ -142,6 +153,8 @@
         <tr class="tot"><td><b>Matr&iacute;culas da safra</b></td><td class="n"><b>13</b></td><td class="n"><b>3</b></td><td><b>setembro foi o pior m&ecirc;s</b></td></tr>
       </table>
       <p style="margin-top:12px"><b>Em setembro aconteceram 4 matr&iacute;culas no total</b> &mdash; 3 de quem entrou no m&ecirc;s e 1 de quem entrou antes.</p>
+
+      <div class="obs"><p><b>Por que h&aacute; duas linhas de lead.</b> O total conta <b>todas as portas</b> &mdash; an&uacute;ncio, indica&ccedil;&atilde;o, quem passa na frente, parceria com escola, base do sistema. <b>A ag&ecirc;ncia e o painel da dire&ccedil;&atilde;o contam s&oacute; a porta do an&uacute;ncio.</b> Por isso os dois n&uacute;meros convivem e nenhum est&aacute; errado &mdash; eles medem coisas diferentes.</p></div>
 
       <div class="obs">
         <p style="margin-bottom:7px"><b>Por que agosto serve de r&eacute;gua, e n&atilde;o setembro.</b> N&atilde;o &eacute; sobre a equipe ter melhorado ou piorado com o tempo &mdash; &eacute; sobre o <b>lead</b>. Quem entrou em agosto j&aacute; teve dois meses para virar matr&iacute;cula ou para se perder: <b>o n&uacute;mero de agosto est&aacute; fechado</b>. Setembro ainda tem <b>19 leads em aberto</b>, nem convertidos nem perdidos.</p>
@@ -208,19 +221,33 @@ SETEMBRO:   66 leads &times; 27%  =  <b>18 aulas experimentais</b>
         <tr><td><b>Valdemar</b> &middot; B2B escolas</td><td class="n">4</td><td class="n"><b>5</b></td><td class="n">6</td></tr>
         <tr class="tot"><td>TOTAL DE OUTUBRO</td><td class="n">11</td><td class="n"><b>15</b></td><td class="n">19</td></tr>
       </table>
-      <p style="margin-top:12px"><b>As 10 da Rita</b> saem de 77 leads convertendo a 13% &mdash; a taxa de agosto. <b>As 5 do Valdemar</b> saem de 3 escolas com assessment aplicado, a cerca de 2 matr&iacute;culas por escola.</p>
+      <p style="margin-top:12px"><b>As 10 da Rita</b> saem de <b>80 leads</b> convertendo a 13% &mdash; a taxa de agosto. <b>As 5 do Valdemar</b> saem de 3 escolas com assessment aplicado, a cerca de 2 matr&iacute;culas por escola.</p>
+      <div class="obs"><p><b>Os 80 leads dependem da verba de an&uacute;ncio.</b> A R$ 30/dia o total chega a 80 e a meta de 10 &eacute; alcan&ccedil;&aacute;vel; a R$ 20/dia o total fica em 62 e o teto cai para 8. <b>A tabela &ldquo;o que cada verba compra&rdquo;, logo abaixo, mostra a conta inteira.</b></p></div>
     </div>
 
     <div class="box">
       <h3>As metas de atividade<small>os n&uacute;meros que se cobram no meio do m&ecirc;s</small></h3>
       <table>
         <tr><th>Quem</th><th>O que</th><th class="n">M&ecirc;s</th><th class="n">Semana</th></tr>
-        <tr class="dest"><td><b>Ag&ecirc;ncia</b></td><td>leads <b>de an&uacute;ncio</b> entregues</td><td class="n"><b>52</b></td><td class="n">~13</td></tr>
+        <tr class="dest"><td><b>Ag&ecirc;ncia</b></td><td>leads <b>de an&uacute;ncio</b> entregues &mdash; <b>depende da verba aprovada</b></td><td class="n"><b>55</b><br><small style="font-weight:400;color:#8496aa">se R$ 30/dia<br>37 se R$ 20</small></td><td class="n">~14</td></tr>
         <tr class="dest"><td><b>Rita</b></td><td>aulas experimentais marcadas</td><td class="n"><b>39</b></td><td class="n">~10</td></tr>
         <tr><td><b>Valdemar</b></td><td>institui&ccedil;&otilde;es visitadas</td><td class="n"><b>15</b></td><td class="n">~4</td></tr>
         <tr><td><b>Valdemar</b></td><td>escolas com assessment marcado</td><td class="n"><b>3</b></td><td class="n">&mdash;</td></tr>
       </table>
-      <div class="obs"><p><b>Nenhum destes n&uacute;meros est&aacute; acima do que agosto j&aacute; fez.</b> A meta de outubro n&atilde;o pede recorde &mdash; pede o volume de volta. <b>Os 52 de an&uacute;ncio s&atilde;o menos do que os 68 entregues em agosto</b>, e outubro &eacute; historicamente um m&ecirc;s mais fraco: o pedido &agrave; ag&ecirc;ncia j&aacute; nasce ajustado &agrave; sazonalidade.</p></div>
+      <div class="obs"><p><b>Nenhum destes n&uacute;meros est&aacute; acima do que agosto j&aacute; fez.</b> A meta de outubro n&atilde;o pede recorde &mdash; pede o volume de volta. <b>Os 55 de an&uacute;ncio s&atilde;o menos do que os 68 entregues em agosto</b>, e outubro &eacute; historicamente um m&ecirc;s mais fraco.</p></div>
+
+      <h4 style="font-size:13px;color:#C8102E;font-weight:800;letter-spacing:.04em;text-transform:uppercase;margin:20px 0 6px">O que cada verba compra</h4>
+      <p style="font-size:14px;color:#44566b;margin-bottom:4px">O volume de an&uacute;ncio n&atilde;o depende de esfor&ccedil;o &mdash; depende de quanto se investe por dia. <b>O teto de matr&iacute;culas sai desta escolha.</b></p>
+      <table>
+        <tr><th>Verba por dia</th><th class="n">No m&ecirc;s</th><th class="n">Conversas</th><th class="n">Leads de an&uacute;ncio</th><th class="n">+ outras portas</th><th class="n">Total</th><th class="n">Matr&iacute;culas</th></tr>
+        <tr><td><b>R$ 20</b> &middot; <i>o que rodou nas &uacute;ltimas semanas</i></td><td class="n">R$ 600</td><td class="n">46</td><td class="n">37</td><td class="n">~25</td><td class="n">62</td><td class="n"><b>8</b></td></tr>
+        <tr class="dest"><td><b>R$ 30</b></td><td class="n">R$ 900</td><td class="n">69</td><td class="n"><b>55</b></td><td class="n">~25</td><td class="n">80</td><td class="n"><b>10</b></td></tr>
+        <tr><td><b>R$ 35</b> &middot; <i>o combinado em contrato</i></td><td class="n">R$ 1.050</td><td class="n">81</td><td class="n">65</td><td class="n">~25</td><td class="n">90</td><td class="n"><b>12</b></td></tr>
+      </table>
+      <div class="obs">
+        <p style="margin-bottom:7px"><b>As tr&ecirc;s premissas da conta, para quem quiser conferir:</b> custo de <b>R$ 13 por conversa</b> (o custo real da ag&ecirc;ncia em setembro) &middot; <b>80% das conversas viram lead</b> no CRM (a taxa das tr&ecirc;s primeiras semanas de setembro) &middot; <b>13% dos leads viram matr&iacute;cula</b> (a taxa de agosto).</p>
+        <p style="margin-bottom:0"><b>A meta de 10 matr&iacute;culas da opera&ccedil;&atilde;o exige a verba de R$ 30 por dia.</b> A R$ 20, o teto &eacute; 8 &mdash; e a&iacute; a meta de outubro precisa ser 13, n&atilde;o 15. <b>&Eacute; uma decis&atilde;o de investimento, n&atilde;o de esfor&ccedil;o da equipe.</b></p>
+      </div>
     </div>
   </div>
 
@@ -323,7 +350,7 @@ SETEMBRO:   66 leads &times; 27%  =  <b>18 aulas experimentais</b>
       <table>
         <tr><th>#</th><th>Tarefa</th><th class="n">Tempo</th><th>Com quem</th></tr>
         <tr class="dest"><td class="n">1</td><td><b>Auditar a BM</b> &mdash; criativos, p&uacute;blicos, custo e qualidade de lead</td><td class="n"><b>1 dia inteiro<br>por rodada</b></td><td>Tiago</td></tr>
-        <tr class="dest"><td class="n">2</td><td><b>Cobrar 52 leads de an&uacute;ncio da ag&ecirc;ncia</b> e entender a causa da queda</td><td class="n">&mdash;</td><td>ag&ecirc;ncia</td></tr>
+        <tr class="dest"><td class="n">2</td><td><b>Checar a m&eacute;trica das conversas no BM</b> &mdash; descobrir se os n&uacute;meros reportados s&atilde;o conversas iniciadas ou mensagens, e investigar a semana de 21 a 27/09</td><td class="n">1h + 1 dia</td><td>ag&ecirc;ncia</td></tr>
         <tr><td class="n">3</td><td><b>Destravar o Instagram</b> &mdash; tr&ecirc;s roteiros escritos em 15/09, nunca gravados</td><td class="n">&mdash;</td><td>Milena</td></tr>
         <tr><td class="n">4</td><td><b>Painel de Metas e Proje&ccedil;&otilde;es</b> &mdash; definir dono por bloco e data de fechamento</td><td class="n">&mdash;</td><td>dire&ccedil;&atilde;o</td></tr>
         <tr><td class="n">5</td><td><b>Montar o plano pedag&oacute;gico de 07 a 31/10</b> &mdash; <i>mais um ciclo de montagem</i></td><td class="n">~1 dia</td><td>Tiago</td></tr>
@@ -468,7 +495,7 @@ SETEMBRO:   66 leads &times; 27%  =  <b>18 aulas experimentais</b>
 
     <div class="frase">
       <div class="lbl">A frase que define outubro</div>
-      <p>Outubro deu certo se entraram <b>77 leads &mdash; sendo 52 de an&uacute;ncio</b>, a Rita marcou <b>39 aulas experimentais</b> e <b>tr&ecirc;s escolas</b> aplicaram o assessment.</p>
+      <p>Outubro deu certo se entraram <b>80 leads</b>, a Rita marcou <b>39 aulas experimentais</b> e <b>tr&ecirc;s escolas</b> aplicaram o assessment.</p>
       <small>As 15 matr&iacute;culas s&atilde;o consequ&ecirc;ncia disso. Se esses tr&ecirc;s acontecerem e vierem 12 matr&iacute;culas, <b>o m&ecirc;s foi bom assim mesmo</b> &mdash; porque a equipe fez a parte dela.</small>
     </div>
 
@@ -500,14 +527,62 @@ SETEMBRO:   66 leads &times; 27%  =  <b>18 aulas experimentais</b>
     <div class="box">
       <table>
         <tr><th>#</th><th>O que trava</th><th>Com quem</th><th>Impacto</th></tr>
-        <tr class="dest"><td class="n">1</td><td><b>Faltam 25 leads de an&uacute;ncio por m&ecirc;s</b> &mdash; de 68 em agosto para 43 em setembro</td><td>ag&ecirc;ncia</td><td>Sem volume, o teto cai de <b>15 para 9</b></td></tr>
-        <tr class="dest"><td class="n">2</td><td><b>A aba Comercial do CRM n&atilde;o &eacute; alimentada</b></td><td><b>Valdemar</b></td><td>Sem registro, <b>n&atilde;o h&aacute; como medir o B2B</b></td></tr>
-        <tr><td class="n">3</td><td><b>Nenhum v&iacute;deo novo desde 15/09</b></td><td>Milena</td><td>Tr&ecirc;s roteiros prontos, nunca gravados</td></tr>
-        <tr><td class="n">4</td><td><b>A coordena&ccedil;&atilde;o ainda n&atilde;o aplica o assessment</b></td><td>dire&ccedil;&atilde;o</td><td>Com tr&ecirc;s escolas, uma pessoa s&oacute; n&atilde;o d&aacute; conta</td></tr>
-        <tr><td class="n">5</td><td><b>Painel de Metas parado desde junho</b></td><td>dire&ccedil;&atilde;o</td><td>Sem dono por bloco, <b>para de novo em novembro</b></td></tr>
-        <tr class="dest"><td class="n">6</td><td><b>A an&aacute;lise da BM est&aacute; descoberta</b></td><td>dire&ccedil;&atilde;o</td><td>S&oacute; abre se o pedag&oacute;gico e o comercial assumirem as tarefas pr&oacute;prias</td></tr>
+        <tr class="dest"><td class="n">1</td><td><b>A verba de an&uacute;ncio est&aacute; em R$ 20/dia</b>, contra os <b>R$ 30 a 35 combinados</b></td><td><b>dire&ccedil;&atilde;o</b></td><td>A R$ 20 o teto &eacute; <b>8 matr&iacute;culas</b>; a R$ 30, <b>10</b>. <b>A meta de 15 do m&ecirc;s pressup&otilde;e R$ 30/dia</b> &mdash; &eacute; decis&atilde;o de investimento, n&atilde;o de esfor&ccedil;o</td></tr>
+        <tr class="dest"><td class="n">2</td><td><b>Na semana de 21 a 27/09, 12 conversas de an&uacute;ncio n&atilde;o viraram lead</b> &mdash; a semana anterior, com a mesma verba, entregou 15</td><td>a investigar</td><td><b>N&atilde;o &eacute; falha de registro:</b> nos dias 21, 22 e 25 entraram leads de outras fontes normalmente. <b>Causa ainda desconhecida</b> &mdash; depende da auditoria do BM</td></tr>
+        <tr class="dest"><td class="n">3</td><td><b>A aba Comercial do CRM n&atilde;o &eacute; alimentada</b></td><td><b>Valdemar</b></td><td>Sem registro, <b>n&atilde;o h&aacute; como medir o B2B</b></td></tr>
+        <tr><td class="n">4</td><td><b>Nenhum v&iacute;deo novo desde 15/09</b></td><td>Milena</td><td>Tr&ecirc;s roteiros prontos, nunca gravados. <b>Criativo antigo encarece o lead</b></td></tr>
+        <tr><td class="n">5</td><td><b>A coordena&ccedil;&atilde;o ainda n&atilde;o aplica o assessment</b></td><td>dire&ccedil;&atilde;o</td><td>Com tr&ecirc;s escolas, uma pessoa s&oacute; n&atilde;o d&aacute; conta</td></tr>
+        <tr><td class="n">6</td><td><b>Painel de Metas parado desde junho</b></td><td>dire&ccedil;&atilde;o</td><td>Sem dono por bloco, <b>para de novo em novembro</b></td></tr>
+        <tr class="dest"><td class="n">7</td><td><b>A an&aacute;lise da BM est&aacute; descoberta</b></td><td>dire&ccedil;&atilde;o</td><td>S&oacute; abre se o pedag&oacute;gico e o comercial assumirem as tarefas pr&oacute;prias</td></tr>
       </table>
-      <div class="obs"><p><b>Os itens 1, 3 e 6 valem matr&iacute;cula direta.</b> O item 1 sozinho &eacute; a diferen&ccedil;a entre a meta de 15 e um teto de 9.</p></div>
+      <div class="obs"><p><b>Os itens 1 e 2 valem matr&iacute;cula direta e s&atilde;o os mais urgentes.</b> O item 1 sozinho &eacute; a diferen&ccedil;a entre a meta de 15 e um teto de 13.</p></div>
+    </div>
+
+    <details class="gav">
+      <summary>Como a auditoria do BM vai ser feita <i>cinco blocos &middot; abrir para ver o passo a passo</i></summary>
+      <div class="conteudo">
+        <p>O item 2 da tabela acima <b>n&atilde;o tem causa conhecida</b>, e a &uacute;nica fonte que responde &eacute; a pr&oacute;pria conta de an&uacute;ncios. Este &eacute; o m&eacute;todo, para que a auditoria possa ser conferida por qualquer pessoa.</p>
+
+        <h4 style="font-size:13px;color:#0F2C4C;font-weight:800;margin:14px 0 6px">Bloco 1 &middot; Acesso</h4>
+        <p>Pedir acesso de <b>Analista</b> &mdash; perfil <b>somente leitura</b> na conta de an&uacute;ncios. Permite ver tudo e <b>n&atilde;o permite alterar nada</b>, de modo que n&atilde;o interfere no trabalho de quem opera a campanha.</p>
+
+        <h4 style="font-size:13px;color:#0F2C4C;font-weight:800;margin:14px 0 6px">Bloco 2 &middot; A m&eacute;trica &mdash; 1 hora</h4>
+        <table>
+          <tr><th>#</th><th>O que fazer</th><th>O que responde</th></tr>
+          <tr><td class="n">1</td><td>Ver o <b>nome exato da coluna</b> que a ag&ecirc;ncia reporta como &ldquo;mensagens&rdquo;</td><td>&eacute; <i>conversa iniciada</i> ou <i>mensagem enviada</i>?</td></tr>
+          <tr><td class="n">2</td><td>Comparar <b>conversas iniciadas &times; mensagens &times; contatos &uacute;nicos</b></td><td>os 63 s&atilde;o 63 pessoas, ou menos pessoas mandando v&aacute;rias mensagens?</td></tr>
+          <tr><td class="n">3</td><td>Verificar a <b>janela de atribui&ccedil;&atilde;o</b> (7 dias de clique, 1 dia de visualiza&ccedil;&atilde;o)</td><td>a conversa pode estar contada no dia do clique, n&atilde;o no dia em que aconteceu &mdash; <b>isso sozinho pode explicar parte do descompasso de datas</b></td></tr>
+        </table>
+
+        <h4 style="font-size:13px;color:#0F2C4C;font-weight:800;margin:14px 0 6px">Bloco 3 &middot; A semana de 21 a 27/09</h4>
+        <table>
+          <tr><th>#</th><th>O que fazer</th><th>O que responde</th></tr>
+          <tr><td class="n">4</td><td><b>Entrega dia a dia</b> daquela semana</td><td>a campanha rodou todos os dias?</td></tr>
+          <tr><td class="n">5</td><td>Checar <b>pausas, reprova&ccedil;&otilde;es por pol&iacute;tica ou limita&ccedil;&otilde;es de entrega</b></td><td>algum an&uacute;ncio ficou fora do ar?</td></tr>
+          <tr><td class="n">6</td><td><b>Gasto real por dia</b></td><td>bateu com os R$ 144 reportados?</td></tr>
+          <tr><td class="n">7</td><td>Houve <b>troca de criativo, de p&uacute;blico ou de posicionamento</b> naquela semana?</td><td>o que mudou?</td></tr>
+        </table>
+
+        <h4 style="font-size:13px;color:#0F2C4C;font-weight:800;margin:14px 0 6px">Bloco 4 &middot; Qualidade da entrega</h4>
+        <table>
+          <tr><th>#</th><th>O que olhar</th><th>O que os relat&oacute;rios semanais j&aacute; indicam</th></tr>
+          <tr><td class="n">8</td><td><b>Frequ&ecirc;ncia</b></td><td>subiu: <b>1,21 &rarr; 1,39 &rarr; 1,32</b>. Frequ&ecirc;ncia em alta significa <b>as mesmas pessoas vendo o an&uacute;ncio mais vezes</b> &mdash; sinal de p&uacute;blico saturado</td></tr>
+          <tr><td class="n">9</td><td><b>Cliques</b></td><td>ca&iacute;ram <b>55%</b>: 172 &rarr; 120 &rarr; 98 &rarr; 78</td></tr>
+          <tr class="dest"><td class="n">10</td><td><b>H&aacute; quanto tempo o criativo est&aacute; no ar</b></td><td>os tr&ecirc;s roteiros escritos em 15/09 <b>nunca foram gravados</b> &mdash; o criativo pode estar sem renova&ccedil;&atilde;o desde ent&atilde;o. <b>Criativo velho encarece o lead</b>, e isso aparece no CPC de R$ 5,52 da segunda semana</td></tr>
+          <tr><td class="n">11</td><td><b>Tamanho e sobreposi&ccedil;&atilde;o do p&uacute;blico</b></td><td>p&uacute;blico pequeno satura r&aacute;pido e empurra a frequ&ecirc;ncia para cima</td></tr>
+        </table>
+
+        <h4 style="font-size:13px;color:#0F2C4C;font-weight:800;margin:14px 0 6px">Bloco 5 &middot; A ponte com o CRM</h4>
+        <table>
+          <tr><th>#</th><th>O que fazer</th><th>Situa&ccedil;&atilde;o</th></tr>
+          <tr><td class="n">12</td><td>Cruzar <b>conversas do BM dia a dia &times; leads do CRM dia a dia</b></td><td><b>o lado do CRM j&aacute; est&aacute; levantado</b> &mdash; falta o lado do BM</td></tr>
+        </table>
+
+        <div class="obs" style="margin-top:14px"><p><b>Tempo estimado:</b> os blocos 1 e 2 levam cerca de <b>uma hora</b> e j&aacute; respondem a pergunta mais importante. Os blocos 3 a 5 consomem <b>um dia de trabalho</b>.</p></div>
+      </div>
+    </details>
+
+    <div class="box">
     </div>
 
     <div class="box">
